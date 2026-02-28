@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books We Need — Paivapo Institution</title>
+  <meta name="description" content="Help build the Paivapo library collection. These are the books we need — donate a title directly.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Paivapo Institution — Home">
+        Paivapo
+        <span>Institution</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+          <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
+          <li><a href="catalog.html" class="nav__link" data-i18n="nav.catalog">Catalog</a></li>
+          <li><a href="wishlist.html" class="nav__link nav__link--active" data-i18n="nav.wishlist">Books We Need</a></li>
+          <li><a href="donate.html" class="nav__link" data-i18n="nav.donate">Donate</a></li>
+          <li><a href="visit.html" class="nav__link" data-i18n="nav.visit">Visit Us</a></li>
+          <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="partners.html" class="nav__link" data-i18n="nav.partners">Partners</a></li>
+          <li><button class="lang-toggle" aria-label="Switch to Shona">SN</button></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header__title" data-i18n="wishlist.title">Books We Need</h1>
+        <p class="page-header__desc" data-i18n="wishlist.desc">Help us build our collection. These are the titles we are looking for.</p>
+      </div>
+    </section>
+
+    <!-- Donate-a-Book CTA -->
+    <section class="container" style="padding-top:var(--space-2xl);">
+      <div class="info-block" style="text-align:center;">
+        <h2 class="info-block__title">Buy Us a Book</h2>
+        <p class="info-block__text" style="max-width:500px;margin:0 auto var(--space-lg);">
+          Buy us a book — it will be delivered directly to our London collection point and shipped to Zimbabwe. Donor addresses remain private.
+        </p>
+        <a href="https://www.amazon.co.uk/hz/wishlist/ls/placeholder" target="_blank" rel="noopener" class="btn btn--primary">
+          View Amazon Wishlist &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Wishlist -->
+    <section class="section">
+      <div class="container container--narrow">
+        <div id="wishlist-list" aria-label="Books we need">
+          <!-- Populated by main.js -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">Paivapo</div>
+          <p class="footer__tagline">A library for the curious, the critical, and the community.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigate</h4>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="catalog.html" class="footer__link">Catalog</a>
+          <a href="wishlist.html" class="footer__link">Books We Need</a>
+          <a href="donate.html" class="footer__link">Donate</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Visit</h4>
+          <a href="visit.html" class="footer__link">Plan Your Visit</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+          <a href="partners.html" class="footer__link">Partners</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Connect</h4>
+          <a href="mailto:hello@paivapo.org" class="footer__link">hello@paivapo.org</a>
+          <a href="https://instagram.com/paivapo" target="_blank" rel="noopener" class="footer__link">Instagram</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copy">&copy; 2026 Paivapo Institution. Harare, Zimbabwe.</span>
+        <span class="footer__built" data-i18n="footer.built">Built with care for Zimbabwe</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

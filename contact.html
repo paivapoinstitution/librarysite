@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Paivapo Institution</title>
+  <meta name="description" content="Get in touch with Paivapo Institution. Enquiries, partnerships, and press.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Paivapo Institution — Home">
+        Paivapo
+        <span>Institution</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+          <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
+          <li><a href="catalog.html" class="nav__link" data-i18n="nav.catalog">Catalog</a></li>
+          <li><a href="wishlist.html" class="nav__link" data-i18n="nav.wishlist">Books We Need</a></li>
+          <li><a href="donate.html" class="nav__link" data-i18n="nav.donate">Donate</a></li>
+          <li><a href="visit.html" class="nav__link" data-i18n="nav.visit">Visit Us</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--active" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="partners.html" class="nav__link" data-i18n="nav.partners">Partners</a></li>
+          <li><button class="lang-toggle" aria-label="Switch to Shona">SN</button></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header__title" data-i18n="contact.title">Contact</h1>
+        <p class="page-header__desc">We would like to hear from you</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid--2">
+
+          <!-- Form -->
+          <div>
+            <form class="form" action="https://formspree.io/f/placeholder" method="POST">
+              <div class="form__group">
+                <label for="name" class="form__label" data-i18n="contact.name">Name</label>
+                <input type="text" id="name" name="name" class="form__input" required autocomplete="name">
+              </div>
+              <div class="form__group">
+                <label for="email" class="form__label" data-i18n="contact.email">Email</label>
+                <input type="email" id="email" name="email" class="form__input" required autocomplete="email">
+              </div>
+              <div class="form__group">
+                <label for="message" class="form__label" data-i18n="contact.message">Message</label>
+                <textarea id="message" name="message" class="form__textarea" required></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary" data-i18n="contact.send">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div style="padding-left:var(--space-3xl);">
+            <div style="margin-bottom:var(--space-2xl);">
+              <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-md);">Email</h3>
+              <a href="mailto:hello@paivapo.org" style="color:var(--color-accent);font-size:var(--text-lg);">hello@paivapo.org</a>
+            </div>
+
+            <div style="margin-bottom:var(--space-2xl);">
+              <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-md);">Zimbabwe</h3>
+              <p style="color:var(--color-text-secondary);">Paivapo Institution<br>Harare, Zimbabwe</p>
+            </div>
+
+            <div style="margin-bottom:var(--space-2xl);">
+              <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-md);">London Office</h3>
+              <p style="color:var(--color-text-secondary);">London, United Kingdom<br>Book donations &amp; logistics</p>
+            </div>
+
+            <div>
+              <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-md);">Social</h3>
+              <a href="https://instagram.com/paivapo" target="_blank" rel="noopener" style="color:var(--color-accent);display:block;margin-bottom:var(--space-sm);">Instagram</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">Paivapo</div>
+          <p class="footer__tagline">A library for the curious, the critical, and the community.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigate</h4>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="catalog.html" class="footer__link">Catalog</a>
+          <a href="wishlist.html" class="footer__link">Books We Need</a>
+          <a href="donate.html" class="footer__link">Donate</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Visit</h4>
+          <a href="visit.html" class="footer__link">Plan Your Visit</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+          <a href="partners.html" class="footer__link">Partners</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Connect</h4>
+          <a href="mailto:hello@paivapo.org" class="footer__link">hello@paivapo.org</a>
+          <a href="https://instagram.com/paivapo" target="_blank" rel="noopener" class="footer__link">Instagram</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copy">&copy; 2026 Paivapo Institution. Harare, Zimbabwe.</span>
+        <span class="footer__built" data-i18n="footer.built">Built with care for Zimbabwe</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

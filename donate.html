@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate — Paivapo Institution</title>
+  <meta name="description" content="Support Paivapo Institution. Donate money or donate a book to help build a community library in Zimbabwe.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Paivapo Institution — Home">
+        Paivapo
+        <span>Institution</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+          <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
+          <li><a href="catalog.html" class="nav__link" data-i18n="nav.catalog">Catalog</a></li>
+          <li><a href="wishlist.html" class="nav__link" data-i18n="nav.wishlist">Books We Need</a></li>
+          <li><a href="donate.html" class="nav__link nav__link--active" data-i18n="nav.donate">Donate</a></li>
+          <li><a href="visit.html" class="nav__link" data-i18n="nav.visit">Visit Us</a></li>
+          <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="partners.html" class="nav__link" data-i18n="nav.partners">Partners</a></li>
+          <li><button class="lang-toggle" aria-label="Switch to Shona">SN</button></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header__title" data-i18n="donate.title">Support Paivapo</h1>
+        <p class="page-header__desc">Every contribution builds a library. Every book opens a world.</p>
+      </div>
+    </section>
+
+    <!-- Donation Options -->
+    <section class="section">
+      <div class="container">
+        <div class="donate-options">
+
+          <!-- Donate Money -->
+          <div class="donate-card">
+            <div class="donate-card__icon" aria-hidden="true">&#9671;</div>
+            <h2 class="donate-card__title" data-i18n="donate.money">Donate Money</h2>
+            <p class="donate-card__desc">
+              Financial donations help us purchase books, maintain our space, and run community programmes. Every amount matters.
+            </p>
+            <a href="#" class="btn btn--primary" aria-label="Donate money via payment processor">
+              Donate Now &rarr;
+            </a>
+            <p style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-md);">
+              Payment processed via Stripe / PayPal
+            </p>
+          </div>
+
+          <!-- Donate a Book -->
+          <div class="donate-card">
+            <div class="donate-card__icon" aria-hidden="true">&#9670;</div>
+            <h2 class="donate-card__title" data-i18n="donate.book">Donate a Book</h2>
+            <p class="donate-card__desc">
+              Buy us a book from our wishlist. It will be delivered directly to our London collection point and shipped to Zimbabwe.
+            </p>
+            <a href="https://www.amazon.co.uk/hz/wishlist/ls/placeholder" target="_blank" rel="noopener" class="btn btn--primary" aria-label="View Amazon wishlist to donate a book">
+              View Wishlist &rarr;
+            </a>
+            <p style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-md);">
+              Via Amazon UK
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- How Funds Are Used -->
+    <section class="section" style="border-top:1px solid var(--color-border);">
+      <div class="container container--narrow" style="text-align:center;">
+        <span class="section-header__label">How Your Support Helps</span>
+        <div class="divider divider--center"></div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-2xl);margin-top:var(--space-2xl);">
+          <div>
+            <h4 style="font-size:var(--text-xl);margin-bottom:var(--space-sm);">Books</h4>
+            <p class="text-sm text-muted">Acquiring titles across art, ecology, and literature for our growing collection.</p>
+          </div>
+          <div>
+            <h4 style="font-size:var(--text-xl);margin-bottom:var(--space-sm);">Space</h4>
+            <p class="text-sm text-muted">Maintaining a welcoming reading room and community gathering area in Harare.</p>
+          </div>
+          <div>
+            <h4 style="font-size:var(--text-xl);margin-bottom:var(--space-sm);">Programmes</h4>
+            <p class="text-sm text-muted">Reading groups, workshops, and cultural events open to all.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Charity Note -->
+    <section class="container" style="padding-bottom:var(--space-4xl);">
+      <div class="info-block" style="text-align:center;">
+        <p class="info-block__text" style="margin:0 auto;">
+          Donations are currently processed through our studio account. UK charity registration is in progress. For questions about donations, contact <a href="mailto:hello@paivapo.org" style="color:var(--color-accent);">hello@paivapo.org</a>.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">Paivapo</div>
+          <p class="footer__tagline">A library for the curious, the critical, and the community.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigate</h4>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="catalog.html" class="footer__link">Catalog</a>
+          <a href="wishlist.html" class="footer__link">Books We Need</a>
+          <a href="donate.html" class="footer__link">Donate</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Visit</h4>
+          <a href="visit.html" class="footer__link">Plan Your Visit</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+          <a href="partners.html" class="footer__link">Partners</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Connect</h4>
+          <a href="mailto:hello@paivapo.org" class="footer__link">hello@paivapo.org</a>
+          <a href="https://instagram.com/paivapo" target="_blank" rel="noopener" class="footer__link">Instagram</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copy">&copy; 2026 Paivapo Institution. Harare, Zimbabwe.</span>
+        <span class="footer__built" data-i18n="footer.built">Built with care for Zimbabwe</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Paivapo Institution</title>
+  <style>
+    :root {
+      --bg: #FAFAF7;
+      --surface: #FFFFFF;
+      --text: #1A1A1A;
+      --text-2: #5C5C5C;
+      --text-3: #8A8A8A;
+      --accent: #C17A3A;
+      --accent-dark: #9E5E25;
+      --border: #E5E5E0;
+      --danger: #C0392B;
+      --success: #27AE60;
+      --font: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --serif: 'DM Serif Display', Georgia, serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* Layout */
+    .admin-header {
+      background: var(--text);
+      color: var(--bg);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .admin-header h1 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+
+    .admin-header small {
+      color: var(--text-3);
+      font-size: 0.75rem;
+    }
+
+    .admin-nav {
+      display: flex;
+      gap: 2px;
+      background: var(--border);
+      padding: 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .admin-nav button {
+      font-family: var(--font);
+      font-size: 0.85rem;
+      padding: 12px 20px;
+      background: var(--surface);
+      border: none;
+      cursor: pointer;
+      color: var(--text-2);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+
+    .admin-nav button:hover { color: var(--accent); }
+    .admin-nav button.active {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+      font-weight: 500;
+    }
+
+    .panel { display: none; padding: 24px; max-width: 1000px; margin: 0 auto; }
+    .panel.active { display: block; }
+
+    .instructions {
+      background: rgba(193,122,58,0.08);
+      border-left: 3px solid var(--accent);
+      padding: 16px;
+      margin-bottom: 24px;
+      font-size: 0.85rem;
+      color: var(--text-2);
+    }
+
+    /* Form elements */
+    label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-3);
+      margin-bottom: 4px;
+    }
+
+    input, select, textarea {
+      font-family: var(--font);
+      font-size: 0.9rem;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+    }
+
+    textarea { min-height: 80px; resize: vertical; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .form-group { margin-bottom: 12px; }
+
+    .form-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    /* Buttons */
+    .btn {
+      font-family: var(--font);
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-outline { background: transparent; border-color: var(--border); color: var(--text); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-danger { background: transparent; border-color: var(--danger); color: var(--danger); }
+    .btn-danger:hover { background: var(--danger); color: #fff; }
+    .btn-success { background: var(--success); color: #fff; border-color: var(--success); }
+    .btn-sm { padding: 4px 10px; font-size: 0.7rem; }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 0.85rem;
+    }
+
+    th {
+      text-align: left;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-3);
+      padding: 8px 12px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:hover { background: rgba(193,122,58,0.03); }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 2px 8px;
+      border: 1px solid var(--border);
+      color: var(--accent);
+    }
+
+    .tag--featured { border-color: var(--accent); background: rgba(193,122,58,0.08); }
+
+    /* Section header */
+    .section-title {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .section-desc {
+      color: var(--text-2);
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+    }
+
+    /* Card form area */
+    .add-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .add-form h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    /* ISBN lookup */
+    .isbn-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .isbn-row input { flex: 1; }
+
+    .status-msg {
+      font-size: 0.8rem;
+      padding: 8px 12px;
+      margin-top: 8px;
+    }
+
+    .status-msg.success { color: var(--success); background: rgba(39,174,96,0.08); }
+    .status-msg.error { color: var(--danger); background: rgba(192,57,43,0.08); }
+
+    /* Preview */
+    .preview-card {
+      border: 1px solid var(--border);
+      display: flex;
+      gap: 16px;
+      padding: 16px;
+      margin-top: 16px;
+      background: var(--bg);
+    }
+
+    .preview-card img {
+      width: 80px;
+      height: 120px;
+      object-fit: cover;
+      background: var(--border);
+    }
+
+    .preview-card h4 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .preview-card p {
+      font-size: 0.8rem;
+      color: var(--text-2);
+      margin-bottom: 4px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: auto;
+    }
+
+    /* Export bar */
+    .export-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 24px;
+    }
+
+    .export-bar span {
+      font-size: 0.8rem;
+      color: var(--text-3);
+    }
+
+    @media (max-width: 768px) {
+      .form-row { grid-template-columns: 1fr; }
+      .admin-nav { flex-wrap: wrap; }
+      .admin-nav button { flex: 1; min-width: 100px; text-align: center; }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="admin-header">
+    <div>
+      <h1>Paivapo Admin</h1>
+      <small>Content Management System</small>
+    </div>
+    <a href="../index.html" class="btn btn-outline" style="color:var(--bg);border-color:rgba(250,250,247,0.2);">View Site &rarr;</a>
+  </header>
+
+  <nav class="admin-nav">
+    <button class="active" data-panel="books">Books</button>
+    <button data-panel="wishlist">Wishlist</button>
+    <button data-panel="partners">Partners</button>
+    <button data-panel="gallery">Gallery</button>
+    <button data-panel="settings">Settings</button>
+  </nav>
+
+  <!-- ==================== BOOKS PANEL ==================== -->
+  <div id="panel-books" class="panel active">
+    <h2 class="section-title">Books Manager</h2>
+    <p class="section-desc">Manage the library catalog. Use ISBN lookup to auto-populate book data from Open Library.</p>
+
+    <div class="instructions">
+      After making changes, click <strong>Download books.json</strong> below. Then commit the downloaded file to your GitHub repository's <code>/data/</code> folder to publish changes.
+    </div>
+
+    <div class="add-form">
+      <h3>Add New Book</h3>
+
+      <!-- ISBN Lookup -->
+      <div class="isbn-row">
+        <input type="text" id="isbn-input" placeholder="Enter ISBN (e.g. 9780140135152)">
+        <button class="btn btn-primary" id="isbn-lookup">Look Up ISBN</button>
+      </div>
+      <div id="isbn-status"></div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="book-title">Title</label>
+          <input type="text" id="book-title">
+        </div>
+        <div class="form-group">
+          <label for="book-author">Author</label>
+          <input type="text" id="book-author">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="book-category">Category</label>
+          <select id="book-category">
+            <option value="art">Art</option>
+            <option value="ecology">Ecology</option>
+            <option value="literature">Literature</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="book-year">Year</label>
+          <input type="number" id="book-year">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="book-description">Description</label>
+        <textarea id="book-description"></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="book-cover">Cover URL</label>
+          <input type="text" id="book-cover">
+        </div>
+        <div class="form-group">
+          <label for="book-isbn-val">ISBN</label>
+          <input type="text" id="book-isbn-val" readonly>
+        </div>
+      </div>
+      <div class="checkbox-group" style="margin-bottom:12px;">
+        <input type="checkbox" id="book-featured">
+        <label for="book-featured" style="margin:0;text-transform:none;font-size:0.85rem;color:var(--text);">Mark as featured</label>
+      </div>
+
+      <!-- Preview -->
+      <div id="book-preview" style="display:none;">
+        <label style="margin-bottom:8px;">Preview</label>
+        <div class="preview-card">
+          <img id="preview-cover" src="" alt="Book cover preview">
+          <div>
+            <h4 id="preview-title"></h4>
+            <p id="preview-author"></p>
+            <p id="preview-category" style="color:var(--accent);text-transform:uppercase;font-size:0.7rem;letter-spacing:0.08em;"></p>
+            <p id="preview-desc"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn btn-primary" id="add-book">Add Book</button>
+        <button class="btn btn-outline" id="preview-book">Preview</button>
+        <button class="btn btn-outline" id="clear-book-form">Clear</button>
+      </div>
+    </div>
+
+    <table id="books-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Category</th>
+          <th>Year</th>
+          <th>Featured</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="export-bar">
+      <span id="books-count">0 books</span>
+      <div style="display:flex;gap:8px;">
+        <button class="btn btn-outline" id="import-books">Import JSON</button>
+        <button class="btn btn-success" id="export-books">Download books.json</button>
+      </div>
+    </div>
+    <input type="file" id="import-books-file" accept=".json" style="display:none">
+  </div>
+
+  <!-- ==================== WISHLIST PANEL ==================== -->
+  <div id="panel-wishlist" class="panel">
+    <h2 class="section-title">Wishlist Manager</h2>
+    <p class="section-desc">Books we need — titles displayed on the "Books We Need" page.</p>
+
+    <div class="instructions">
+      After making changes, click <strong>Download wishlist.json</strong>. Commit the file to <code>/data/</code> to publish.
+    </div>
+
+    <div class="add-form">
+      <h3>Add Wishlist Item</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="wish-title">Title</label>
+          <input type="text" id="wish-title">
+        </div>
+        <div class="form-group">
+          <label for="wish-author">Author</label>
+          <input type="text" id="wish-author">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="wish-category">Category</label>
+          <select id="wish-category">
+            <option value="art">Art</option>
+            <option value="ecology">Ecology</option>
+            <option value="literature">Literature</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="wish-amazon">Amazon URL</label>
+          <input type="url" id="wish-amazon">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="wish-reason">Why We Need It</label>
+        <textarea id="wish-reason"></textarea>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-primary" id="add-wish">Add to Wishlist</button>
+        <button class="btn btn-outline" id="clear-wish-form">Clear</button>
+      </div>
+    </div>
+
+    <table id="wishlist-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Category</th>
+          <th>Reason</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="export-bar">
+      <span id="wishlist-count">0 items</span>
+      <div style="display:flex;gap:8px;">
+        <button class="btn btn-outline" id="import-wishlist">Import JSON</button>
+        <button class="btn btn-success" id="export-wishlist">Download wishlist.json</button>
+      </div>
+    </div>
+    <input type="file" id="import-wishlist-file" accept=".json" style="display:none">
+  </div>
+
+  <!-- ==================== PARTNERS PANEL ==================== -->
+  <div id="panel-partners" class="panel">
+    <h2 class="section-title">Partners Manager</h2>
+    <p class="section-desc">Manage partners and sponsors displayed on the Partners page.</p>
+
+    <div class="instructions">
+      After making changes, click <strong>Download partners.json</strong>. Commit the file to <code>/data/</code> to publish.
+    </div>
+
+    <div class="add-form">
+      <h3>Add Partner</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="partner-name">Name</label>
+          <input type="text" id="partner-name">
+        </div>
+        <div class="form-group">
+          <label for="partner-tier">Tier</label>
+          <select id="partner-tier">
+            <option value="founding">Founding Partner</option>
+            <option value="partner">Partner</option>
+            <option value="supporter">Supporter</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="partner-url">Website URL</label>
+          <input type="url" id="partner-url">
+        </div>
+        <div class="form-group">
+          <label for="partner-logo">Logo URL</label>
+          <input type="text" id="partner-logo" value="/assets/images/placeholder.svg">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="partner-desc">Description</label>
+        <textarea id="partner-desc"></textarea>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-primary" id="add-partner">Add Partner</button>
+        <button class="btn btn-outline" id="clear-partner-form">Clear</button>
+      </div>
+    </div>
+
+    <table id="partners-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Tier</th>
+          <th>URL</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="export-bar">
+      <span id="partners-count">0 partners</span>
+      <div style="display:flex;gap:8px;">
+        <button class="btn btn-outline" id="import-partners">Import JSON</button>
+        <button class="btn btn-success" id="export-partners">Download partners.json</button>
+      </div>
+    </div>
+    <input type="file" id="import-partners-file" accept=".json" style="display:none">
+  </div>
+
+  <!-- ==================== GALLERY PANEL ==================== -->
+  <div id="panel-gallery" class="panel">
+    <h2 class="section-title">Gallery Manager</h2>
+    <p class="section-desc">Manage photos displayed on the Visit Us page.</p>
+
+    <div class="instructions">
+      After making changes, click <strong>Download gallery.json</strong>. Commit the file to <code>/data/</code> to publish.
+    </div>
+
+    <div class="add-form">
+      <h3>Add Image</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="gallery-url">Image URL</label>
+          <input type="text" id="gallery-url" value="/assets/images/placeholder.svg">
+        </div>
+        <div class="form-group">
+          <label for="gallery-alt">Alt Text</label>
+          <input type="text" id="gallery-alt">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="gallery-caption">Caption</label>
+        <input type="text" id="gallery-caption">
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-primary" id="add-gallery">Add Image</button>
+        <button class="btn btn-outline" id="clear-gallery-form">Clear</button>
+      </div>
+    </div>
+
+    <table id="gallery-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Caption</th>
+          <th>Alt Text</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="export-bar">
+      <span id="gallery-count">0 images</span>
+      <div style="display:flex;gap:8px;">
+        <button class="btn btn-outline" id="import-gallery">Import JSON</button>
+        <button class="btn btn-success" id="export-gallery">Download gallery.json</button>
+      </div>
+    </div>
+    <input type="file" id="import-gallery-file" accept=".json" style="display:none">
+  </div>
+
+  <!-- ==================== SETTINGS PANEL ==================== -->
+  <div id="panel-settings" class="panel">
+    <h2 class="section-title">Site Settings</h2>
+    <p class="section-desc">Edit site-wide settings — tagline, contact info, opening date, and more.</p>
+
+    <div class="instructions">
+      After making changes, click <strong>Download settings.json</strong>. Commit the file to <code>/data/</code> to publish.
+    </div>
+
+    <div class="add-form">
+      <div class="form-group">
+        <label for="set-name">Site Name</label>
+        <input type="text" id="set-name">
+      </div>
+      <div class="form-group">
+        <label for="set-tagline">Tagline</label>
+        <input type="text" id="set-tagline">
+      </div>
+      <div class="form-group">
+        <label for="set-mission">Mission Statement</label>
+        <textarea id="set-mission" style="min-height:100px;"></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="set-opening">Opening Date</label>
+          <input type="date" id="set-opening">
+        </div>
+        <div class="form-group">
+          <label for="set-email">Email</label>
+          <input type="email" id="set-email">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="set-location">Location</label>
+          <input type="text" id="set-location">
+        </div>
+        <div class="form-group">
+          <label for="set-london">London Office</label>
+          <input type="text" id="set-london">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="set-instagram">Instagram URL</label>
+          <input type="url" id="set-instagram">
+        </div>
+        <div class="form-group">
+          <label for="set-hours">Opening Hours</label>
+          <input type="text" id="set-hours">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="set-charity">Charity Note</label>
+        <textarea id="set-charity"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="set-amazon">Amazon Wishlist URL</label>
+        <input type="url" id="set-amazon">
+      </div>
+      <div class="form-group">
+        <label for="set-biennale">Biennale Note</label>
+        <textarea id="set-biennale"></textarea>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-success" id="export-settings">Download settings.json</button>
+        <button class="btn btn-outline" id="import-settings">Import JSON</button>
+      </div>
+      <input type="file" id="import-settings-file" accept=".json" style="display:none">
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    'use strict';
+
+    // ---- State ----
+    let books = [];
+    let wishlist = [];
+    let partners = [];
+    let gallery = [];
+    let settings = {};
+
+    // ---- Tab Navigation ----
+    document.querySelectorAll('.admin-nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.admin-nav button').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
+      });
+    });
+
+    // ---- Utility: generate ID ----
+    function genId(prefix) {
+      return prefix + Date.now().toString(36);
+    }
+
+    // ---- Utility: download JSON ----
+    function downloadJSON(data, filename) {
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // ---- Utility: import JSON ----
+    function importJSON(fileInput, callback) {
+      fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          try {
+            const data = JSON.parse(ev.target.result);
+            callback(data);
+          } catch (err) {
+            alert('Invalid JSON file.');
+          }
+        };
+        reader.readAsText(file);
+        fileInput.value = '';
+      });
+    }
+
+    // ---- Utility: truncate text ----
+    function trunc(str, len) {
+      if (!str) return '';
+      return str.length > len ? str.substring(0, len) + '...' : str;
+    }
+
+    // ============================================================
+    //  BOOKS
+    // ============================================================
+
+    const booksTable = document.querySelector('#books-table tbody');
+
+    function renderBooks() {
+      booksTable.innerHTML = books.map((b, i) => `
+        <tr>
+          <td><strong>${b.title}</strong></td>
+          <td>${b.author}</td>
+          <td><span class="tag">${b.category}</span></td>
+          <td>${b.year || ''}</td>
+          <td>${b.featured ? '<span class="tag tag--featured">Featured</span>' : ''}</td>
+          <td>
+            <button class="btn btn-sm btn-outline" onclick="editBook(${i})">Edit</button>
+            <button class="btn btn-sm btn-danger" onclick="deleteBook(${i})">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+      document.getElementById('books-count').textContent = books.length + ' book' + (books.length !== 1 ? 's' : '');
+    }
+
+    // ISBN Lookup
+    document.getElementById('isbn-lookup').addEventListener('click', async () => {
+      const isbn = document.getElementById('isbn-input').value.replace(/[-\s]/g, '');
+      const status = document.getElementById('isbn-status');
+      if (!isbn) { status.innerHTML = '<div class="status-msg error">Please enter an ISBN.</div>'; return; }
+
+      status.innerHTML = '<div class="status-msg">Looking up ISBN...</div>';
+
+      try {
+        const res = await fetch('https://openlibrary.org/api/books?bibkeys=ISBN:' + isbn + '&format=json&jscmd=data');
+        const data = await res.json();
+        const key = 'ISBN:' + isbn;
+
+        if (!data[key]) {
+          status.innerHTML = '<div class="status-msg error">Book not found. Try a different ISBN or enter details manually.</div>';
+          return;
+        }
+
+        const book = data[key];
+        document.getElementById('book-title').value = book.title || '';
+        document.getElementById('book-author').value = (book.authors && book.authors[0]) ? book.authors[0].name : '';
+        document.getElementById('book-description').value = book.excerpts ? book.excerpts[0].text : (book.subjects ? book.subjects.slice(0, 3).map(s => s.name).join(', ') : '');
+        document.getElementById('book-cover').value = book.cover ? (book.cover.large || book.cover.medium || '') : 'https://covers.openlibrary.org/b/isbn/' + isbn + '-L.jpg';
+        document.getElementById('book-year').value = book.publish_date ? book.publish_date.match(/\d{4}/)?.[0] || '' : '';
+        document.getElementById('book-isbn-val').value = isbn;
+
+        status.innerHTML = '<div class="status-msg success">Book found! Review the details and click Add Book.</div>';
+      } catch (err) {
+        status.innerHTML = '<div class="status-msg error">Lookup failed. Check your connection and try again.</div>';
+      }
+    });
+
+    // Preview book
+    document.getElementById('preview-book').addEventListener('click', () => {
+      const preview = document.getElementById('book-preview');
+      preview.style.display = 'block';
+      document.getElementById('preview-title').textContent = document.getElementById('book-title').value || 'Title';
+      document.getElementById('preview-author').textContent = document.getElementById('book-author').value || 'Author';
+      document.getElementById('preview-category').textContent = document.getElementById('book-category').value;
+      document.getElementById('preview-desc').textContent = trunc(document.getElementById('book-description').value, 120);
+      document.getElementById('preview-cover').src = document.getElementById('book-cover').value || '';
+    });
+
+    // Add book
+    document.getElementById('add-book').addEventListener('click', () => {
+      const title = document.getElementById('book-title').value.trim();
+      const author = document.getElementById('book-author').value.trim();
+      if (!title || !author) { alert('Title and author are required.'); return; }
+
+      const editIdx = document.getElementById('add-book').dataset.editIndex;
+
+      const bookData = {
+        id: editIdx !== undefined ? books[editIdx].id : genId(''),
+        isbn: document.getElementById('book-isbn-val').value || document.getElementById('isbn-input').value.replace(/[-\s]/g, ''),
+        title: title,
+        author: author,
+        category: document.getElementById('book-category').value,
+        description: document.getElementById('book-description').value.trim(),
+        cover_url: document.getElementById('book-cover').value.trim(),
+        year: parseInt(document.getElementById('book-year').value) || null,
+        added_date: editIdx !== undefined ? books[editIdx].added_date : new Date().toISOString().split('T')[0],
+        featured: document.getElementById('book-featured').checked
+      };
+
+      if (editIdx !== undefined) {
+        books[parseInt(editIdx)] = bookData;
+        delete document.getElementById('add-book').dataset.editIndex;
+        document.getElementById('add-book').textContent = 'Add Book';
+      } else {
+        books.push(bookData);
+      }
+
+      clearBookForm();
+      renderBooks();
+    });
+
+    window.editBook = function(i) {
+      const b = books[i];
+      document.getElementById('isbn-input').value = b.isbn || '';
+      document.getElementById('book-title').value = b.title;
+      document.getElementById('book-author').value = b.author;
+      document.getElementById('book-category').value = b.category;
+      document.getElementById('book-year').value = b.year || '';
+      document.getElementById('book-description').value = b.description || '';
+      document.getElementById('book-cover').value = b.cover_url || '';
+      document.getElementById('book-isbn-val').value = b.isbn || '';
+      document.getElementById('book-featured').checked = b.featured || false;
+      document.getElementById('add-book').dataset.editIndex = i;
+      document.getElementById('add-book').textContent = 'Update Book';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.deleteBook = function(i) {
+      if (confirm('Delete "' + books[i].title + '"?')) {
+        books.splice(i, 1);
+        renderBooks();
+      }
+    };
+
+    function clearBookForm() {
+      ['isbn-input','book-title','book-author','book-description','book-cover','book-year','book-isbn-val'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('book-category').value = 'art';
+      document.getElementById('book-featured').checked = false;
+      document.getElementById('book-preview').style.display = 'none';
+      document.getElementById('isbn-status').innerHTML = '';
+      delete document.getElementById('add-book').dataset.editIndex;
+      document.getElementById('add-book').textContent = 'Add Book';
+    }
+
+    document.getElementById('clear-book-form').addEventListener('click', clearBookForm);
+    document.getElementById('export-books').addEventListener('click', () => downloadJSON(books, 'books.json'));
+    document.getElementById('import-books').addEventListener('click', () => document.getElementById('import-books-file').click());
+    importJSON(document.getElementById('import-books-file'), (data) => { books = data; renderBooks(); });
+
+    // ============================================================
+    //  WISHLIST
+    // ============================================================
+
+    const wishTable = document.querySelector('#wishlist-table tbody');
+
+    function renderWishlist() {
+      wishTable.innerHTML = wishlist.map((w, i) => `
+        <tr>
+          <td><strong>${w.title}</strong></td>
+          <td>${w.author}</td>
+          <td><span class="tag">${w.category}</span></td>
+          <td>${trunc(w.reason, 60)}</td>
+          <td>
+            <button class="btn btn-sm btn-outline" onclick="editWish(${i})">Edit</button>
+            <button class="btn btn-sm btn-danger" onclick="deleteWish(${i})">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+      document.getElementById('wishlist-count').textContent = wishlist.length + ' item' + (wishlist.length !== 1 ? 's' : '');
+    }
+
+    document.getElementById('add-wish').addEventListener('click', () => {
+      const title = document.getElementById('wish-title').value.trim();
+      const author = document.getElementById('wish-author').value.trim();
+      if (!title || !author) { alert('Title and author are required.'); return; }
+
+      const editIdx = document.getElementById('add-wish').dataset.editIndex;
+
+      const item = {
+        id: editIdx !== undefined ? wishlist[editIdx].id : genId('w'),
+        title: title,
+        author: author,
+        category: document.getElementById('wish-category').value,
+        reason: document.getElementById('wish-reason').value.trim(),
+        amazon_url: document.getElementById('wish-amazon').value.trim()
+      };
+
+      if (editIdx !== undefined) {
+        wishlist[parseInt(editIdx)] = item;
+        delete document.getElementById('add-wish').dataset.editIndex;
+        document.getElementById('add-wish').textContent = 'Add to Wishlist';
+      } else {
+        wishlist.push(item);
+      }
+
+      clearWishForm();
+      renderWishlist();
+    });
+
+    window.editWish = function(i) {
+      const w = wishlist[i];
+      document.getElementById('wish-title').value = w.title;
+      document.getElementById('wish-author').value = w.author;
+      document.getElementById('wish-category').value = w.category;
+      document.getElementById('wish-reason').value = w.reason || '';
+      document.getElementById('wish-amazon').value = w.amazon_url || '';
+      document.getElementById('add-wish').dataset.editIndex = i;
+      document.getElementById('add-wish').textContent = 'Update Item';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.deleteWish = function(i) {
+      if (confirm('Delete "' + wishlist[i].title + '"?')) {
+        wishlist.splice(i, 1);
+        renderWishlist();
+      }
+    };
+
+    function clearWishForm() {
+      ['wish-title','wish-author','wish-reason','wish-amazon'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('wish-category').value = 'art';
+      delete document.getElementById('add-wish').dataset.editIndex;
+      document.getElementById('add-wish').textContent = 'Add to Wishlist';
+    }
+
+    document.getElementById('clear-wish-form').addEventListener('click', clearWishForm);
+    document.getElementById('export-wishlist').addEventListener('click', () => downloadJSON(wishlist, 'wishlist.json'));
+    document.getElementById('import-wishlist').addEventListener('click', () => document.getElementById('import-wishlist-file').click());
+    importJSON(document.getElementById('import-wishlist-file'), (data) => { wishlist = data; renderWishlist(); });
+
+    // ============================================================
+    //  PARTNERS
+    // ============================================================
+
+    const partnersTable = document.querySelector('#partners-table tbody');
+
+    function renderPartners() {
+      partnersTable.innerHTML = partners.map((p, i) => `
+        <tr>
+          <td><strong>${p.name}</strong></td>
+          <td><span class="tag">${p.tier}</span></td>
+          <td>${trunc(p.url, 40)}</td>
+          <td>
+            <button class="btn btn-sm btn-outline" onclick="editPartner(${i})">Edit</button>
+            <button class="btn btn-sm btn-danger" onclick="deletePartner(${i})">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+      document.getElementById('partners-count').textContent = partners.length + ' partner' + (partners.length !== 1 ? 's' : '');
+    }
+
+    document.getElementById('add-partner').addEventListener('click', () => {
+      const name = document.getElementById('partner-name').value.trim();
+      if (!name) { alert('Partner name is required.'); return; }
+
+      const editIdx = document.getElementById('add-partner').dataset.editIndex;
+
+      const item = {
+        id: editIdx !== undefined ? partners[editIdx].id : genId('p'),
+        name: name,
+        tier: document.getElementById('partner-tier').value,
+        logo_url: document.getElementById('partner-logo').value.trim() || '/assets/images/placeholder.svg',
+        url: document.getElementById('partner-url').value.trim(),
+        description: document.getElementById('partner-desc').value.trim()
+      };
+
+      if (editIdx !== undefined) {
+        partners[parseInt(editIdx)] = item;
+        delete document.getElementById('add-partner').dataset.editIndex;
+        document.getElementById('add-partner').textContent = 'Add Partner';
+      } else {
+        partners.push(item);
+      }
+
+      clearPartnerForm();
+      renderPartners();
+    });
+
+    window.editPartner = function(i) {
+      const p = partners[i];
+      document.getElementById('partner-name').value = p.name;
+      document.getElementById('partner-tier').value = p.tier;
+      document.getElementById('partner-url').value = p.url || '';
+      document.getElementById('partner-logo').value = p.logo_url || '';
+      document.getElementById('partner-desc').value = p.description || '';
+      document.getElementById('add-partner').dataset.editIndex = i;
+      document.getElementById('add-partner').textContent = 'Update Partner';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.deletePartner = function(i) {
+      if (confirm('Delete "' + partners[i].name + '"?')) {
+        partners.splice(i, 1);
+        renderPartners();
+      }
+    };
+
+    function clearPartnerForm() {
+      ['partner-name','partner-url','partner-desc'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('partner-tier').value = 'founding';
+      document.getElementById('partner-logo').value = '/assets/images/placeholder.svg';
+      delete document.getElementById('add-partner').dataset.editIndex;
+      document.getElementById('add-partner').textContent = 'Add Partner';
+    }
+
+    document.getElementById('clear-partner-form').addEventListener('click', clearPartnerForm);
+    document.getElementById('export-partners').addEventListener('click', () => downloadJSON(partners, 'partners.json'));
+    document.getElementById('import-partners').addEventListener('click', () => document.getElementById('import-partners-file').click());
+    importJSON(document.getElementById('import-partners-file'), (data) => { partners = data; renderPartners(); });
+
+    // ============================================================
+    //  GALLERY
+    // ============================================================
+
+    const galleryTable = document.querySelector('#gallery-table tbody');
+
+    function renderGallery() {
+      galleryTable.innerHTML = gallery.map((g, i) => `
+        <tr>
+          <td><img src="${g.image_url}" alt="${g.alt}" style="width:60px;height:45px;object-fit:cover;background:var(--border);"></td>
+          <td>${g.caption}</td>
+          <td>${trunc(g.alt, 40)}</td>
+          <td>
+            <button class="btn btn-sm btn-outline" onclick="editGallery(${i})">Edit</button>
+            <button class="btn btn-sm btn-danger" onclick="deleteGallery(${i})">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+      document.getElementById('gallery-count').textContent = gallery.length + ' image' + (gallery.length !== 1 ? 's' : '');
+    }
+
+    document.getElementById('add-gallery').addEventListener('click', () => {
+      const url = document.getElementById('gallery-url').value.trim();
+      const caption = document.getElementById('gallery-caption').value.trim();
+      if (!url || !caption) { alert('Image URL and caption are required.'); return; }
+
+      const editIdx = document.getElementById('add-gallery').dataset.editIndex;
+
+      const item = {
+        id: editIdx !== undefined ? gallery[editIdx].id : genId('g'),
+        image_url: url,
+        caption: caption,
+        alt: document.getElementById('gallery-alt').value.trim() || caption
+      };
+
+      if (editIdx !== undefined) {
+        gallery[parseInt(editIdx)] = item;
+        delete document.getElementById('add-gallery').dataset.editIndex;
+        document.getElementById('add-gallery').textContent = 'Add Image';
+      } else {
+        gallery.push(item);
+      }
+
+      clearGalleryForm();
+      renderGallery();
+    });
+
+    window.editGallery = function(i) {
+      const g = gallery[i];
+      document.getElementById('gallery-url').value = g.image_url;
+      document.getElementById('gallery-caption').value = g.caption;
+      document.getElementById('gallery-alt').value = g.alt || '';
+      document.getElementById('add-gallery').dataset.editIndex = i;
+      document.getElementById('add-gallery').textContent = 'Update Image';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.deleteGallery = function(i) {
+      if (confirm('Delete this image?')) {
+        gallery.splice(i, 1);
+        renderGallery();
+      }
+    };
+
+    function clearGalleryForm() {
+      document.getElementById('gallery-url').value = '/assets/images/placeholder.svg';
+      document.getElementById('gallery-caption').value = '';
+      document.getElementById('gallery-alt').value = '';
+      delete document.getElementById('add-gallery').dataset.editIndex;
+      document.getElementById('add-gallery').textContent = 'Add Image';
+    }
+
+    document.getElementById('clear-gallery-form').addEventListener('click', clearGalleryForm);
+    document.getElementById('export-gallery').addEventListener('click', () => downloadJSON(gallery, 'gallery.json'));
+    document.getElementById('import-gallery').addEventListener('click', () => document.getElementById('import-gallery-file').click());
+    importJSON(document.getElementById('import-gallery-file'), (data) => { gallery = data; renderGallery(); });
+
+    // ============================================================
+    //  SETTINGS
+    // ============================================================
+
+    function loadSettingsUI() {
+      document.getElementById('set-name').value = settings.site_name || '';
+      document.getElementById('set-tagline').value = settings.tagline || '';
+      document.getElementById('set-mission').value = settings.mission || '';
+      document.getElementById('set-opening').value = settings.opening_date || '';
+      document.getElementById('set-email').value = settings.email || '';
+      document.getElementById('set-location').value = settings.location || '';
+      document.getElementById('set-london').value = settings.london_office || '';
+      document.getElementById('set-instagram').value = settings.instagram || '';
+      document.getElementById('set-hours').value = settings.opening_hours || '';
+      document.getElementById('set-charity').value = settings.charity_note || '';
+      document.getElementById('set-amazon').value = settings.amazon_wishlist_url || '';
+      document.getElementById('set-biennale').value = settings.biennale_note || '';
+    }
+
+    function readSettingsUI() {
+      return {
+        site_name: document.getElementById('set-name').value,
+        tagline: document.getElementById('set-tagline').value,
+        mission: document.getElementById('set-mission').value,
+        opening_date: document.getElementById('set-opening').value,
+        email: document.getElementById('set-email').value,
+        location: document.getElementById('set-location').value,
+        london_office: document.getElementById('set-london').value,
+        instagram: document.getElementById('set-instagram').value,
+        twitter: settings.twitter || '',
+        charity_note: document.getElementById('set-charity').value,
+        amazon_wishlist_url: document.getElementById('set-amazon').value,
+        biennale_note: document.getElementById('set-biennale').value,
+        founder: settings.founder || 'Felix Shumba',
+        opening_hours: document.getElementById('set-hours').value,
+        map_lat: settings.map_lat || '-17.8292',
+        map_lng: settings.map_lng || '31.0522'
+      };
+    }
+
+    document.getElementById('export-settings').addEventListener('click', () => {
+      settings = readSettingsUI();
+      downloadJSON(settings, 'settings.json');
+    });
+
+    document.getElementById('import-settings').addEventListener('click', () => document.getElementById('import-settings-file').click());
+    importJSON(document.getElementById('import-settings-file'), (data) => { settings = data; loadSettingsUI(); });
+
+    // ============================================================
+    //  INIT — Load existing data from /data/ JSON files
+    // ============================================================
+
+    async function loadData(path) {
+      try {
+        const res = await fetch('../data/' + path);
+        if (!res.ok) return null;
+        return await res.json();
+      } catch { return null; }
+    }
+
+    async function init() {
+      const [b, w, p, g, s] = await Promise.all([
+        loadData('books.json'),
+        loadData('wishlist.json'),
+        loadData('partners.json'),
+        loadData('gallery.json'),
+        loadData('settings.json')
+      ]);
+
+      if (b) books = b;
+      if (w) wishlist = w;
+      if (p) partners = p;
+      if (g) gallery = g;
+      if (s) settings = s;
+
+      renderBooks();
+      renderWishlist();
+      renderPartners();
+      renderGallery();
+      loadSettingsUI();
+    }
+
+    init();
+  })();
+  </script>
+</body>
+</html>

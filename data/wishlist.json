@@ -1,0 +1,34 @@
+[
+  {
+    "id": "w001",
+    "title": "The Buried Giant",
+    "author": "Kazuo Ishiguro",
+    "category": "literature",
+    "reason": "A profound exploration of memory and forgetting — essential for our literature collection.",
+    "amazon_url": "https://www.amazon.co.uk/dp/0571315070"
+  },
+  {
+    "id": "w002",
+    "title": "Under the Udala Trees",
+    "author": "Chinelo Okparanta",
+    "category": "literature",
+    "reason": "An important Nigerian novel about identity, love, and resilience during and after the Biafran War.",
+    "amazon_url": "https://www.amazon.co.uk/dp/1847088368"
+  },
+  {
+    "id": "w003",
+    "title": "The Mushroom at the End of the World",
+    "author": "Anna Lowenhaupt Tsing",
+    "category": "ecology",
+    "reason": "A vital text on ecology, capitalism, and survival in the ruins of industrial civilisation.",
+    "amazon_url": "https://www.amazon.co.uk/dp/0691178321"
+  },
+  {
+    "id": "w004",
+    "title": "Sculpture in the Age of Doubt",
+    "author": "Thomas McEvilley",
+    "category": "art",
+    "reason": "Critical reading for understanding contemporary sculpture and its philosophical roots.",
+    "amazon_url": "https://www.amazon.co.uk/dp/1581150067"
+  }
+]

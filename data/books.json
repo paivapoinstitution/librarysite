@@ -1,0 +1,74 @@
+[
+  {
+    "id": "001",
+    "isbn": "9780140135152",
+    "title": "Ways of Seeing",
+    "author": "John Berger",
+    "category": "art",
+    "description": "A groundbreaking work on how we perceive art, exploring the relationship between seeing and knowing. Berger challenges conventional approaches to visual culture with essays that remain as vital today as when first published.",
+    "cover_url": "https://covers.openlibrary.org/b/isbn/9780140135152-L.jpg",
+    "year": 1972,
+    "added_date": "2025-12-01",
+    "featured": true
+  },
+  {
+    "id": "002",
+    "isbn": "9780954702335",
+    "title": "Nervous Conditions",
+    "author": "Tsitsi Dangarembga",
+    "category": "literature",
+    "description": "A powerful novel set in colonial Rhodesia, exploring the tensions between tradition and modernity through the eyes of a young girl determined to get an education. A cornerstone of African literature.",
+    "cover_url": "https://covers.openlibrary.org/b/isbn/9780954702335-L.jpg",
+    "year": 1988,
+    "added_date": "2025-12-05",
+    "featured": true
+  },
+  {
+    "id": "003",
+    "isbn": "9780525510314",
+    "title": "Entangled Life",
+    "author": "Merlin Sheldrake",
+    "category": "ecology",
+    "description": "A mind-expanding exploration of the hidden world of fungi — the organisms that sustain life, shape our minds, and hold the key to understanding our planet.",
+    "cover_url": "https://covers.openlibrary.org/b/isbn/9780525510314-L.jpg",
+    "year": 2020,
+    "added_date": "2025-12-10",
+    "featured": true
+  },
+  {
+    "id": "004",
+    "isbn": "9780802158536",
+    "title": "Black Skin, White Masks",
+    "author": "Frantz Fanon",
+    "category": "literature",
+    "description": "A radical analysis of the psychology of racism and colonialism, examining how the colonised mind internalises the values of the oppressor. Essential, urgent, enduring.",
+    "cover_url": "https://covers.openlibrary.org/b/isbn/9780802158536-L.jpg",
+    "year": 1952,
+    "added_date": "2026-01-05",
+    "featured": false
+  },
+  {
+    "id": "005",
+    "isbn": "9781571313560",
+    "title": "Braiding Sweetgrass",
+    "author": "Robin Wall Kimmerer",
+    "category": "ecology",
+    "description": "Indigenous wisdom, scientific knowledge, and the teachings of plants woven together in a luminous meditation on reciprocity between humans and the living world.",
+    "cover_url": "https://covers.openlibrary.org/b/isbn/9781571313560-L.jpg",
+    "year": 2013,
+    "added_date": "2026-01-10",
+    "featured": true
+  },
+  {
+    "id": "006",
+    "isbn": "9780241146514",
+    "title": "Ways of Curating",
+    "author": "Hans Ulrich Obrist",
+    "category": "art",
+    "description": "A personal history of curating by one of the art world's most influential figures. Obrist traces connections between exhibitions, conversations, and the act of bringing ideas together.",
+    "cover_url": "https://covers.openlibrary.org/b/isbn/9780241146514-L.jpg",
+    "year": 2014,
+    "added_date": "2026-01-15",
+    "featured": false
+  }
+]

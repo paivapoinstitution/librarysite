@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit Us — Paivapo Institution</title>
+  <meta name="description" content="Plan your visit to Paivapo Institution in Harare, Zimbabwe. Opening March 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Paivapo Institution — Home">
+        Paivapo
+        <span>Institution</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+          <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
+          <li><a href="catalog.html" class="nav__link" data-i18n="nav.catalog">Catalog</a></li>
+          <li><a href="wishlist.html" class="nav__link" data-i18n="nav.wishlist">Books We Need</a></li>
+          <li><a href="donate.html" class="nav__link" data-i18n="nav.donate">Donate</a></li>
+          <li><a href="visit.html" class="nav__link nav__link--active" data-i18n="nav.visit">Visit Us</a></li>
+          <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="partners.html" class="nav__link" data-i18n="nav.partners">Partners</a></li>
+          <li><button class="lang-toggle" aria-label="Switch to Shona">SN</button></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header__title" data-i18n="visit.title">Visit Us</h1>
+        <p class="page-header__desc">A space for reading, reflection, and encounter in Harare</p>
+      </div>
+    </section>
+
+    <!-- Countdown -->
+    <section class="section" style="text-align:center;padding-bottom:0;">
+      <div class="container">
+        <span class="section-header__label">Opening Day Countdown</span>
+        <h2 style="font-size:var(--text-3xl);margin-bottom:var(--space-md);">March 31, 2026</h2>
+        <div class="countdown" id="countdown" aria-label="Countdown to opening day">
+          <!-- Populated by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__label">The Space</span>
+          <h2 class="section-header__title">Inside Paivapo</h2>
+        </div>
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Populated by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit Details -->
+    <section class="section" style="border-top:1px solid var(--color-border);">
+      <div class="container">
+        <div class="grid grid--2">
+
+          <!-- Info -->
+          <div>
+            <div style="margin-bottom:var(--space-2xl);">
+              <h3 style="font-size:var(--text-2xl);margin-bottom:var(--space-md);" data-i18n="visit.hours">Opening Hours</h3>
+              <p style="color:var(--color-text-secondary);">Tuesday – Saturday, 9:00 – 17:00</p>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-sm);">Closed Sundays, Mondays, and public holidays</p>
+            </div>
+
+            <div style="margin-bottom:var(--space-2xl);">
+              <h3 style="font-size:var(--text-2xl);margin-bottom:var(--space-md);" data-i18n="visit.address">Address</h3>
+              <p style="color:var(--color-text-secondary);">Paivapo Institution<br>Harare, Zimbabwe</p>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-sm);">Detailed address to be announced closer to opening</p>
+            </div>
+
+            <div>
+              <h3 style="font-size:var(--text-2xl);margin-bottom:var(--space-md);" data-i18n="visit.expect">What to Expect</h3>
+              <ul style="color:var(--color-text-secondary);line-height:2;">
+                <li>— A quiet reading room with natural light</li>
+                <li>— Free access to our full collection</li>
+                <li>— Comfortable seating and work tables</li>
+                <li>— A courtyard for conversation and rest</li>
+                <li>— Periodic reading groups and cultural events</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div>
+            <div class="map-container">
+              <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=30.95%2C-17.88%2C31.15%2C-17.78&layer=mapnik&marker=-17.8292%2C31.0522"
+                title="Location of Paivapo Institution on OpenStreetMap"
+                loading="lazy"
+                aria-label="Map showing Harare, Zimbabwe"
+              ></iframe>
+            </div>
+            <p style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-sm);">
+              <a href="https://www.openstreetmap.org/?mlat=-17.8292&mlon=31.0522#map=13/-17.8292/31.0522" target="_blank" rel="noopener" style="color:var(--color-accent);">View larger map</a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">Paivapo</div>
+          <p class="footer__tagline">A library for the curious, the critical, and the community.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigate</h4>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="catalog.html" class="footer__link">Catalog</a>
+          <a href="wishlist.html" class="footer__link">Books We Need</a>
+          <a href="donate.html" class="footer__link">Donate</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Visit</h4>
+          <a href="visit.html" class="footer__link">Plan Your Visit</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+          <a href="partners.html" class="footer__link">Partners</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Connect</h4>
+          <a href="mailto:hello@paivapo.org" class="footer__link">hello@paivapo.org</a>
+          <a href="https://instagram.com/paivapo" target="_blank" rel="noopener" class="footer__link">Instagram</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copy">&copy; 2026 Paivapo Institution. Harare, Zimbabwe.</span>
+        <span class="footer__built" data-i18n="footer.built">Built with care for Zimbabwe</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

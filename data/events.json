@@ -1,0 +1,20 @@
+[
+  {
+    "id": "e001",
+    "title": "Grand Opening",
+    "date": "2026-03-31",
+    "time": "10:00",
+    "description": "Join us for the official opening of Paivapo Institution. Readings, conversations, and the unveiling of our founding collection.",
+    "location": "Paivapo Institution, Harare",
+    "featured": true
+  },
+  {
+    "id": "e002",
+    "title": "First Reading Circle",
+    "date": "2026-04-15",
+    "time": "14:00",
+    "description": "Our inaugural reading group meets to discuss Tsitsi Dangarembga's Nervous Conditions.",
+    "location": "Paivapo Institution, Harare",
+    "featured": false
+  }
+]

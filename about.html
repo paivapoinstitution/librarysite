@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Paivapo Institution</title>
+  <meta name="description" content="The story of Paivapo Institution, a community library in Zimbabwe founded by Felix Shumba.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Paivapo Institution — Home">
+        Paivapo
+        <span>Institution</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+          <li><a href="about.html" class="nav__link nav__link--active" data-i18n="nav.about">About</a></li>
+          <li><a href="catalog.html" class="nav__link" data-i18n="nav.catalog">Catalog</a></li>
+          <li><a href="wishlist.html" class="nav__link" data-i18n="nav.wishlist">Books We Need</a></li>
+          <li><a href="donate.html" class="nav__link" data-i18n="nav.donate">Donate</a></li>
+          <li><a href="visit.html" class="nav__link" data-i18n="nav.visit">Visit Us</a></li>
+          <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="partners.html" class="nav__link" data-i18n="nav.partners">Partners</a></li>
+          <li><button class="lang-toggle" aria-label="Switch to Shona">SN</button></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header__title" data-i18n="about.title">About</h1>
+        <p class="page-header__desc">The story of Paivapo Institution</p>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="section">
+      <div class="container container--narrow">
+        <span class="section-header__label">Our Story</span>
+        <div class="divider"></div>
+        <div style="font-size:var(--text-lg);font-weight:300;line-height:1.8;color:var(--color-text-secondary);">
+          <p style="margin-bottom:var(--space-lg);">
+            Paivapo Institution was founded by artist Felix Shumba with a singular conviction: that a community library is not a luxury but a necessity. In a landscape where access to books — especially on art, ecology, and critical thought — remains uneven, Paivapo exists to close that gap.
+          </p>
+          <p style="margin-bottom:var(--space-lg);">
+            The name <em>Paivapo</em> speaks to presence and place. It is a declaration: <em>here, where we are</em>. The institution is rooted in Harare, Zimbabwe, but its vision extends beyond geography. We collect, preserve, and share books that matter — works that challenge, illuminate, and inspire.
+          </p>
+          <p style="margin-bottom:var(--space-lg);">
+            Our founding collection of approximately 100 titles spans three disciplines: art, ecology, and literature. These are not arbitrary categories — they represent the interconnected ways humans understand the world: through making, through living systems, and through story.
+          </p>
+          <p>
+            With support from our London office, which handles book donations and international logistics, Paivapo is building something enduring. A place where a student, an artist, a farmer, or a curious stranger can walk in, sit down, and read.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Biennale Note -->
+    <section class="container">
+      <div class="biennale-note">
+        <p>Paivapo Institution will be represented at the Venice Biennale 2026 through the work of artist Felix Shumba. This participation reflects the institution's commitment to bringing Zimbabwean cultural production into global conversation.</p>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" style="text-align:center;">
+          <span class="section-header__label" data-i18n="about.team">Our Team</span>
+          <h2 class="section-header__title">The People Behind Paivapo</h2>
+        </div>
+        <div class="grid grid--3" id="team-grid">
+          <!-- Populated by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Space / Gallery -->
+    <section class="section section--dark section--motif">
+      <div class="container">
+        <div class="section-header" style="text-align:center;">
+          <span class="section-header__label" data-i18n="about.space">The Space</span>
+          <h2 class="section-header__title">Where Knowledge Lives</h2>
+          <p class="section-header__desc" style="margin:var(--space-md) auto 0;color:rgba(250,250,247,0.6);">
+            A physical space designed for reading, reflection, and encounter. Opening March 2026 in Harare.
+          </p>
+        </div>
+        <div class="gallery-grid" id="about-gallery">
+          <div class="gallery-grid__item">
+            <img src="assets/images/placeholder.svg" alt="Interior of the reading room" loading="lazy">
+            <div class="gallery-grid__caption">The reading room</div>
+          </div>
+          <div class="gallery-grid__item">
+            <img src="assets/images/placeholder.svg" alt="Bookshelves" loading="lazy">
+            <div class="gallery-grid__caption">Shelves awaiting their first hundred titles</div>
+          </div>
+          <div class="gallery-grid__item">
+            <img src="assets/images/placeholder.svg" alt="Entrance" loading="lazy">
+            <div class="gallery-grid__caption">The entrance</div>
+          </div>
+          <div class="gallery-grid__item">
+            <img src="assets/images/placeholder.svg" alt="Community space" loading="lazy">
+            <div class="gallery-grid__caption">Community gathering area</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">Paivapo</div>
+          <p class="footer__tagline">A library for the curious, the critical, and the community.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigate</h4>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="catalog.html" class="footer__link">Catalog</a>
+          <a href="wishlist.html" class="footer__link">Books We Need</a>
+          <a href="donate.html" class="footer__link">Donate</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Visit</h4>
+          <a href="visit.html" class="footer__link">Plan Your Visit</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+          <a href="partners.html" class="footer__link">Partners</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Connect</h4>
+          <a href="mailto:hello@paivapo.org" class="footer__link">hello@paivapo.org</a>
+          <a href="https://instagram.com/paivapo" target="_blank" rel="noopener" class="footer__link">Instagram</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copy">&copy; 2026 Paivapo Institution. Harare, Zimbabwe.</span>
+        <span class="footer__built" data-i18n="footer.built">Built with care for Zimbabwe</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

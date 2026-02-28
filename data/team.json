@@ -1,0 +1,23 @@
+[
+  {
+    "id": "t001",
+    "name": "Felix Shumba",
+    "role": "Founder & Director",
+    "bio": "Artist and cultural practitioner. Felix founded Paivapo Institution to create a space where knowledge, art, and ecology converge. His work will be represented at the Venice Biennale 2026.",
+    "image_url": "/assets/images/placeholder.svg"
+  },
+  {
+    "id": "t002",
+    "name": "Community Librarian",
+    "role": "Librarian",
+    "bio": "Position opening March 2026. Our librarian will be the heart of the institution — managing the collection, hosting reading groups, and welcoming all visitors.",
+    "image_url": "/assets/images/placeholder.svg"
+  },
+  {
+    "id": "t003",
+    "name": "London Coordinator",
+    "role": "UK Operations",
+    "bio": "Managing book donations, shipping logistics, and UK-based partnerships from our London support office.",
+    "image_url": "/assets/images/placeholder.svg"
+  }
+]
