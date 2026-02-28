@@ -69,6 +69,12 @@
     }
   }
 
+  /* ---- Hide Loader ---- */
+  function hideLoader(id) {
+    var el = document.getElementById(id);
+    if (el) el.classList.add('is-hidden');
+  }
+
   /* ---- Load JSON Data ---- */
   async function loadJSON(path) {
     try {
@@ -89,6 +95,7 @@
     const books = await loadJSON('data/books.json');
     if (!books) return;
 
+    hideLoader('featured-loader');
     const featured = books.filter(b => b.featured);
     track.innerHTML = featured.map(book => `
       <div class="carousel__item">
@@ -143,6 +150,7 @@
     if (!grid) return;
 
     const books = await loadJSON('data/books.json');
+    hideLoader('catalog-loader');
     if (!books) return;
 
     let currentFilter = 'all';
@@ -241,6 +249,7 @@
     if (!list) return;
 
     const items = await loadJSON('data/wishlist.json');
+    hideLoader('wishlist-loader');
     if (!items) return;
 
     list.innerHTML = items.map(item => `
@@ -266,6 +275,7 @@
     if (!grid) return;
 
     const team = await loadJSON('data/team.json');
+    hideLoader('team-loader');
     if (!team) return;
 
     grid.innerHTML = team.map(member => `
@@ -288,6 +298,7 @@
     if (!grid) return;
 
     const gallery = await loadJSON('data/gallery.json');
+    hideLoader('gallery-loader');
     if (!gallery) return;
 
     grid.innerHTML = gallery.map(item => `
@@ -306,6 +317,7 @@
     if (!container) return;
 
     const partners = await loadJSON('data/partners.json');
+    hideLoader('partners-loader');
     if (!partners) return;
 
     const tiers = {
@@ -350,6 +362,7 @@
     if (!grid) return;
 
     const events = await loadJSON('data/events.json');
+    hideLoader('events-loader');
     if (!events) return;
 
     grid.innerHTML = events.map(evt => {
