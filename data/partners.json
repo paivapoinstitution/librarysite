@@ -5,7 +5,7 @@
     "tier": "founding",
     "logo_url": "/assets/images/placeholder.svg",
     "url": "https://nationalgallery.co.zw",
-    "description": "Zimbabwe's premier institution for visual arts, supporting Paivapo's mission to broaden access to cultural knowledge."
+    "description": "Zimbabwe's national institution for visual arts. Supporting Paivapo's work to broaden access to cultural knowledge."
   },
   {
     "id": "p002",
@@ -13,7 +13,7 @@
     "tier": "founding",
     "logo_url": "/assets/images/placeholder.svg",
     "url": "https://bookaid.org",
-    "description": "Working with libraries across Africa to provide access to books and support a culture of reading."
+    "description": "Works with libraries across Africa to provide access to books and support reading."
   },
   {
     "id": "p003",
@@ -21,7 +21,7 @@
     "tier": "partner",
     "logo_url": "/assets/images/placeholder.svg",
     "url": "#",
-    "description": "Supporting cultural initiatives and creative projects across Zimbabwe."
+    "description": "Supports cultural initiatives and creative projects across Zimbabwe."
   },
   {
     "id": "p004",
@@ -29,6 +29,6 @@
     "tier": "supporter",
     "logo_url": "/assets/images/placeholder.svg",
     "url": "#",
-    "description": "Fostering artistic development and cultural exchange in Harare and beyond."
+    "description": "Supports artistic development and cultural exchange in Harare."
   }
 ]

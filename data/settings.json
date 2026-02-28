@@ -1,7 +1,7 @@
 {
   "site_name": "Paivapo Institution",
   "tagline": "A library for the curious, the critical, and the community.",
-  "mission": "Paivapo Institution is a community library in Zimbabwe dedicated to collecting, preserving, and sharing books across art, ecology, and literature. We believe access to books is a right, not a privilege.",
+  "mission": "Paivapo Institution is a community library in Zimbabwe. We collect, preserve, and share books across art, ecology, and literature. Access to books should be ordinary, not exceptional.",
   "opening_date": "2026-03-31",
   "email": "hello@paivapo.org",
   "location": "Harare, Zimbabwe",
@@ -10,9 +10,9 @@
   "twitter": "",
   "charity_note": "Donations are currently processed through our studio account. UK charity registration is in progress.",
   "amazon_wishlist_url": "https://www.amazon.co.uk/hz/wishlist/ls/placeholder",
-  "biennale_note": "Paivapo Institution will be represented at the Venice Biennale 2026 through the work of artist Felix Shumba.",
+  "biennale_note": "Paivapo Institution is represented at the Venice Biennale 2026 through the work of artist Felix Shumba.",
   "founder": "Felix Shumba",
-  "opening_hours": "Tuesday – Saturday, 9:00 – 17:00",
+  "opening_hours": "Tuesday – Saturday, 09:00 – 17:00",
   "map_lat": "-17.8292",
   "map_lng": "31.0522"
 }

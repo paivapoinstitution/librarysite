@@ -19,7 +19,7 @@ const TRANSLATIONS = {
 
     // Homepage
     'home.mission.label': 'Our Mission',
-    'home.mission.text': 'Paivapo Institution is a community library in Zimbabwe dedicated to collecting, preserving, and sharing books across art, ecology, and literature. We believe access to books is a right, not a privilege.',
+    'home.mission.text': 'Paivapo Institution is a community library in Zimbabwe. We collect, preserve, and share books across art, ecology, and literature. Access to books should be ordinary, not exceptional.',
     'home.featured': 'Featured Books',
     'home.stats.books': 'Books',
     'home.stats.categories': 'Categories',
