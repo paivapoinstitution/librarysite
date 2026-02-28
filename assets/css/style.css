@@ -809,15 +809,45 @@ p {
   }
 }
 
-/* ---------- Catalog Filters ---------- */
-.filters {
+/* ---------- Catalog Page Header ---------- */
+.page-header--catalog {
+  background: #555;
+  color: #fff;
+  border-bottom: none;
+}
+
+.page-header--catalog .page-header__title {
+  color: #fff;
+}
+
+.page-header--catalog .page-header__desc {
+  color: rgba(255,255,255,0.6);
+}
+
+/* ---------- Catalog Section (Saint Heron-inspired) ---------- */
+.catalog-section {
+  background: #666;
+  color: #fff;
+  min-height: calc(100vh - var(--header-height));
+}
+
+.catalog-toolbar {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-md);
-  margin-bottom: var(--space-2xl);
-  padding-bottom: var(--space-lg);
-  border-bottom: 1px solid var(--color-border);
+  justify-content: space-between;
+  padding: var(--space-lg) 25px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.catalog-toolbar__filters {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.catalog-toolbar__search {
+  flex-shrink: 0;
 }
 
 .filter-btn {
@@ -825,19 +855,346 @@ p {
   font-size: var(--text-xs);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 8px 16px;
-  border: 1px solid var(--color-border);
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.3);
   transition: all var(--duration) var(--ease);
   background: transparent;
+  color: rgba(255,255,255,0.6);
   cursor: pointer;
 }
 
 .filter-btn:hover,
 .filter-btn.is-active {
-  background: var(--color-dark);
-  color: var(--color-dark-text);
+  background: #fff;
+  color: #000;
+  border-color: #fff;
 }
 
+.catalog-section .search-input {
+  font-family: var(--font-body);
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: transparent;
+  font-size: var(--text-xs);
+  min-width: 200px;
+  color: #fff;
+  outline: none;
+  transition: all var(--duration) var(--ease);
+}
+
+.catalog-section .search-input:focus {
+  background: rgba(255,255,255,0.1);
+  border-color: #fff;
+}
+
+.catalog-section .search-input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+/* Split view */
+.catalog-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  min-height: 60vh;
+}
+
+/* Left: text list */
+.catalog-list {
+  border-right: 1px solid rgba(255,255,255,0.15);
+  padding: var(--space-xl) 25px;
+}
+
+.catalog-list__item {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: all var(--duration) var(--ease);
+  text-decoration: none;
+}
+
+.catalog-list__item:hover {
+  color: #fff;
+  padding-left: var(--space-sm);
+  text-decoration: none;
+}
+
+.catalog-list__item:last-child {
+  border-bottom: none;
+}
+
+.catalog-list__author {
+  display: block;
+  font-size: var(--text-xs);
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 0.5;
+  margin-top: 2px;
+}
+
+.catalog-list__category {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.4;
+  margin-left: var(--space-sm);
+}
+
+/* Right: cover grid */
+.catalog-covers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  padding: var(--space-xl) 25px;
+  align-content: start;
+}
+
+.catalog-cover-item {
+  cursor: pointer;
+  overflow: hidden;
+  aspect-ratio: 2/3;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all var(--duration) var(--ease);
+  position: relative;
+}
+
+.catalog-cover-item:hover {
+  border-color: #fff;
+  z-index: 1;
+}
+
+.catalog-cover-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration) var(--ease);
+}
+
+.catalog-cover-item:hover img {
+  transform: scale(1.03);
+}
+
+/* Empty state for catalog */
+.catalog-split .empty-state {
+  grid-column: 1 / -1;
+  color: rgba(255,255,255,0.5);
+}
+
+/* CTA at bottom */
+.catalog-cta {
+  text-align: center;
+  padding: var(--space-2xl) 25px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.catalog-cta p {
+  color: rgba(255,255,255,0.5);
+  margin-bottom: var(--space-lg);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.catalog-cta .btn--outline {
+  border-color: rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+.catalog-cta .btn--outline:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .catalog-toolbar {
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: stretch;
+  }
+  .catalog-toolbar__filters {
+    flex-wrap: wrap;
+  }
+  .catalog-split {
+    grid-template-columns: 1fr;
+  }
+  .catalog-list {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .catalog-covers {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- Book Detail Modal ---------- */
+.book-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+}
+
+.book-modal[hidden] {
+  display: none;
+}
+
+.book-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(50, 50, 50, 0.85);
+  cursor: pointer;
+}
+
+.book-modal__content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.book-modal__close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  z-index: 10;
+  font-size: var(--text-3xl);
+  color: #000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--duration) var(--ease);
+}
+
+.book-modal__close:hover {
+  opacity: 0.5;
+}
+
+.book-modal__cover {
+  background: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl);
+  min-height: 400px;
+}
+
+.book-modal__cover img {
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.book-modal__info {
+  background: #f5f5f0;
+  color: #000;
+  padding: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid #000;
+  overflow-y: auto;
+}
+
+.book-modal__category {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: var(--space-lg);
+}
+
+.book-modal__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.book-modal__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: auto;
+  padding-bottom: var(--space-xl);
+}
+
+.book-modal__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-lg);
+  border-top: 1px solid #ddd;
+  margin-top: var(--space-lg);
+}
+
+.book-modal__author {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.book-modal__year {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: #666;
+  letter-spacing: 0.04em;
+}
+
+.book-modal__badge {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  background: #000;
+  color: var(--color-bg);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .book-modal__content {
+    grid-template-columns: 1fr;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+  .book-modal__cover {
+    min-height: 250px;
+  }
+  .book-modal__close {
+    color: #fff;
+  }
+}
+
+/* ---------- Legacy filters (non-catalog pages) ---------- */
 .search-input {
   font-family: var(--font-body);
   padding: 8px 16px;
@@ -1376,7 +1733,7 @@ p {
   opacity: 0.3;
 }
 
-/* ---------- Catalog Grid ---------- */
+/* ---------- Catalog Grid (legacy, kept for other pages) ---------- */
 .catalog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));

@@ -45,7 +45,7 @@
   <main id="main">
 
     <!-- Page Header -->
-    <section class="page-header">
+    <section class="page-header page-header--catalog">
       <div class="container">
         <h1 class="page-header__title" data-i18n="catalog.title">Book Catalog</h1>
         <p class="page-header__desc">Our growing collection across art, ecology, and literature</p>
@@ -53,40 +53,53 @@
     </section>
 
     <!-- Catalog -->
-    <section class="section">
-      <div class="container">
+    <section class="catalog-section">
 
-        <!-- Filters -->
-        <div class="filters" role="search" aria-label="Filter and search books">
+      <!-- Filters -->
+      <div class="catalog-toolbar">
+        <div class="catalog-toolbar__filters" role="search" aria-label="Filter and search books">
           <button class="filter-btn is-active" data-filter="all" data-i18n="catalog.all">All</button>
           <button class="filter-btn" data-filter="art" data-i18n="catalog.art">Art</button>
           <button class="filter-btn" data-filter="ecology" data-i18n="catalog.ecology">Ecology</button>
           <button class="filter-btn" data-filter="literature" data-i18n="catalog.literature">Literature</button>
+        </div>
+        <div class="catalog-toolbar__search">
           <input type="search" id="catalog-search" class="search-input" placeholder="Search by title or author..." aria-label="Search books" data-i18n="catalog.search">
-          <select id="catalog-sort" class="sort-select" aria-label="Sort books">
-            <option value="title">Sort: A–Z</option>
-            <option value="title-desc">Sort: Z–A</option>
-            <option value="author">Sort: Author</option>
-            <option value="year">Sort: Year (newest)</option>
-          </select>
         </div>
-
-        <!-- Book Grid -->
-        <div class="page-loader" id="catalog-loader">
-          <div class="book-loader"><div class="inner"><div class="left"></div><div class="middle"></div><div class="right"></div></div><ul><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
-        </div>
-        <div class="catalog-grid" id="catalog-grid" aria-live="polite">
-          <!-- Populated by main.js -->
-        </div>
-
-        <!-- Wishlist CTA -->
-        <div style="text-align:center;margin-top:var(--space-4xl);padding-top:var(--space-2xl);border-top:1px solid var(--color-border);">
-          <p style="color:var(--color-text-secondary);margin-bottom:var(--space-lg);">Looking for a title we don't have yet?</p>
-          <a href="wishlist.html" class="btn btn--outline">See Books We Need &rarr;</a>
-        </div>
-
       </div>
+
+      <!-- Loader -->
+      <div class="page-loader" id="catalog-loader">
+        <div class="book-loader"><div class="inner"><div class="left"></div><div class="middle"></div><div class="right"></div></div><ul><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
+      </div>
+
+      <!-- Split View: Text List + Cover Grid -->
+      <div class="catalog-split" id="catalog-split" aria-live="polite">
+        <div class="catalog-list" id="catalog-list">
+          <!-- Text list populated by main.js -->
+        </div>
+        <div class="catalog-covers" id="catalog-covers">
+          <!-- Cover grid populated by main.js -->
+        </div>
+      </div>
+
+      <!-- Wishlist CTA -->
+      <div class="catalog-cta">
+        <p>Looking for a title we don't have yet?</p>
+        <a href="wishlist.html" class="btn btn--outline">See Books We Need &rarr;</a>
+      </div>
+
     </section>
+
+    <!-- Book Detail Modal -->
+    <div class="book-modal" id="book-modal" role="dialog" aria-modal="true" aria-label="Book details" hidden>
+      <div class="book-modal__overlay" id="book-modal-overlay"></div>
+      <div class="book-modal__content">
+        <button class="book-modal__close" id="book-modal-close" aria-label="Close">&times;</button>
+        <div class="book-modal__cover" id="book-modal-cover"></div>
+        <div class="book-modal__info" id="book-modal-info"></div>
+      </div>
+    </div>
 
   </main>
 

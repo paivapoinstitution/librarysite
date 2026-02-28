@@ -144,28 +144,26 @@
     initLazyLoad();
   }
 
-  /* ---- Catalog Page ---- */
+  /* ---- Catalog Page (Saint Heron-inspired split view) ---- */
   async function initCatalog() {
-    const grid = document.getElementById('catalog-grid');
-    if (!grid) return;
+    const listEl = document.getElementById('catalog-list');
+    const coversEl = document.getElementById('catalog-covers');
+    if (!listEl || !coversEl) return;
 
     const books = await loadJSON('data/books.json');
     hideLoader('catalog-loader');
     if (!books) return;
 
     let currentFilter = 'all';
-    let currentSort = 'title';
     let searchQuery = '';
 
-    function renderBooks() {
+    function getFiltered() {
       let filtered = [...books];
 
-      // Filter by category
       if (currentFilter !== 'all') {
         filtered = filtered.filter(b => b.category === currentFilter);
       }
 
-      // Filter by search
       if (searchQuery) {
         const q = searchQuery.toLowerCase();
         filtered = filtered.filter(b =>
@@ -174,43 +172,95 @@
         );
       }
 
-      // Sort
-      if (currentSort === 'title') {
-        filtered.sort((a, b) => a.title.localeCompare(b.title));
-      } else if (currentSort === 'title-desc') {
-        filtered.sort((a, b) => b.title.localeCompare(a.title));
-      } else if (currentSort === 'author') {
-        filtered.sort((a, b) => a.author.localeCompare(b.author));
-      } else if (currentSort === 'year') {
-        filtered.sort((a, b) => b.year - a.year);
-      }
+      // Always sort A-Z for the list view
+      filtered.sort((a, b) => a.title.localeCompare(b.title));
+      return filtered;
+    }
+
+    function renderCatalog() {
+      var filtered = getFiltered();
 
       if (filtered.length === 0) {
-        grid.innerHTML = `
-          <div class="empty-state" style="grid-column: 1/-1">
-            <div class="empty-state__icon">&#9671;</div>
-            <p>No books found matching your search.</p>
-          </div>`;
+        listEl.innerHTML = '<div class="empty-state"><p>No books found.</p></div>';
+        coversEl.innerHTML = '';
         return;
       }
 
-      grid.innerHTML = filtered.map(book => `
-        <article class="book-card">
-          <div class="book-card__cover">
-            <img data-src="${book.cover_url}" alt="Cover of ${book.title} by ${book.author}" loading="lazy">
-          </div>
-          <div class="book-card__info">
-            <span class="book-card__category">${book.category}</span>
-            <h3 class="book-card__title">${book.title}</h3>
-            <p class="book-card__author">${book.author}</p>
-            <p class="book-card__desc">${book.description}</p>
-            <span class="book-card__year">${book.year}</span>
-          </div>
-        </article>
+      // Left: text list
+      listEl.innerHTML = filtered.map(book => `
+        <a class="catalog-list__item" data-book-id="${book.id}" role="button" tabindex="0">
+          ${book.title}
+          <span class="catalog-list__category">${book.category}</span>
+          <span class="catalog-list__author">${book.author}</span>
+        </a>
+      `).join('');
+
+      // Right: cover grid
+      coversEl.innerHTML = filtered.map(book => `
+        <div class="catalog-cover-item" data-book-id="${book.id}" role="button" tabindex="0" aria-label="View ${book.title}">
+          <img data-src="${book.cover_url}" alt="Cover of ${book.title}" loading="lazy">
+        </div>
       `).join('');
 
       initLazyLoad();
+
+      // Attach click handlers
+      listEl.querySelectorAll('.catalog-list__item').forEach(el => {
+        el.addEventListener('click', () => openBookModal(el.dataset.bookId));
+        el.addEventListener('keydown', (e) => { if (e.key === 'Enter') openBookModal(el.dataset.bookId); });
+      });
+
+      coversEl.querySelectorAll('.catalog-cover-item').forEach(el => {
+        el.addEventListener('click', () => openBookModal(el.dataset.bookId));
+        el.addEventListener('keydown', (e) => { if (e.key === 'Enter') openBookModal(el.dataset.bookId); });
+      });
     }
+
+    // Book detail modal
+    function openBookModal(bookId) {
+      var book = books.find(b => b.id === bookId);
+      if (!book) return;
+
+      var modal = document.getElementById('book-modal');
+      var coverEl = document.getElementById('book-modal-cover');
+      var infoEl = document.getElementById('book-modal-info');
+
+      coverEl.innerHTML = '<img src="' + book.cover_url + '" alt="Cover of ' + book.title + '">';
+
+      infoEl.innerHTML =
+        '<div>' +
+          '<div class="book-modal__category">' + book.category + '</div>' +
+          '<h2 class="book-modal__title">' + book.title + '</h2>' +
+          '<p class="book-modal__desc">' + book.description + '</p>' +
+        '</div>' +
+        '<div class="book-modal__footer">' +
+          '<div>' +
+            '<div class="book-modal__author">' + book.author + '</div>' +
+            '<div class="book-modal__year">' + book.year + '</div>' +
+          '</div>' +
+          '<span class="book-modal__badge">In Collection</span>' +
+        '</div>';
+
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBookModal() {
+      var modal = document.getElementById('book-modal');
+      if (modal) {
+        modal.hidden = true;
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modal close handlers
+    var closeBtn = document.getElementById('book-modal-close');
+    var overlay = document.getElementById('book-modal-overlay');
+    if (closeBtn) closeBtn.addEventListener('click', closeBookModal);
+    if (overlay) overlay.addEventListener('click', closeBookModal);
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeBookModal();
+    });
 
     // Filter buttons
     document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -218,7 +268,7 @@
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('is-active'));
         btn.classList.add('is-active');
         currentFilter = btn.dataset.filter;
-        renderBooks();
+        renderCatalog();
       });
     });
 
@@ -227,20 +277,11 @@
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
         searchQuery = e.target.value;
-        renderBooks();
+        renderCatalog();
       });
     }
 
-    // Sort select
-    const sortSelect = document.getElementById('catalog-sort');
-    if (sortSelect) {
-      sortSelect.addEventListener('change', (e) => {
-        currentSort = e.target.value;
-        renderBooks();
-      });
-    }
-
-    renderBooks();
+    renderCatalog();
   }
 
   /* ---- Wishlist Page ---- */
