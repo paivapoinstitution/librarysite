@@ -1,0 +1,22 @@
+{
+  "title": "Visit Us",
+  "description": "Reading, reflection, and gathering. Harare, Zimbabwe.",
+  "opening_label": "Opening",
+  "opening_date_display": "March 31, 2026",
+  "gallery_label": "The Space",
+  "gallery_title": "Inside Paivapo",
+  "hours_title": "Opening Hours",
+  "hours_text": "Tuesday \u2013 Saturday, 9:00 \u2013 17:00",
+  "hours_note": "Closed Sundays, Mondays, and public holidays",
+  "address_title": "Address",
+  "address_text": "Paivapo Institution<br>Harare, Zimbabwe",
+  "address_note": "Detailed address to be announced closer to opening",
+  "expect_title": "What to Expect",
+  "expect_items": [
+    "Quiet reading room with natural light",
+    "Free access to our full collection",
+    "Seating and work tables",
+    "Courtyard for conversation and rest",
+    "Reading groups and cultural events"
+  ]
+}

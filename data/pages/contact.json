@@ -1,0 +1,18 @@
+{
+  "title": "Contact",
+  "description": "Get in touch",
+  "form_action": "https://formspree.io/f/placeholder",
+  "form_name_label": "Name",
+  "form_email_label": "Email",
+  "form_message_label": "Message",
+  "form_button": "Send Message",
+  "info_email": "hello@paivapo.org",
+  "info_zimbabwe_title": "Zimbabwe",
+  "info_zimbabwe_text": "Paivapo Institution<br>Harare, Zimbabwe",
+  "info_london_title": "London Office",
+  "info_london_text": "London, United Kingdom<br>Book donations &amp; logistics",
+  "info_social_title": "Social",
+  "info_social_links": [
+    { "label": "Instagram", "url": "https://instagram.com/paivapo" }
+  ]
+}

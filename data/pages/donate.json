@@ -1,0 +1,19 @@
+{
+  "title": "Support Paivapo",
+  "description": "We rely on donations to build the collection and maintain the space.",
+  "money_title": "Donate Money",
+  "money_description": "Financial donations go towards books, space maintenance, and community programmes.",
+  "money_button": "Donate Now",
+  "money_note": "Payment processed via Stripe / PayPal",
+  "book_title": "Donate a Book",
+  "book_description": "Buy a book from our wishlist. It is delivered to our London collection point and shipped to Zimbabwe.",
+  "book_button": "View Wishlist",
+  "book_note": "Via Amazon UK",
+  "how_label": "How It Helps",
+  "how_items": [
+    { "title": "Books", "text": "Acquiring titles across art, ecology, and literature." },
+    { "title": "Space", "text": "Maintaining the reading room and gathering area in Harare." },
+    { "title": "Programmes", "text": "Reading groups, workshops, and cultural events open to all." }
+  ],
+  "charity_note": "Donations are currently processed through our studio account. UK charity registration is in progress. For questions about donations, contact <a href=\"mailto:hello@paivapo.org\">hello@paivapo.org</a>."
+}

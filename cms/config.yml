@@ -6,11 +6,155 @@ media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
 collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "data/pages/home.json"
+        fields:
+          - { name: "hero_title", label: "Hero Title", widget: "string" }
+          - { name: "hero_subtitle", label: "Hero Subtitle", widget: "string" }
+          - { name: "cta_browse", label: "Browse Button Text", widget: "string" }
+          - { name: "cta_donate", label: "Donate Button Text", widget: "string" }
+          - { name: "cta_visit", label: "Visit Button Text", widget: "string" }
+          - { name: "mission_label", label: "Mission Label", widget: "string" }
+          - { name: "mission_text", label: "Mission Text", widget: "text" }
+          - name: "stats"
+            label: "Stats"
+            widget: "list"
+            fields:
+              - { name: "number", label: "Number", widget: "string" }
+              - { name: "label", label: "Label", widget: "string" }
+          - { name: "featured_label", label: "Featured Section Label", widget: "string" }
+          - { name: "featured_title", label: "Featured Section Title", widget: "string" }
+          - { name: "partners_label", label: "Partners Section Label", widget: "string" }
+
+      - name: "about"
+        label: "About Page"
+        file: "data/pages/about.json"
+        fields:
+          - { name: "title", label: "Page Title", widget: "string" }
+          - { name: "description", label: "Page Description", widget: "string" }
+          - { name: "story_label", label: "Story Section Label", widget: "string" }
+          - name: "story_paragraphs"
+            label: "Story Paragraphs"
+            widget: "list"
+            field: { name: "paragraph", label: "Paragraph", widget: "text" }
+          - { name: "team_label", label: "Team Section Label", widget: "string" }
+          - { name: "team_title", label: "Team Section Title", widget: "string" }
+          - { name: "space_label", label: "Space Section Label", widget: "string" }
+          - { name: "space_title", label: "Space Section Title", widget: "string" }
+          - { name: "space_description", label: "Space Description", widget: "string" }
+
+      - name: "catalog"
+        label: "Catalog Page"
+        file: "data/pages/catalog.json"
+        fields:
+          - { name: "title", label: "Page Title", widget: "string" }
+          - { name: "description", label: "Page Description", widget: "string" }
+          - { name: "search_placeholder", label: "Search Placeholder", widget: "string" }
+          - { name: "cta_text", label: "CTA Text", widget: "string" }
+          - { name: "cta_button", label: "CTA Button Text", widget: "string" }
+
+      - name: "wishlist_page"
+        label: "Wishlist Page"
+        file: "data/pages/wishlist.json"
+        fields:
+          - { name: "title", label: "Page Title", widget: "string" }
+          - { name: "description", label: "Page Description", widget: "string" }
+          - { name: "buy_title", label: "Buy Section Title", widget: "string" }
+          - { name: "buy_text", label: "Buy Section Text", widget: "text" }
+          - { name: "buy_button", label: "Buy Button Text", widget: "string" }
+
+      - name: "donate"
+        label: "Donate Page"
+        file: "data/pages/donate.json"
+        fields:
+          - { name: "title", label: "Page Title", widget: "string" }
+          - { name: "description", label: "Page Description", widget: "string" }
+          - { name: "money_title", label: "Donate Money Title", widget: "string" }
+          - { name: "money_description", label: "Donate Money Description", widget: "text" }
+          - { name: "money_button", label: "Donate Money Button", widget: "string" }
+          - { name: "money_note", label: "Donate Money Note", widget: "string" }
+          - { name: "book_title", label: "Donate Book Title", widget: "string" }
+          - { name: "book_description", label: "Donate Book Description", widget: "text" }
+          - { name: "book_button", label: "Donate Book Button", widget: "string" }
+          - { name: "book_note", label: "Donate Book Note", widget: "string" }
+          - { name: "how_label", label: "How It Helps Label", widget: "string" }
+          - name: "how_items"
+            label: "How It Helps Items"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "text", label: "Description", widget: "text" }
+          - { name: "charity_note", label: "Charity Note (HTML allowed)", widget: "text" }
+
+      - name: "visit"
+        label: "Visit Page"
+        file: "data/pages/visit.json"
+        fields:
+          - { name: "title", label: "Page Title", widget: "string" }
+          - { name: "description", label: "Page Description", widget: "string" }
+          - { name: "opening_label", label: "Opening Label", widget: "string" }
+          - { name: "opening_date_display", label: "Opening Date Display", widget: "string" }
+          - { name: "gallery_label", label: "Gallery Label", widget: "string" }
+          - { name: "gallery_title", label: "Gallery Title", widget: "string" }
+          - { name: "hours_title", label: "Hours Title", widget: "string" }
+          - { name: "hours_text", label: "Hours Text", widget: "string" }
+          - { name: "hours_note", label: "Hours Note", widget: "string" }
+          - { name: "address_title", label: "Address Title", widget: "string" }
+          - { name: "address_text", label: "Address (HTML allowed)", widget: "text" }
+          - { name: "address_note", label: "Address Note", widget: "string" }
+          - { name: "expect_title", label: "What to Expect Title", widget: "string" }
+          - name: "expect_items"
+            label: "What to Expect Items"
+            widget: "list"
+            field: { name: "item", label: "Item", widget: "string" }
+
+      - name: "contact"
+        label: "Contact Page"
+        file: "data/pages/contact.json"
+        fields:
+          - { name: "title", label: "Page Title", widget: "string" }
+          - { name: "description", label: "Page Description", widget: "string" }
+          - { name: "form_action", label: "Form Action URL", widget: "string" }
+          - { name: "form_name_label", label: "Name Field Label", widget: "string" }
+          - { name: "form_email_label", label: "Email Field Label", widget: "string" }
+          - { name: "form_message_label", label: "Message Field Label", widget: "string" }
+          - { name: "form_button", label: "Submit Button Text", widget: "string" }
+          - { name: "info_email", label: "Contact Email", widget: "string" }
+          - { name: "info_zimbabwe_title", label: "Zimbabwe Office Title", widget: "string" }
+          - { name: "info_zimbabwe_text", label: "Zimbabwe Address (HTML allowed)", widget: "text" }
+          - { name: "info_london_title", label: "London Office Title", widget: "string" }
+          - { name: "info_london_text", label: "London Address (HTML allowed)", widget: "text" }
+          - { name: "info_social_title", label: "Social Section Title", widget: "string" }
+          - name: "info_social_links"
+            label: "Social Links"
+            widget: "list"
+            fields:
+              - { name: "label", label: "Label", widget: "string" }
+              - { name: "url", label: "URL", widget: "string" }
+
+      - name: "partners_page"
+        label: "Partners Page"
+        file: "data/pages/partners.json"
+        fields:
+          - { name: "title", label: "Page Title", widget: "string" }
+          - { name: "description", label: "Page Description", widget: "string" }
+          - { name: "cta_title", label: "CTA Title", widget: "string" }
+          - { name: "cta_text", label: "CTA Text", widget: "text" }
+          - { name: "cta_button", label: "CTA Button Text", widget: "string" }
+
+      - name: "events_page"
+        label: "Events Page"
+        file: "data/pages/events.json"
+        fields:
+          - { name: "title", label: "Page Title", widget: "string" }
+          - { name: "description", label: "Page Description", widget: "string" }
+
   - name: "books"
     label: "Book Catalog"
-    folder: "data"
-    create: false
-    format: "json"
     files:
       - name: "books"
         label: "Books"
@@ -34,11 +178,8 @@ collections:
               - { name: "added_date", label: "Date Added", widget: "date" }
               - { name: "featured", label: "Featured", widget: "boolean", default: false }
 
-  - name: "wishlist"
+  - name: "wishlist_data"
     label: "Wishlist"
-    folder: "data"
-    create: false
-    format: "json"
     files:
       - name: "wishlist"
         label: "Books We Need"
@@ -58,11 +199,8 @@ collections:
               - { name: "reason", label: "Why We Want It", widget: "text" }
               - { name: "amazon_url", label: "Amazon URL", widget: "string" }
 
-  - name: "partners"
+  - name: "partners_data"
     label: "Partners"
-    folder: "data"
-    create: false
-    format: "json"
     files:
       - name: "partners"
         label: "Partners"
@@ -84,9 +222,6 @@ collections:
 
   - name: "team"
     label: "Team"
-    folder: "data"
-    create: false
-    format: "json"
     files:
       - name: "team"
         label: "Team Members"
@@ -104,9 +239,6 @@ collections:
 
   - name: "events"
     label: "Events"
-    folder: "data"
-    create: false
-    format: "json"
     files:
       - name: "events"
         label: "Events"
@@ -123,6 +255,21 @@ collections:
               - { name: "location", label: "Location", widget: "string" }
               - { name: "description", label: "Description", widget: "text" }
 
+  - name: "gallery"
+    label: "Gallery"
+    files:
+      - name: "gallery"
+        label: "Gallery Images"
+        file: "data/gallery.json"
+        fields:
+          - name: "images"
+            label: "Gallery Images"
+            widget: "list"
+            fields:
+              - { name: "image_url", label: "Image URL", widget: "image" }
+              - { name: "alt", label: "Alt Text", widget: "string" }
+              - { name: "caption", label: "Caption", widget: "string" }
+
   - name: "settings"
     label: "Site Settings"
     files:
@@ -132,8 +279,16 @@ collections:
         fields:
           - { name: "site_name", label: "Site Name", widget: "string" }
           - { name: "tagline", label: "Tagline", widget: "string" }
+          - { name: "mission", label: "Mission Statement", widget: "text" }
+          - { name: "opening_date", label: "Opening Date", widget: "date" }
           - { name: "contact_email", label: "Contact Email", widget: "string" }
+          - { name: "location", label: "Location", widget: "string" }
+          - { name: "london_office", label: "London Office", widget: "string" }
+          - { name: "instagram", label: "Instagram URL", widget: "string" }
+          - { name: "twitter", label: "Twitter URL", widget: "string" }
           - { name: "founder", label: "Founder", widget: "string" }
           - { name: "opening_hours", label: "Opening Hours", widget: "string" }
           - { name: "charity_note", label: "Charity Note", widget: "text" }
           - { name: "amazon_wishlist_url", label: "Amazon Wishlist URL", widget: "string" }
+          - { name: "map_lat", label: "Map Latitude", widget: "string" }
+          - { name: "map_lng", label: "Map Longitude", widget: "string" }

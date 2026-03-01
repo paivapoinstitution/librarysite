@@ -1,0 +1,17 @@
+{
+  "hero_title": "Paivapo",
+  "hero_subtitle": "A library for the curious, the critical, and the community.",
+  "cta_browse": "Browse Catalog",
+  "cta_donate": "Donate",
+  "cta_visit": "Visit Us",
+  "mission_label": "Mission",
+  "mission_text": "Paivapo Institution is a community library in Zimbabwe. We collect, preserve, and share books across art, ecology, and literature. Access to books should be ordinary, not exceptional.",
+  "stats": [
+    { "number": "~100", "label": "Books" },
+    { "number": "3", "label": "Categories" },
+    { "number": "Mar 2026", "label": "Opening" }
+  ],
+  "featured_label": "Featured Books",
+  "featured_title": "From the Collection",
+  "partners_label": "Partners"
+}

@@ -47,8 +47,8 @@
     <!-- Page Header -->
     <section class="page-header">
       <div class="container">
-        <h1 class="page-header__title" data-i18n="contact.title">Contact</h1>
-        <p class="page-header__desc">Get in touch</p>
+        <h1 class="page-header__title" id="pc-title" data-i18n="contact.title">Contact</h1>
+        <p class="page-header__desc" id="pc-description">Get in touch</p>
       </div>
     </section>
 
@@ -59,43 +59,45 @@
 
           <!-- Form -->
           <div>
-            <form class="form" action="https://formspree.io/f/placeholder" method="POST">
+            <form class="form" id="pc-form" action="https://formspree.io/f/placeholder" method="POST">
               <div class="form__group">
-                <label for="name" class="form__label" data-i18n="contact.name">Name</label>
+                <label for="name" class="form__label" id="pc-name-label" data-i18n="contact.name">Name</label>
                 <input type="text" id="name" name="name" class="form__input" required autocomplete="name">
               </div>
               <div class="form__group">
-                <label for="email" class="form__label" data-i18n="contact.email">Email</label>
+                <label for="email" class="form__label" id="pc-email-label" data-i18n="contact.email">Email</label>
                 <input type="email" id="email" name="email" class="form__input" required autocomplete="email">
               </div>
               <div class="form__group">
-                <label for="message" class="form__label" data-i18n="contact.message">Message</label>
+                <label for="message" class="form__label" id="pc-message-label" data-i18n="contact.message">Message</label>
                 <textarea id="message" name="message" class="form__textarea" required></textarea>
               </div>
-              <button type="submit" class="btn btn--primary" data-i18n="contact.send">Send Message</button>
+              <button type="submit" class="btn btn--primary" id="pc-form-button" data-i18n="contact.send">Send Message</button>
             </form>
           </div>
 
           <!-- Contact Info -->
-          <div style="padding-left:var(--space-3xl);">
+          <div style="padding-left:var(--space-3xl);" id="pc-contact-info">
             <div style="margin-bottom:var(--space-2xl);">
               <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-md);">Email</h3>
-              <a href="mailto:hello@paivapo.org" style="font-size:var(--text-lg);font-weight:700;">hello@paivapo.org</a>
+              <a href="mailto:hello@paivapo.org" id="pc-info-email" style="font-size:var(--text-lg);font-weight:700;">hello@paivapo.org</a>
             </div>
 
             <div style="margin-bottom:var(--space-2xl);">
-              <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-md);">Zimbabwe</h3>
-              <p style="color:var(--color-text-secondary);">Paivapo Institution<br>Harare, Zimbabwe</p>
+              <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-md);" id="pc-zimbabwe-title">Zimbabwe</h3>
+              <p style="color:var(--color-text-secondary);" id="pc-zimbabwe-text">Paivapo Institution<br>Harare, Zimbabwe</p>
             </div>
 
             <div style="margin-bottom:var(--space-2xl);">
-              <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-md);">London Office</h3>
-              <p style="color:var(--color-text-secondary);">London, United Kingdom<br>Book donations &amp; logistics</p>
+              <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-md);" id="pc-london-title">London Office</h3>
+              <p style="color:var(--color-text-secondary);" id="pc-london-text">London, United Kingdom<br>Book donations &amp; logistics</p>
             </div>
 
             <div>
-              <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-md);">Social</h3>
-              <a href="https://instagram.com/paivapo" target="_blank" rel="noopener" style="display:block;margin-bottom:var(--space-sm);font-weight:700;">Instagram</a>
+              <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-md);" id="pc-social-title">Social</h3>
+              <div id="pc-social-links">
+                <a href="https://instagram.com/paivapo" target="_blank" rel="noopener" style="display:block;margin-bottom:var(--space-sm);font-weight:700;">Instagram</a>
+              </div>
             </div>
           </div>
 
