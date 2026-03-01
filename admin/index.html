@@ -310,7 +310,13 @@
       <h1>Paivapo Admin</h1>
       <small>Content Management</small>
     </div>
-    <a href="../index.html" class="btn btn-outline" style="color:var(--bg);border-color:rgba(255,255,99,0.3);">View Site &rarr;</a>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <button id="token-btn" class="btn btn-outline" style="color:var(--bg);border-color:rgba(255,255,99,0.3);font-size:0.7rem;" onclick="
+        var t = prompt('Enter your GitHub Personal Access Token:');
+        if (t && t.trim()) { localStorage.setItem('paivapo_github_token', t.trim()); this.textContent = 'Token Set'; }
+      ">Set GitHub Token</button>
+      <a href="../index.html" class="btn btn-outline" style="color:var(--bg);border-color:rgba(255,255,99,0.3);">View Site &rarr;</a>
+    </div>
   </header>
 
   <!-- CMS Dashboard -->
@@ -318,40 +324,24 @@
     <h2 style="font-family:var(--serif);font-size:2rem;margin-bottom:8px;">Edit Your Website</h2>
     <p style="color:var(--text-2);margin-bottom:32px;font-size:1.05rem;">Use the Content Manager to edit any page, add books, update partners, and change site settings. All changes go live automatically.</p>
 
-    <a href="/cms/" style="display:inline-block;padding:16px 40px;background:var(--text);color:var(--bg);font-family:var(--font);font-size:1.1rem;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;border:2px solid var(--text);margin-bottom:40px;">
-      Open Content Manager &rarr;
-    </a>
-
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;">
-      <a href="/cms/#/collections/pages" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
-        <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Pages</strong>
-        <span style="color:var(--text-2);font-size:0.85rem;">Edit text on any page</span>
-      </a>
-      <a href="/cms/#/collections/books" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
+      <a href="#" onclick="document.querySelector('[data-panel=books]').click();return false;" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
         <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Books</strong>
         <span style="color:var(--text-2);font-size:0.85rem;">Add or edit books</span>
       </a>
-      <a href="/cms/#/collections/wishlist_data" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
+      <a href="#" onclick="document.querySelector('[data-panel=wishlist]').click();return false;" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
         <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Wishlist</strong>
         <span style="color:var(--text-2);font-size:0.85rem;">Books we need</span>
       </a>
-      <a href="/cms/#/collections/partners_data" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
+      <a href="#" onclick="document.querySelector('[data-panel=partners]').click();return false;" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
         <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Partners</strong>
         <span style="color:var(--text-2);font-size:0.85rem;">Manage partners</span>
       </a>
-      <a href="/cms/#/collections/team" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
-        <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Team</strong>
-        <span style="color:var(--text-2);font-size:0.85rem;">Team members</span>
-      </a>
-      <a href="/cms/#/collections/events" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
-        <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Events</strong>
-        <span style="color:var(--text-2);font-size:0.85rem;">Upcoming events</span>
-      </a>
-      <a href="/cms/#/collections/gallery" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
+      <a href="#" onclick="document.querySelector('[data-panel=gallery]').click();return false;" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
         <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Gallery</strong>
         <span style="color:var(--text-2);font-size:0.85rem;">Photos of the space</span>
       </a>
-      <a href="/cms/#/collections/settings" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
+      <a href="#" onclick="document.querySelector('[data-panel=settings]').click();return false;" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
         <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Settings</strong>
         <span style="color:var(--text-2);font-size:0.85rem;">Site name, email, hours</span>
       </a>
@@ -364,24 +354,21 @@
     <div style="padding:20px;border:1px solid var(--border);background:rgba(0,0,0,0.03);">
       <strong>How it works:</strong>
       <ol style="margin-top:8px;padding-left:20px;color:var(--text-2);line-height:1.8;">
-        <li>Click <strong>Open Content Manager</strong> above</li>
-        <li>Sign in with your GitHub account</li>
-        <li>Select what you want to edit (a page, books, settings, etc.)</li>
-        <li>Make your changes and click <strong>Publish</strong></li>
-        <li>The website updates automatically within a minute</li>
+        <li>First time only: click <strong>Set GitHub Token</strong> in the top bar (you'll be given a token by the site admin)</li>
+        <li>Use the sections below to edit books, wishlist, partners, gallery, or settings</li>
+        <li>Click <strong>Publish</strong> when you're done — changes go live within a minute</li>
       </ol>
     </div>
 
-    <hr style="border:none;border-top:1px solid var(--border);margin:40px 0;">
-    <p style="font-size:0.85rem;color:var(--text-3);">Advanced tools below are for bulk operations only. For normal editing, use the Content Manager above.</p>
+    <p style="font-size:0.85rem;color:var(--text-3);margin-top:24px;">Edit content directly below. All changes are published straight to the website.</p>
   </div>
 
   <nav class="admin-nav">
-    <button class="active" data-panel="books">Books (Advanced)</button>
-    <button data-panel="wishlist">Wishlist (Advanced)</button>
-    <button data-panel="partners">Partners (Advanced)</button>
-    <button data-panel="gallery">Gallery (Advanced)</button>
-    <button data-panel="settings">Settings (Advanced)</button>
+    <button class="active" data-panel="books">Books</button>
+    <button data-panel="wishlist">Wishlist</button>
+    <button data-panel="partners">Partners</button>
+    <button data-panel="gallery">Gallery</button>
+    <button data-panel="settings">Settings</button>
   </nav>
 
   <!-- ==================== BOOKS PANEL ==================== -->
@@ -390,7 +377,7 @@
     <p class="section-desc">Manage the library catalog. Use ISBN lookup to auto-populate book data from Open Library.</p>
 
     <div class="instructions">
-      After making changes, click <strong>Download books.json</strong> below. Then commit the downloaded file to your GitHub repository's <code>/data/</code> folder to publish changes.
+      Make your changes below, then click <strong>Publish Books</strong> to save directly to the website. Changes go live within a minute.
     </div>
 
     <div class="add-form">
@@ -485,7 +472,7 @@
       <span id="books-count">0 books</span>
       <div style="display:flex;gap:8px;">
         <button class="btn btn-outline" id="import-books">Import JSON</button>
-        <button class="btn btn-success" id="export-books">Download books.json</button>
+        <button class="btn btn-success" id="export-books">Publish Books</button>
       </div>
     </div>
     <input type="file" id="import-books-file" accept=".json" style="display:none">
@@ -497,7 +484,7 @@
     <p class="section-desc">Books we need — titles displayed on the "Books We Need" page.</p>
 
     <div class="instructions">
-      After making changes, click <strong>Download wishlist.json</strong>. Commit the file to <code>/data/</code> to publish.
+      Make your changes below, then click <strong>Publish Wishlist</strong> to save directly to the website.
     </div>
 
     <div class="add-form">
@@ -553,7 +540,7 @@
       <span id="wishlist-count">0 items</span>
       <div style="display:flex;gap:8px;">
         <button class="btn btn-outline" id="import-wishlist">Import JSON</button>
-        <button class="btn btn-success" id="export-wishlist">Download wishlist.json</button>
+        <button class="btn btn-success" id="export-wishlist">Publish Wishlist</button>
       </div>
     </div>
     <input type="file" id="import-wishlist-file" accept=".json" style="display:none">
@@ -565,7 +552,7 @@
     <p class="section-desc">Manage partners and sponsors displayed on the Partners page.</p>
 
     <div class="instructions">
-      After making changes, click <strong>Download partners.json</strong>. Commit the file to <code>/data/</code> to publish.
+      Make your changes below, then click <strong>Publish Partners</strong> to save directly to the website.
     </div>
 
     <div class="add-form">
@@ -620,7 +607,7 @@
       <span id="partners-count">0 partners</span>
       <div style="display:flex;gap:8px;">
         <button class="btn btn-outline" id="import-partners">Import JSON</button>
-        <button class="btn btn-success" id="export-partners">Download partners.json</button>
+        <button class="btn btn-success" id="export-partners">Publish Partners</button>
       </div>
     </div>
     <input type="file" id="import-partners-file" accept=".json" style="display:none">
@@ -632,7 +619,7 @@
     <p class="section-desc">Manage photos displayed on the Visit Us page.</p>
 
     <div class="instructions">
-      After making changes, click <strong>Download gallery.json</strong>. Commit the file to <code>/data/</code> to publish.
+      Make your changes below, then click <strong>Publish Gallery</strong> to save directly to the website.
     </div>
 
     <div class="add-form">
@@ -673,7 +660,7 @@
       <span id="gallery-count">0 images</span>
       <div style="display:flex;gap:8px;">
         <button class="btn btn-outline" id="import-gallery">Import JSON</button>
-        <button class="btn btn-success" id="export-gallery">Download gallery.json</button>
+        <button class="btn btn-success" id="export-gallery">Publish Gallery</button>
       </div>
     </div>
     <input type="file" id="import-gallery-file" accept=".json" style="display:none">
@@ -685,7 +672,7 @@
     <p class="section-desc">Edit site-wide settings — tagline, contact info, opening date, and more.</p>
 
     <div class="instructions">
-      After making changes, click <strong>Download settings.json</strong>. Commit the file to <code>/data/</code> to publish.
+      Make your changes below, then click <strong>Publish Settings</strong> to save directly to the website.
     </div>
 
     <div class="add-form">
@@ -744,7 +731,7 @@
         <textarea id="set-biennale"></textarea>
       </div>
       <div class="form-actions">
-        <button class="btn btn-success" id="export-settings">Download settings.json</button>
+        <button class="btn btn-success" id="export-settings">Publish Settings</button>
         <button class="btn btn-outline" id="import-settings">Import JSON</button>
       </div>
       <input type="file" id="import-settings-file" accept=".json" style="display:none">
@@ -755,12 +742,117 @@
   (function() {
     'use strict';
 
+    // ---- Config ----
+    const GITHUB_REPO = 'paivapoinstitution/librarysite';
+    const GITHUB_BRANCH = 'main';
+
     // ---- State ----
     let books = [];
     let wishlist = [];
     let partners = [];
     let gallery = [];
     let settings = {};
+
+    // ---- GitHub Token Management ----
+    function getToken() {
+      return localStorage.getItem('paivapo_github_token') || '';
+    }
+
+    function setToken(token) {
+      localStorage.setItem('paivapo_github_token', token);
+    }
+
+    function promptForToken() {
+      const token = prompt(
+        'To publish changes, enter your GitHub Personal Access Token.\n\n' +
+        'This is saved in your browser and only sent to GitHub.\n\n' +
+        'To create one: GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token\n' +
+        'Give it "Contents" read & write permission for this repository.'
+      );
+      if (token && token.trim()) {
+        setToken(token.trim());
+        return token.trim();
+      }
+      return null;
+    }
+
+    // ---- GitHub API: Publish JSON ----
+    async function publishToGitHub(data, filepath, message) {
+      let token = getToken();
+      if (!token) {
+        token = promptForToken();
+        if (!token) { alert('Publishing cancelled — no token provided.'); return false; }
+      }
+
+      const apiUrl = 'https://api.github.com/repos/' + GITHUB_REPO + '/contents/data/' + filepath;
+      const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2) + '\n')));
+
+      try {
+        // Get current file SHA (needed for updates)
+        const getRes = await fetch(apiUrl + '?ref=' + GITHUB_BRANCH, {
+          headers: { 'Authorization': 'Bearer ' + token }
+        });
+
+        let sha = null;
+        if (getRes.ok) {
+          const existing = await getRes.json();
+          sha = existing.sha;
+        } else if (getRes.status === 401 || getRes.status === 403) {
+          setToken('');
+          alert('Token is invalid or expired. Please try again.');
+          return false;
+        }
+
+        // Create or update file
+        const body = {
+          message: message || 'Update ' + filepath + ' via admin panel',
+          content: content,
+          branch: GITHUB_BRANCH
+        };
+        if (sha) body.sha = sha;
+
+        const putRes = await fetch(apiUrl, {
+          method: 'PUT',
+          headers: {
+            'Authorization': 'Bearer ' + token,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(body)
+        });
+
+        if (putRes.ok) {
+          return true;
+        } else if (putRes.status === 401 || putRes.status === 403) {
+          setToken('');
+          alert('Token is invalid or lacks permission. Please try again.');
+          return false;
+        } else {
+          const err = await putRes.json();
+          alert('Publish failed: ' + (err.message || 'Unknown error'));
+          return false;
+        }
+      } catch (err) {
+        alert('Network error: ' + err.message);
+        return false;
+      }
+    }
+
+    // ---- Publish with status feedback ----
+    async function publishWithFeedback(btn, data, filepath, message) {
+      const origText = btn.textContent;
+      btn.textContent = 'Publishing...';
+      btn.disabled = true;
+
+      const success = await publishToGitHub(data, filepath, message);
+
+      if (success) {
+        btn.textContent = 'Published!';
+        setTimeout(() => { btn.textContent = origText; btn.disabled = false; }, 2000);
+      } else {
+        btn.textContent = origText;
+        btn.disabled = false;
+      }
+    }
 
     // ---- Tab Navigation ----
     document.querySelectorAll('.admin-nav button').forEach(btn => {
@@ -777,7 +869,7 @@
       return prefix + Date.now().toString(36);
     }
 
-    // ---- Utility: download JSON ----
+    // ---- Utility: download JSON (fallback) ----
     function downloadJSON(data, filename) {
       const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
       const url = URL.createObjectURL(blob);
@@ -946,7 +1038,9 @@
     }
 
     document.getElementById('clear-book-form').addEventListener('click', clearBookForm);
-    document.getElementById('export-books').addEventListener('click', () => downloadJSON(books, 'books.json'));
+    document.getElementById('export-books').addEventListener('click', function() {
+      publishWithFeedback(this, books, 'books.json', 'Update book catalog');
+    });
     document.getElementById('import-books').addEventListener('click', () => document.getElementById('import-books-file').click());
     importJSON(document.getElementById('import-books-file'), (data) => { books = data; renderBooks(); });
 
@@ -1027,7 +1121,9 @@
     }
 
     document.getElementById('clear-wish-form').addEventListener('click', clearWishForm);
-    document.getElementById('export-wishlist').addEventListener('click', () => downloadJSON(wishlist, 'wishlist.json'));
+    document.getElementById('export-wishlist').addEventListener('click', function() {
+      publishWithFeedback(this, wishlist, 'wishlist.json', 'Update wishlist');
+    });
     document.getElementById('import-wishlist').addEventListener('click', () => document.getElementById('import-wishlist-file').click());
     importJSON(document.getElementById('import-wishlist-file'), (data) => { wishlist = data; renderWishlist(); });
 
@@ -1107,7 +1203,9 @@
     }
 
     document.getElementById('clear-partner-form').addEventListener('click', clearPartnerForm);
-    document.getElementById('export-partners').addEventListener('click', () => downloadJSON(partners, 'partners.json'));
+    document.getElementById('export-partners').addEventListener('click', function() {
+      publishWithFeedback(this, partners, 'partners.json', 'Update partners');
+    });
     document.getElementById('import-partners').addEventListener('click', () => document.getElementById('import-partners-file').click());
     importJSON(document.getElementById('import-partners-file'), (data) => { partners = data; renderPartners(); });
 
@@ -1184,7 +1282,9 @@
     }
 
     document.getElementById('clear-gallery-form').addEventListener('click', clearGalleryForm);
-    document.getElementById('export-gallery').addEventListener('click', () => downloadJSON(gallery, 'gallery.json'));
+    document.getElementById('export-gallery').addEventListener('click', function() {
+      publishWithFeedback(this, gallery, 'gallery.json', 'Update gallery');
+    });
     document.getElementById('import-gallery').addEventListener('click', () => document.getElementById('import-gallery-file').click());
     importJSON(document.getElementById('import-gallery-file'), (data) => { gallery = data; renderGallery(); });
 
@@ -1228,9 +1328,9 @@
       };
     }
 
-    document.getElementById('export-settings').addEventListener('click', () => {
+    document.getElementById('export-settings').addEventListener('click', function() {
       settings = readSettingsUI();
-      downloadJSON(settings, 'settings.json');
+      publishWithFeedback(this, settings, 'settings.json', 'Update site settings');
     });
 
     document.getElementById('import-settings').addEventListener('click', () => document.getElementById('import-settings-file').click());
@@ -1271,6 +1371,12 @@
     }
 
     init();
+
+    // Update token button if already set
+    if (getToken()) {
+      document.getElementById('token-btn').textContent = 'Token Set';
+      document.getElementById('token-btn').style.borderColor = 'rgba(39,174,96,0.5)';
+    }
   })();
   </script>
 </body>
