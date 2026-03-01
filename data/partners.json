@@ -2,7 +2,7 @@
   {
     "id": "p001",
     "name": "National Gallery of Zimbabwe",
-    "tier": "founding",
+    "tier": "partner",
     "logo_url": "https://nationalgallery.co.zw/wp-content/uploads/2019/02/Gallery-Logo-OG-01.png",
     "url": "https://nationalgallery.co.zw",
     "description": "Zimbabwe's national institution for visual arts. Supporting Paivapo's work to broaden access to cultural knowledge."
@@ -19,16 +19,16 @@
     "id": "p003",
     "name": "Zimbabwe Culture Fund",
     "tier": "partner",
-    "logo_url": "/assets/images/placeholder.svg",
-    "url": "#",
+    "logo_url": "https://static.wixstatic.com/media/b4581c_023f6753c78d491aa626b17cfa91960b~mv2_d_3626_2598_s_4_2.png/v1/crop/x_0,y_520,w_1837,h_1704/fill/w_280,h_260,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b4581c_023f6753c78d491aa626b17cfa91960b~mv2_d_3626_2598_s_4_2.png",
+    "url": "https://www.culturefund.org.zw/",
     "description": "Supports cultural initiatives and creative projects across Zimbabwe."
   },
   {
     "id": "p004",
-    "name": "Harare Arts Trust",
+    "name": "1925 Glen Norah",
     "tier": "supporter",
-    "logo_url": "/assets/images/placeholder.svg",
-    "url": "#",
+    "logo_url": "https://i0.wp.com/glennorah.co.uk/wp-content/uploads/2023/10/cropped-Landscape_Transparent_Glen-Norah_Logo-2.png?fit=512%2C512&ssl=1",
+    "url": "glennorah.co.uk",
     "description": "Supports artistic development and cultural exchange in Harare."
   }
 ]
