@@ -78,7 +78,8 @@
   /* ---- Load JSON Data ---- */
   async function loadJSON(path) {
     try {
-      const res = await fetch(path);
+      var url = path + '?v=' + Date.now();
+      const res = await fetch(url);
       if (!res.ok) throw new Error('Failed to load ' + path);
       return await res.json();
     } catch (e) {
