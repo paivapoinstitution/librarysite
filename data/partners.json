@@ -3,15 +3,15 @@
     "id": "p001",
     "name": "National Gallery of Zimbabwe",
     "tier": "founding",
-    "logo_url": "/assets/images/placeholder.svg",
+    "logo_url": "https://nationalgallery.co.zw/wp-content/uploads/2019/02/Gallery-Logo-OG-01.png",
     "url": "https://nationalgallery.co.zw",
     "description": "Zimbabwe's national institution for visual arts. Supporting Paivapo's work to broaden access to cultural knowledge."
   },
   {
     "id": "p002",
     "name": "Book Aid International",
-    "tier": "founding",
-    "logo_url": "/assets/images/placeholder.svg",
+    "tier": "supporter",
+    "logo_url": "https://www.charitycardshop.com/images/logos/7bb77bfa9f97eb142293076bacb95b3b.png",
     "url": "https://bookaid.org",
     "description": "Works with libraries across Africa to provide access to books and support reading."
   },
@@ -30,13 +30,5 @@
     "logo_url": "/assets/images/placeholder.svg",
     "url": "#",
     "description": "Supports artistic development and cultural exchange in Harare."
-  },
-  {
-    "id": "pmm7xlrbm",
-    "name": "1925 GLEN NORAH",
-    "tier": "founding",
-    "logo_url": "https://i0.wp.com/glennorah.co.uk/wp-content/uploads/2023/10/cropped-Landscape_Transparent_Glen-Norah_Logo-2.png?fit=512%2C512&ssl=1",
-    "url": "glennorah.co.uk",
-    "description": "1925 GLEN NORAH is an olfactory practice that captures past cultural and artistic movements through scent. Fragrances reflect the spirit of times, referencing contributions that shaped cultural landscapes."
   }
 ]
