@@ -1,6 +1,19 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: paivapoinstitution/librarysite
   branch: main
+  auth_type: pkce
+  app_id: ""
+  # To enable login, create a GitHub OAuth App:
+  # 1. Go to github.com/settings/developers → New OAuth App
+  # 2. Set Homepage URL to your site URL
+  # 3. Set Authorization callback URL to: https://yoursite.com/cms/
+  # 4. Copy the Client ID and paste it above as app_id
+  # No client secret is needed — PKCE auth is fully client-side
+
+site_url: https://paivapoinstitution.github.io/librarysite
+display_url: https://paivapoinstitution.github.io/librarysite
+logo_url: /assets/images/placeholder.svg
 
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
