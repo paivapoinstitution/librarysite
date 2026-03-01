@@ -3,7 +3,7 @@ backend:
   repo: paivapoinstitution/librarysite
   branch: main
   auth_type: pkce
-  app_id: ""
+  app_id: "Ov23liiv8sE5dfTGbZxA"
   # To enable login, create a GitHub OAuth App:
   # 1. Go to github.com/settings/developers → New OAuth App
   # 2. Set Homepage URL to your site URL
