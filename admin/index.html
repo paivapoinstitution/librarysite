@@ -974,11 +974,26 @@
 
       if (success) {
         btn.textContent = 'Published!';
+        showDeployNote();
         setTimeout(() => { btn.textContent = origText; btn.disabled = false; }, 2000);
       } else {
         btn.textContent = origText;
         btn.disabled = false;
       }
+    }
+
+    // Show a note that GitHub Pages takes time to rebuild
+    function showDeployNote() {
+      let note = document.getElementById('deploy-note');
+      if (!note) {
+        note = document.createElement('div');
+        note.id = 'deploy-note';
+        note.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#000;color:#FFFF63;padding:12px 24px;font-size:0.8rem;font-family:monospace;z-index:9999;border:1px solid #FFFF63;max-width:500px;text-align:center;';
+        document.body.appendChild(note);
+      }
+      note.textContent = 'Saved to GitHub. The live site takes 1–2 minutes to update. Your admin panel will always show the latest saved data.';
+      note.style.display = 'block';
+      setTimeout(() => { note.style.display = 'none'; }, 8000);
     }
 
     // ---- Tab Navigation ----
@@ -1464,12 +1479,35 @@
     importJSON(document.getElementById('import-settings-file'), (data) => { settings = data; loadSettingsUI(); });
 
     // ============================================================
-    //  INIT — Load existing data from /data/ JSON files
+    //  INIT — Load existing data from GitHub API (or fallback to local)
     // ============================================================
 
+    // Load from GitHub API when token is available (always up-to-date),
+    // fall back to local static files if no token or API fails.
     async function loadData(path) {
+      const token = getToken();
+      if (token) {
+        try {
+          const apiUrl = 'https://api.github.com/repos/' + GITHUB_REPO + '/contents/data/' + path + '?ref=' + GITHUB_BRANCH + '&t=' + Date.now();
+          const res = await fetch(apiUrl, {
+            headers: {
+              'Authorization': 'Bearer ' + token,
+              'Accept': 'application/vnd.github.v3+json',
+              'If-None-Match': ''
+            }
+          });
+          if (res.ok) {
+            const file = await res.json();
+            const decoded = decodeURIComponent(escape(atob(file.content)));
+            return JSON.parse(decoded);
+          }
+        } catch (e) {
+          console.warn('GitHub API load failed for', path, '— falling back to local files.', e);
+        }
+      }
+      // Fallback: load from deployed static site
       try {
-        const res = await fetch('../data/' + path);
+        const res = await fetch('../data/' + path + '?t=' + Date.now());
         if (!res.ok) return null;
         return await res.json();
       } catch { return null; }
