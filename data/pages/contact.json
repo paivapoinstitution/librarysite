@@ -8,11 +8,14 @@
   "form_button": "Send Message",
   "info_email": "hello@paivapo.org",
   "info_zimbabwe_title": "Zimbabwe",
-  "info_zimbabwe_text": "Paivapo Institution<br>Harare, Zimbabwe",
+  "info_zimbabwe_text": "Paivapo Institution<br>Masvingo, Zimbabwe",
   "info_london_title": "London Office",
-  "info_london_text": "London, United Kingdom<br>Book donations &amp; logistics",
+  "info_london_text": "London, United Kingdom<br>Book donations & logistics",
   "info_social_title": "Social",
   "info_social_links": [
-    { "label": "Instagram", "url": "https://instagram.com/paivapo" }
+    {
+      "label": "Instagram",
+      "url": "https://instagram.com/paivapo"
+    }
   ]
 }
