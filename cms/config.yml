@@ -1,0 +1,139 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+  - name: "books"
+    label: "Book Catalog"
+    folder: "data"
+    create: false
+    format: "json"
+    files:
+      - name: "books"
+        label: "Books"
+        file: "data/books.json"
+        fields:
+          - name: "books"
+            label: "Books"
+            widget: "list"
+            fields:
+              - { name: "id", label: "ID", widget: "string" }
+              - { name: "isbn", label: "ISBN", widget: "string" }
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "author", label: "Author", widget: "string" }
+              - name: "category"
+                label: "Category"
+                widget: "select"
+                options: ["art", "ecology", "literature"]
+              - { name: "description", label: "Description", widget: "text" }
+              - { name: "cover_url", label: "Cover URL", widget: "string" }
+              - { name: "year", label: "Year", widget: "number" }
+              - { name: "added_date", label: "Date Added", widget: "date" }
+              - { name: "featured", label: "Featured", widget: "boolean", default: false }
+
+  - name: "wishlist"
+    label: "Wishlist"
+    folder: "data"
+    create: false
+    format: "json"
+    files:
+      - name: "wishlist"
+        label: "Books We Need"
+        file: "data/wishlist.json"
+        fields:
+          - name: "items"
+            label: "Wishlist Items"
+            widget: "list"
+            fields:
+              - { name: "id", label: "ID", widget: "string" }
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "author", label: "Author", widget: "string" }
+              - name: "category"
+                label: "Category"
+                widget: "select"
+                options: ["art", "ecology", "literature"]
+              - { name: "reason", label: "Why We Want It", widget: "text" }
+              - { name: "amazon_url", label: "Amazon URL", widget: "string" }
+
+  - name: "partners"
+    label: "Partners"
+    folder: "data"
+    create: false
+    format: "json"
+    files:
+      - name: "partners"
+        label: "Partners"
+        file: "data/partners.json"
+        fields:
+          - name: "partners"
+            label: "Partners"
+            widget: "list"
+            fields:
+              - { name: "id", label: "ID", widget: "string" }
+              - { name: "name", label: "Name", widget: "string" }
+              - { name: "url", label: "Website", widget: "string" }
+              - { name: "logo_url", label: "Logo URL", widget: "string" }
+              - { name: "description", label: "Description", widget: "text" }
+              - name: "tier"
+                label: "Tier"
+                widget: "select"
+                options: ["founding", "partner", "supporter"]
+
+  - name: "team"
+    label: "Team"
+    folder: "data"
+    create: false
+    format: "json"
+    files:
+      - name: "team"
+        label: "Team Members"
+        file: "data/team.json"
+        fields:
+          - name: "members"
+            label: "Team Members"
+            widget: "list"
+            fields:
+              - { name: "id", label: "ID", widget: "string" }
+              - { name: "name", label: "Name", widget: "string" }
+              - { name: "role", label: "Role", widget: "string" }
+              - { name: "bio", label: "Bio", widget: "text" }
+              - { name: "image_url", label: "Photo URL", widget: "string" }
+
+  - name: "events"
+    label: "Events"
+    folder: "data"
+    create: false
+    format: "json"
+    files:
+      - name: "events"
+        label: "Events"
+        file: "data/events.json"
+        fields:
+          - name: "events"
+            label: "Events"
+            widget: "list"
+            fields:
+              - { name: "id", label: "ID", widget: "string" }
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "date", label: "Date", widget: "date" }
+              - { name: "time", label: "Time", widget: "string" }
+              - { name: "location", label: "Location", widget: "string" }
+              - { name: "description", label: "Description", widget: "text" }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "settings"
+        label: "General Settings"
+        file: "data/settings.json"
+        fields:
+          - { name: "site_name", label: "Site Name", widget: "string" }
+          - { name: "tagline", label: "Tagline", widget: "string" }
+          - { name: "contact_email", label: "Contact Email", widget: "string" }
+          - { name: "founder", label: "Founder", widget: "string" }
+          - { name: "opening_hours", label: "Opening Hours", widget: "string" }
+          - { name: "charity_note", label: "Charity Note", widget: "text" }
+          - { name: "amazon_wishlist_url", label: "Amazon Wishlist URL", widget: "string" }

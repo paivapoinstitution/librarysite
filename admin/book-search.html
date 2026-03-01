@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Search — Paivapo Admin</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'SF Mono', 'Consolas', 'Liberation Mono', monospace;
+      font-size: 13px;
+      background: #f5f5f0;
+      color: #000;
+      line-height: 1.5;
+    }
+    .admin-bar {
+      background: #000;
+      color: #FFFF63;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .admin-bar a { color: #FFFF63; text-decoration: none; }
+    .admin-bar a:hover { text-decoration: underline; }
+    .admin-title { font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; }
+
+    .main { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+
+    h1 { font-size: 24px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; margin-bottom: 8px; font-family: Georgia, serif; }
+    .subtitle { color: #666; margin-bottom: 32px; }
+
+    .search-box {
+      display: flex;
+      gap: 0;
+      margin-bottom: 32px;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 13px;
+      outline: none;
+    }
+    .search-box input:focus { border-color: #000; }
+    .search-box button {
+      padding: 10px 20px;
+      background: #000;
+      color: #FFFF63;
+      border: 1px solid #000;
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+    }
+    .search-box button:hover { background: #333; }
+    .search-box button:disabled { opacity: 0.5; cursor: default; }
+
+    .search-mode {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .search-mode label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+    }
+    .search-mode input { margin-right: 4px; }
+
+    .results { margin-bottom: 40px; }
+    .result-count { font-size: 11px; color: #666; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+    .book-result {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 16px;
+      align-items: start;
+      padding: 16px;
+      border: 1px solid #ddd;
+      margin-bottom: -1px;
+      background: #fff;
+    }
+    .book-result:hover { background: #fafaf5; }
+    .book-result__cover {
+      width: 80px;
+      height: 120px;
+      background: #eee;
+      overflow: hidden;
+    }
+    .book-result__cover img { width: 100%; height: 100%; object-fit: cover; }
+    .book-result__title { font-weight: 700; font-size: 14px; font-family: Georgia, serif; }
+    .book-result__author { color: #666; margin-top: 2px; }
+    .book-result__meta { color: #999; font-size: 11px; margin-top: 4px; }
+    .book-result__desc { color: #555; font-size: 12px; margin-top: 8px; max-width: 500px; }
+
+    .btn-add {
+      padding: 8px 16px;
+      background: #000;
+      color: #FFFF63;
+      border: 1px solid #000;
+      font-family: inherit;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      white-space: nowrap;
+      align-self: center;
+    }
+    .btn-add:hover { background: #333; }
+    .btn-add:disabled { opacity: 0.4; cursor: default; background: #666; }
+    .btn-add--added {
+      background: #FFFF63;
+      color: #000;
+      border-color: #ccc;
+    }
+
+    .category-select {
+      font-family: inherit;
+      font-size: 11px;
+      padding: 4px 8px;
+      border: 1px solid #ccc;
+      margin-top: 6px;
+      display: block;
+    }
+
+    .status { padding: 12px 16px; background: #FFFF63; border: 1px solid #ccc; margin-bottom: 24px; font-size: 12px; }
+    .status--error { background: #fdd; border-color: #c00; }
+
+    .loading { text-align: center; padding: 40px; color: #999; }
+
+    .current-catalog { margin-top: 48px; padding-top: 32px; border-top: 1px solid #ddd; }
+    .current-catalog h2 { font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 16px; font-family: Georgia, serif; }
+    .catalog-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 12px;
+    }
+    .catalog-item__title { font-weight: 700; }
+    .catalog-item__isbn { color: #999; font-size: 11px; }
+  </style>
+</head>
+<body>
+
+  <div class="admin-bar">
+    <span class="admin-title">Paivapo Admin / Book Search</span>
+    <div>
+      <a href="/admin/">Dashboard</a> &mdash;
+      <a href="/cms/">CMS</a> &mdash;
+      <a href="/">Site</a>
+    </div>
+  </div>
+
+  <div class="main">
+    <h1>Add Books via Search</h1>
+    <p class="subtitle">Search Open Library by title, author, or ISBN. Results are added to your catalog JSON.</p>
+
+    <div id="status-area"></div>
+
+    <div class="search-mode">
+      <label><input type="radio" name="mode" value="query" checked> Title / Author</label>
+      <label><input type="radio" name="mode" value="isbn"> ISBN</label>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Search Open Library..." autofocus>
+      <button id="search-btn">Search</button>
+    </div>
+
+    <div id="results" class="results"></div>
+
+    <div class="current-catalog">
+      <h2>Current Catalog (<span id="catalog-count">0</span> books)</h2>
+      <div id="catalog-list"></div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var catalog = [];
+      var searchMode = 'query';
+
+      // Load current catalog
+      fetch('/data/books.json')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          catalog = data || [];
+          renderCatalog();
+        });
+
+      function renderCatalog() {
+        var el = document.getElementById('catalog-list');
+        var countEl = document.getElementById('catalog-count');
+        countEl.textContent = catalog.length;
+        el.innerHTML = catalog.map(function(b) {
+          return '<div class="catalog-item">' +
+            '<div><span class="catalog-item__title">' + b.title + '</span> — ' + b.author + ' (' + b.year + ')</div>' +
+            '<span class="catalog-item__isbn">' + (b.isbn || 'no isbn') + '</span>' +
+          '</div>';
+        }).join('');
+      }
+
+      // Search mode
+      document.querySelectorAll('input[name="mode"]').forEach(function(radio) {
+        radio.addEventListener('change', function() {
+          searchMode = this.value;
+          var input = document.getElementById('search-input');
+          input.placeholder = searchMode === 'isbn' ? 'Enter ISBN...' : 'Search Open Library...';
+        });
+      });
+
+      // Search
+      var searchInput = document.getElementById('search-input');
+      var searchBtn = document.getElementById('search-btn');
+
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') doSearch();
+      });
+      searchBtn.addEventListener('click', doSearch);
+
+      function doSearch() {
+        var q = searchInput.value.trim();
+        if (!q) return;
+
+        searchBtn.disabled = true;
+        searchBtn.textContent = 'Searching...';
+        document.getElementById('results').innerHTML = '<div class="loading">Searching Open Library...</div>';
+
+        var url;
+        if (searchMode === 'isbn') {
+          url = 'https://openlibrary.org/search.json?isbn=' + encodeURIComponent(q) + '&limit=10';
+        } else {
+          url = 'https://openlibrary.org/search.json?q=' + encodeURIComponent(q) + '&limit=20';
+        }
+
+        fetch(url)
+          .then(function(r) { return r.json(); })
+          .then(function(data) {
+            renderResults(data.docs || []);
+          })
+          .catch(function(err) {
+            document.getElementById('results').innerHTML = '<div class="status status--error">Search failed: ' + err.message + '</div>';
+          })
+          .finally(function() {
+            searchBtn.disabled = false;
+            searchBtn.textContent = 'Search';
+          });
+      }
+
+      function renderResults(docs) {
+        var el = document.getElementById('results');
+
+        if (docs.length === 0) {
+          el.innerHTML = '<div class="result-count">No results found</div>';
+          return;
+        }
+
+        el.innerHTML = '<div class="result-count">' + docs.length + ' results</div>' +
+          docs.map(function(doc) {
+            var isbn = (doc.isbn && doc.isbn[0]) || '';
+            var coverUrl = isbn
+              ? 'https://covers.openlibrary.org/b/isbn/' + isbn + '-M.jpg'
+              : '';
+            var year = doc.first_publish_year || '';
+            var author = (doc.author_name && doc.author_name[0]) || 'Unknown';
+            var title = doc.title || 'Untitled';
+            var alreadyInCatalog = catalog.some(function(b) { return b.isbn === isbn && isbn; });
+
+            return '<div class="book-result" data-isbn="' + isbn + '" data-title="' + escapeAttr(title) + '" data-author="' + escapeAttr(author) + '" data-year="' + year + '">' +
+              '<div class="book-result__cover">' +
+                (coverUrl ? '<img src="' + coverUrl + '" alt="" loading="lazy">' : '') +
+              '</div>' +
+              '<div>' +
+                '<div class="book-result__title">' + escapeHtml(title) + '</div>' +
+                '<div class="book-result__author">' + escapeHtml(author) + '</div>' +
+                '<div class="book-result__meta">' +
+                  (year ? year + ' · ' : '') +
+                  (isbn ? 'ISBN: ' + isbn : 'No ISBN') +
+                '</div>' +
+                '<select class="category-select">' +
+                  '<option value="art">Art</option>' +
+                  '<option value="ecology">Ecology</option>' +
+                  '<option value="literature">Literature</option>' +
+                '</select>' +
+              '</div>' +
+              '<button class="btn-add' + (alreadyInCatalog ? ' btn-add--added' : '') + '"' +
+                (alreadyInCatalog ? ' disabled' : '') + '>' +
+                (alreadyInCatalog ? 'In Catalog' : 'Add to Catalog') +
+              '</button>' +
+            '</div>';
+          }).join('');
+
+        // Attach add buttons
+        el.querySelectorAll('.btn-add:not(:disabled)').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var row = btn.closest('.book-result');
+            var category = row.querySelector('.category-select').value;
+            addBookToCatalog(row, category, btn);
+          });
+        });
+      }
+
+      function addBookToCatalog(row, category, btn) {
+        var isbn = row.dataset.isbn;
+        var title = row.dataset.title;
+        var author = row.dataset.author;
+        var year = parseInt(row.dataset.year) || 0;
+
+        // Fetch description from Open Library
+        var descPromise = isbn
+          ? fetch('https://openlibrary.org/isbn/' + isbn + '.json')
+              .then(function(r) { return r.ok ? r.json() : {}; })
+              .catch(function() { return {}; })
+          : Promise.resolve({});
+
+        btn.disabled = true;
+        btn.textContent = 'Adding...';
+
+        descPromise.then(function(bookData) {
+          var description = '';
+          if (bookData.description) {
+            description = typeof bookData.description === 'string'
+              ? bookData.description
+              : bookData.description.value || '';
+          }
+          // Truncate long descriptions
+          if (description.length > 300) {
+            description = description.substring(0, 297) + '...';
+          }
+
+          var newId = String(catalog.length + 1).padStart(3, '0');
+          var coverUrl = isbn
+            ? 'https://covers.openlibrary.org/b/isbn/' + isbn + '-L.jpg'
+            : '/assets/images/placeholder.svg';
+
+          var newBook = {
+            id: newId,
+            isbn: isbn,
+            title: title,
+            author: author,
+            category: category,
+            description: description || 'No description available.',
+            cover_url: coverUrl,
+            year: year,
+            added_date: new Date().toISOString().split('T')[0],
+            featured: false
+          };
+
+          catalog.push(newBook);
+
+          // Save to local file (download as JSON)
+          var blob = new Blob([JSON.stringify(catalog, null, 2)], { type: 'application/json' });
+          var a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = 'books.json';
+          a.click();
+          URL.revokeObjectURL(a.href);
+
+          btn.textContent = 'Added ✓';
+          btn.classList.add('btn-add--added');
+
+          showStatus('Added "' + title + '" to catalog. Replace data/books.json with the downloaded file.');
+          renderCatalog();
+        });
+      }
+
+      function showStatus(msg) {
+        var el = document.getElementById('status-area');
+        el.innerHTML = '<div class="status">' + msg + '</div>';
+        setTimeout(function() { el.innerHTML = ''; }, 8000);
+      }
+
+      function escapeHtml(str) {
+        var div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+      }
+
+      function escapeAttr(str) {
+        return str.replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;');
+      }
+    })();
+  </script>
+</body>
+</html>
