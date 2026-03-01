@@ -442,6 +442,7 @@
     <button data-panel="wishlist">Wishlist</button>
     <button data-panel="partners">Partners</button>
     <button data-panel="gallery">Gallery</button>
+    <button data-panel="pages">Pages</button>
     <button data-panel="settings">Settings</button>
   </nav>
 
@@ -738,6 +739,38 @@
       </div>
     </div>
     <input type="file" id="import-gallery-file" accept=".json" style="display:none">
+  </div>
+
+  <!-- ==================== PAGES PANEL ==================== -->
+  <div id="panel-pages" class="panel">
+    <h2 class="section-title">Pages Editor</h2>
+    <p class="section-desc">Edit the content of your site pages. Select a page below, make changes, then publish.</p>
+
+    <div class="instructions">
+      Select a page to edit, make your changes, then click <strong>Publish Page</strong> to save directly to the website.
+    </div>
+
+    <div class="add-form">
+      <div class="form-group">
+        <label for="page-select">Page</label>
+        <select id="page-select">
+          <option value="about">About</option>
+          <option value="home">Home</option>
+          <option value="donate">Donate</option>
+          <option value="visit">Visit</option>
+          <option value="contact">Contact</option>
+          <option value="events">Events</option>
+        </select>
+      </div>
+
+      <div id="page-fields"></div>
+
+      <div class="form-actions">
+        <button class="btn btn-success" id="export-page">Publish Page</button>
+        <button class="btn btn-outline" id="import-page">Import JSON</button>
+      </div>
+      <input type="file" id="import-page-file" accept=".json" style="display:none">
+    </div>
   </div>
 
   <!-- ==================== SETTINGS PANEL ==================== -->
@@ -1431,6 +1464,182 @@
     importJSON(document.getElementById('import-gallery-file'), (data) => { gallery = data; renderGallery(); });
 
     // ============================================================
+    //  PAGES
+    // ============================================================
+
+    let currentPageData = {};
+    let currentPageName = 'about';
+
+    // Field definitions for each page
+    function getPageFields(pageName, data) {
+      const fields = {
+        about: [
+          { key: 'title', label: 'Page Title', type: 'text' },
+          { key: 'description', label: 'Description', type: 'text' },
+          { key: 'story_label', label: 'Story Section Label', type: 'text' },
+          { key: 'story_paragraphs', label: 'Story Paragraphs', type: 'array', hint: 'One paragraph per field. HTML like <em> is allowed.' },
+          { key: 'team_label', label: 'Team Section Label', type: 'text' },
+          { key: 'team_title', label: 'Team Section Title', type: 'text' },
+          { key: 'space_label', label: 'Space Section Label', type: 'text' },
+          { key: 'space_title', label: 'Space Section Title', type: 'text' },
+          { key: 'space_description', label: 'Space Description', type: 'textarea' }
+        ],
+        home: [
+          { key: 'hero_title', label: 'Hero Title', type: 'text' },
+          { key: 'hero_subtitle', label: 'Hero Subtitle', type: 'text' },
+          { key: 'cta_browse', label: 'Browse Button Text', type: 'text' },
+          { key: 'cta_donate', label: 'Donate Button Text', type: 'text' },
+          { key: 'cta_visit', label: 'Visit Button Text', type: 'text' },
+          { key: 'mission_label', label: 'Mission Label', type: 'text' },
+          { key: 'mission_text', label: 'Mission Text', type: 'textarea' },
+          { key: 'featured_label', label: 'Featured Section Label', type: 'text' },
+          { key: 'featured_title', label: 'Featured Section Title', type: 'text' },
+          { key: 'partners_label', label: 'Partners Section Label', type: 'text' }
+        ],
+        donate: [
+          { key: 'title', label: 'Page Title', type: 'text' },
+          { key: 'description', label: 'Description', type: 'textarea' },
+          { key: 'money_title', label: 'Money Donation Title', type: 'text' },
+          { key: 'money_description', label: 'Money Donation Description', type: 'textarea' },
+          { key: 'money_button', label: 'Money Button Text', type: 'text' },
+          { key: 'money_note', label: 'Money Note', type: 'text' },
+          { key: 'book_title', label: 'Book Donation Title', type: 'text' },
+          { key: 'book_description', label: 'Book Donation Description', type: 'textarea' },
+          { key: 'book_button', label: 'Book Button Text', type: 'text' },
+          { key: 'book_note', label: 'Book Note', type: 'text' },
+          { key: 'charity_note', label: 'Charity Note (HTML allowed)', type: 'textarea' }
+        ],
+        visit: [
+          { key: 'title', label: 'Page Title', type: 'text' },
+          { key: 'description', label: 'Description', type: 'text' },
+          { key: 'opening_label', label: 'Opening Label', type: 'text' },
+          { key: 'opening_date_display', label: 'Opening Date Display', type: 'text' },
+          { key: 'gallery_label', label: 'Gallery Label', type: 'text' },
+          { key: 'gallery_title', label: 'Gallery Title', type: 'text' },
+          { key: 'hours_title', label: 'Hours Title', type: 'text' },
+          { key: 'hours_text', label: 'Hours Text', type: 'text' },
+          { key: 'hours_note', label: 'Hours Note', type: 'text' },
+          { key: 'address_title', label: 'Address Title', type: 'text' },
+          { key: 'address_text', label: 'Address Text (HTML allowed)', type: 'textarea' },
+          { key: 'address_note', label: 'Address Note', type: 'text' },
+          { key: 'expect_title', label: 'What to Expect Title', type: 'text' },
+          { key: 'expect_items', label: 'What to Expect Items', type: 'array', hint: 'One item per field.' }
+        ],
+        contact: [
+          { key: 'title', label: 'Page Title', type: 'text' },
+          { key: 'description', label: 'Description', type: 'text' },
+          { key: 'form_action', label: 'Form Action URL', type: 'text' },
+          { key: 'form_name_label', label: 'Name Field Label', type: 'text' },
+          { key: 'form_email_label', label: 'Email Field Label', type: 'text' },
+          { key: 'form_message_label', label: 'Message Field Label', type: 'text' },
+          { key: 'form_button', label: 'Submit Button Text', type: 'text' },
+          { key: 'info_email', label: 'Contact Email', type: 'text' },
+          { key: 'info_zimbabwe_title', label: 'Zimbabwe Office Title', type: 'text' },
+          { key: 'info_zimbabwe_text', label: 'Zimbabwe Office Text (HTML allowed)', type: 'textarea' },
+          { key: 'info_london_title', label: 'London Office Title', type: 'text' },
+          { key: 'info_london_text', label: 'London Office Text (HTML allowed)', type: 'textarea' }
+        ],
+        events: [
+          { key: 'title', label: 'Page Title', type: 'text' },
+          { key: 'description', label: 'Description', type: 'text' }
+        ]
+      };
+      return fields[pageName] || [];
+    }
+
+    function renderPageFields() {
+      const container = document.getElementById('page-fields');
+      const fields = getPageFields(currentPageName, currentPageData);
+      let html = '';
+
+      fields.forEach(field => {
+        if (field.type === 'array') {
+          const arr = currentPageData[field.key] || [];
+          html += '<div class="form-group" data-array-key="' + field.key + '">';
+          html += '<label>' + field.label + '</label>';
+          if (field.hint) html += '<small style="display:block;color:#555;margin-bottom:6px;">' + field.hint + '</small>';
+          html += '<div class="page-array-items">';
+          arr.forEach((item, idx) => {
+            html += '<div style="display:flex;gap:8px;margin-bottom:6px;">';
+            html += '<textarea class="page-array-input" data-key="' + field.key + '" data-index="' + idx + '" style="flex:1;min-height:60px;">' + (item || '') + '</textarea>';
+            html += '<button class="btn btn-sm btn-danger page-array-remove" data-key="' + field.key + '" data-index="' + idx + '" style="align-self:start;">Remove</button>';
+            html += '</div>';
+          });
+          html += '</div>';
+          html += '<button class="btn btn-sm btn-outline page-array-add" data-key="' + field.key + '" style="margin-top:4px;">+ Add Item</button>';
+          html += '</div>';
+        } else if (field.type === 'textarea') {
+          html += '<div class="form-group">';
+          html += '<label for="page-' + field.key + '">' + field.label + '</label>';
+          html += '<textarea id="page-' + field.key + '" style="min-height:80px;">' + (currentPageData[field.key] || '') + '</textarea>';
+          html += '</div>';
+        } else {
+          html += '<div class="form-group">';
+          html += '<label for="page-' + field.key + '">' + field.label + '</label>';
+          html += '<input type="text" id="page-' + field.key + '" value="' + (currentPageData[field.key] || '').replace(/"/g, '&quot;') + '">';
+          html += '</div>';
+        }
+      });
+
+      container.innerHTML = html;
+
+      // Bind array add/remove buttons
+      container.querySelectorAll('.page-array-add').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.dataset.key;
+          if (!currentPageData[key]) currentPageData[key] = [];
+          currentPageData[key].push('');
+          readPageFields();
+          renderPageFields();
+        });
+      });
+
+      container.querySelectorAll('.page-array-remove').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.dataset.key;
+          const idx = parseInt(btn.dataset.index);
+          readPageFields();
+          currentPageData[key].splice(idx, 1);
+          renderPageFields();
+        });
+      });
+    }
+
+    function readPageFields() {
+      const fields = getPageFields(currentPageName, currentPageData);
+      fields.forEach(field => {
+        if (field.type === 'array') {
+          const inputs = document.querySelectorAll('.page-array-input[data-key="' + field.key + '"]');
+          currentPageData[field.key] = Array.from(inputs).map(inp => inp.value);
+        } else {
+          const el = document.getElementById('page-' + field.key);
+          if (el) currentPageData[field.key] = el.value;
+        }
+      });
+    }
+
+    async function loadPageData(pageName) {
+      const data = await loadData('pages/' + pageName + '.json');
+      if (data) currentPageData = data;
+      else currentPageData = {};
+      currentPageName = pageName;
+      renderPageFields();
+    }
+
+    document.getElementById('page-select').addEventListener('change', function() {
+      readPageFields(); // save any in-progress edits to state
+      loadPageData(this.value);
+    });
+
+    document.getElementById('export-page').addEventListener('click', function() {
+      readPageFields();
+      publishWithFeedback(this, currentPageData, 'pages/' + currentPageName + '.json', 'Update ' + currentPageName + ' page content');
+    });
+
+    document.getElementById('import-page').addEventListener('click', () => document.getElementById('import-page-file').click());
+    importJSON(document.getElementById('import-page-file'), (data) => { currentPageData = data; renderPageFields(); });
+
+    // ============================================================
     //  SETTINGS
     // ============================================================
 
@@ -1533,6 +1742,7 @@
       renderPartners();
       renderGallery();
       loadSettingsUI();
+      loadPageData('about');
     }
 
     init();
