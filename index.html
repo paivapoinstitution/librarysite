@@ -46,12 +46,12 @@
   <!-- Hero -->
   <section class="hero" aria-label="Introduction">
     <div class="hero__content">
-      <h1 class="hero__title">Paivapo</h1>
-      <p class="hero__subtitle" data-i18n="hero.tagline">A library for the curious, the critical, and the community.</p>
+      <h1 class="hero__title" id="pc-hero-title">Paivapo</h1>
+      <p class="hero__subtitle" id="pc-hero-subtitle" data-i18n="hero.tagline">A library for the curious, the critical, and the community.</p>
       <div class="btn-group">
-        <a href="catalog.html" class="btn btn--primary" data-i18n="home.cta.browse">Browse Catalog</a>
-        <a href="donate.html" class="btn btn--outline" data-i18n="home.cta.donate">Donate</a>
-        <a href="visit.html" class="btn btn--outline" data-i18n="home.cta.visit">Visit Us</a>
+        <a href="catalog.html" class="btn btn--primary" id="pc-cta-browse" data-i18n="home.cta.browse">Browse Catalog</a>
+        <a href="donate.html" class="btn btn--outline" id="pc-cta-donate" data-i18n="home.cta.donate">Donate</a>
+        <a href="visit.html" class="btn btn--outline" id="pc-cta-visit" data-i18n="home.cta.visit">Visit Us</a>
       </div>
     </div>
   </section>
@@ -62,9 +62,9 @@
     <!-- Mission -->
     <section class="section">
       <div class="container">
-        <span class="section-header__label" data-i18n="home.mission.label">Mission</span>
+        <span class="section-header__label" id="pc-mission-label" data-i18n="home.mission.label">Mission</span>
         <div class="divider"></div>
-        <p style="font-size:var(--text-lg);line-height:1.7;max-width:600px;" data-i18n="home.mission.text">
+        <p style="font-size:var(--text-lg);line-height:1.7;max-width:600px;" id="pc-mission-text" data-i18n="home.mission.text">
           Paivapo Institution is a community library in Zimbabwe. We collect, preserve, and share books across art, ecology, and literature. Access to books should be ordinary, not exceptional.
         </p>
       </div>
@@ -72,7 +72,7 @@
 
     <!-- Stats -->
     <section class="container">
-      <div class="stats">
+      <div class="stats" id="pc-stats">
         <div>
           <div class="stat__number" id="book-count">~100</div>
           <div class="stat__label" data-i18n="home.stats.books">Books</div>
@@ -92,8 +92,8 @@
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-header__label" data-i18n="home.featured">Featured Books</span>
-          <h2 class="section-header__title">From the Collection</h2>
+          <span class="section-header__label" id="pc-featured-label" data-i18n="home.featured">Featured Books</span>
+          <h2 class="section-header__title" id="pc-featured-title">From the Collection</h2>
         </div>
         <div class="page-loader" id="featured-loader">
           <div class="book-loader"><div class="inner"><div class="left"></div><div class="middle"></div><div class="right"></div></div><ul><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
@@ -112,7 +112,7 @@
     <!-- Partners -->
     <section class="section" style="border-top:var(--border-w) solid var(--color-border);">
       <div class="container">
-        <span class="section-header__label" data-i18n="home.partners">Partners</span>
+        <span class="section-header__label" id="pc-partners-label" data-i18n="home.partners">Partners</span>
         <div class="partners-strip" aria-label="Partner logos">
           <!-- Populated by main.js -->
         </div>

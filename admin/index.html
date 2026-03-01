@@ -308,19 +308,80 @@
   <header class="admin-header">
     <div>
       <h1>Paivapo Admin</h1>
-      <small>Content Management System</small>
+      <small>Content Management</small>
     </div>
     <a href="../index.html" class="btn btn-outline" style="color:var(--bg);border-color:rgba(255,255,99,0.3);">View Site &rarr;</a>
   </header>
 
+  <!-- CMS Dashboard -->
+  <div style="padding:32px 24px;max-width:900px;margin:0 auto;">
+    <h2 style="font-family:var(--serif);font-size:2rem;margin-bottom:8px;">Edit Your Website</h2>
+    <p style="color:var(--text-2);margin-bottom:32px;font-size:1.05rem;">Use the Content Manager to edit any page, add books, update partners, and change site settings. All changes go live automatically.</p>
+
+    <a href="/cms/" style="display:inline-block;padding:16px 40px;background:var(--text);color:var(--bg);font-family:var(--font);font-size:1.1rem;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;border:2px solid var(--text);margin-bottom:40px;">
+      Open Content Manager &rarr;
+    </a>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;">
+      <a href="/cms/#/collections/pages" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
+        <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Pages</strong>
+        <span style="color:var(--text-2);font-size:0.85rem;">Edit text on any page</span>
+      </a>
+      <a href="/cms/#/collections/books" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
+        <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Books</strong>
+        <span style="color:var(--text-2);font-size:0.85rem;">Add or edit books</span>
+      </a>
+      <a href="/cms/#/collections/wishlist_data" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
+        <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Wishlist</strong>
+        <span style="color:var(--text-2);font-size:0.85rem;">Books we need</span>
+      </a>
+      <a href="/cms/#/collections/partners_data" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
+        <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Partners</strong>
+        <span style="color:var(--text-2);font-size:0.85rem;">Manage partners</span>
+      </a>
+      <a href="/cms/#/collections/team" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
+        <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Team</strong>
+        <span style="color:var(--text-2);font-size:0.85rem;">Team members</span>
+      </a>
+      <a href="/cms/#/collections/events" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
+        <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Events</strong>
+        <span style="color:var(--text-2);font-size:0.85rem;">Upcoming events</span>
+      </a>
+      <a href="/cms/#/collections/gallery" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
+        <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Gallery</strong>
+        <span style="color:var(--text-2);font-size:0.85rem;">Photos of the space</span>
+      </a>
+      <a href="/cms/#/collections/settings" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
+        <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Settings</strong>
+        <span style="color:var(--text-2);font-size:0.85rem;">Site name, email, hours</span>
+      </a>
+      <a href="book-search.html" style="display:block;padding:20px;border:1px solid var(--border);text-decoration:none;color:var(--text);">
+        <strong style="display:block;font-size:1.1rem;margin-bottom:4px;">Book Search</strong>
+        <span style="color:var(--text-2);font-size:0.85rem;">Look up books by ISBN</span>
+      </a>
+    </div>
+
+    <div style="padding:20px;border:1px solid var(--border);background:rgba(0,0,0,0.03);">
+      <strong>How it works:</strong>
+      <ol style="margin-top:8px;padding-left:20px;color:var(--text-2);line-height:1.8;">
+        <li>Click <strong>Open Content Manager</strong> above</li>
+        <li>Sign in with your GitHub account</li>
+        <li>Select what you want to edit (a page, books, settings, etc.)</li>
+        <li>Make your changes and click <strong>Publish</strong></li>
+        <li>The website updates automatically within a minute</li>
+      </ol>
+    </div>
+
+    <hr style="border:none;border-top:1px solid var(--border);margin:40px 0;">
+    <p style="font-size:0.85rem;color:var(--text-3);">Advanced tools below are for bulk operations only. For normal editing, use the Content Manager above.</p>
+  </div>
+
   <nav class="admin-nav">
-    <button class="active" data-panel="books">Books</button>
-    <button data-panel="wishlist">Wishlist</button>
-    <button data-panel="partners">Partners</button>
-    <button data-panel="gallery">Gallery</button>
-    <button data-panel="settings">Settings</button>
-    <a href="book-search.html" style="font-family:var(--font);font-size:0.85rem;padding:12px 20px;background:var(--surface);border:none;border-right:1px solid var(--border);color:var(--text-2);letter-spacing:0.03em;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;">Book Search API</a>
-    <a href="/cms/" style="font-family:var(--font);font-size:0.85rem;padding:12px 20px;background:var(--surface);border:none;color:var(--text-2);letter-spacing:0.03em;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;">CMS</a>
+    <button class="active" data-panel="books">Books (Advanced)</button>
+    <button data-panel="wishlist">Wishlist (Advanced)</button>
+    <button data-panel="partners">Partners (Advanced)</button>
+    <button data-panel="gallery">Gallery (Advanced)</button>
+    <button data-panel="settings">Settings (Advanced)</button>
   </nav>
 
   <!-- ==================== BOOKS PANEL ==================== -->

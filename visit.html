@@ -47,16 +47,16 @@
     <!-- Page Header -->
     <section class="page-header">
       <div class="container">
-        <h1 class="page-header__title" data-i18n="visit.title">Visit Us</h1>
-        <p class="page-header__desc">Reading, reflection, and gathering. Harare, Zimbabwe.</p>
+        <h1 class="page-header__title" id="pc-title" data-i18n="visit.title">Visit Us</h1>
+        <p class="page-header__desc" id="pc-description">Reading, reflection, and gathering. Harare, Zimbabwe.</p>
       </div>
     </section>
 
     <!-- Countdown -->
     <section class="section" style="padding-bottom:0;">
       <div class="container">
-        <span class="section-header__label">Opening</span>
-        <h2 style="font-size:var(--text-4xl);margin-bottom:var(--space-md);text-transform:uppercase;letter-spacing:-0.03em;">March 31, 2026</h2>
+        <span class="section-header__label" id="pc-opening-label">Opening</span>
+        <h2 style="font-size:var(--text-4xl);margin-bottom:var(--space-md);text-transform:uppercase;letter-spacing:-0.03em;" id="pc-opening-date">March 31, 2026</h2>
         <div class="countdown" id="countdown" aria-label="Countdown to opening day">
           <!-- Populated by main.js -->
         </div>
@@ -67,8 +67,8 @@
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-header__label">The Space</span>
-          <h2 class="section-header__title">Inside Paivapo</h2>
+          <span class="section-header__label" id="pc-gallery-label">The Space</span>
+          <h2 class="section-header__title" id="pc-gallery-title">Inside Paivapo</h2>
         </div>
         <div class="page-loader" id="gallery-loader">
           <div class="book-loader"><div class="inner"><div class="left"></div><div class="middle"></div><div class="right"></div></div><ul><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
@@ -87,20 +87,20 @@
           <!-- Info -->
           <div>
             <div style="margin-bottom:var(--space-2xl);">
-              <h3 style="font-size:var(--text-2xl);margin-bottom:var(--space-md);" data-i18n="visit.hours">Opening Hours</h3>
-              <p style="color:var(--color-text-secondary);">Tuesday – Saturday, 9:00 – 17:00</p>
-              <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-sm);">Closed Sundays, Mondays, and public holidays</p>
+              <h3 style="font-size:var(--text-2xl);margin-bottom:var(--space-md);" id="pc-hours-title" data-i18n="visit.hours">Opening Hours</h3>
+              <p style="color:var(--color-text-secondary);" id="pc-hours-text">Tuesday – Saturday, 9:00 – 17:00</p>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-sm);" id="pc-hours-note">Closed Sundays, Mondays, and public holidays</p>
             </div>
 
             <div style="margin-bottom:var(--space-2xl);">
-              <h3 style="font-size:var(--text-2xl);margin-bottom:var(--space-md);" data-i18n="visit.address">Address</h3>
-              <p style="color:var(--color-text-secondary);">Paivapo Institution<br>Harare, Zimbabwe</p>
-              <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-sm);">Detailed address to be announced closer to opening</p>
+              <h3 style="font-size:var(--text-2xl);margin-bottom:var(--space-md);" id="pc-address-title" data-i18n="visit.address">Address</h3>
+              <p style="color:var(--color-text-secondary);" id="pc-address-text">Paivapo Institution<br>Harare, Zimbabwe</p>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-sm);" id="pc-address-note">Detailed address to be announced closer to opening</p>
             </div>
 
             <div>
-              <h3 style="font-size:var(--text-2xl);margin-bottom:var(--space-md);" data-i18n="visit.expect">What to Expect</h3>
-              <ul style="color:var(--color-text-secondary);line-height:2;">
+              <h3 style="font-size:var(--text-2xl);margin-bottom:var(--space-md);" id="pc-expect-title" data-i18n="visit.expect">What to Expect</h3>
+              <ul style="color:var(--color-text-secondary);line-height:2;" id="pc-expect-items">
                 <li>— Quiet reading room with natural light</li>
                 <li>— Free access to our full collection</li>
                 <li>— Seating and work tables</li>
