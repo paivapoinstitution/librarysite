@@ -30,5 +30,13 @@
     "logo_url": "/assets/images/placeholder.svg",
     "url": "#",
     "description": "Supports artistic development and cultural exchange in Harare."
+  },
+  {
+    "id": "pmm7xlrbm",
+    "name": "1925 GLEN NORAH",
+    "tier": "founding",
+    "logo_url": "https://i0.wp.com/glennorah.co.uk/wp-content/uploads/2023/10/cropped-Landscape_Transparent_Glen-Norah_Logo-2.png?fit=512%2C512&ssl=1",
+    "url": "glennorah.co.uk",
+    "description": "1925 GLEN NORAH is an olfactory practice that captures past cultural and artistic movements through scent. Fragrances reflect the spirit of times, referencing contributions that shaped cultural landscapes."
   }
 ]
