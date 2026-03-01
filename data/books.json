@@ -358,5 +358,89 @@
     "year": 2014,
     "added_date": "2026-03-01",
     "featured": false
+  },
+  {
+    "id": "mm80lmbd",
+    "isbn": "9783907493137",
+    "title": "David Hammons",
+    "author": "David Hammons",
+    "category": "art",
+    "description": "Art, Exhibitions",
+    "cover_url": "https://covers.openlibrary.org/b/isbn/9783907493137-L.jpg",
+    "year": 2025,
+    "added_date": "2026-03-01",
+    "featured": false
+  },
+  {
+    "id": "mm80m5yg",
+    "isbn": "9781846381867",
+    "title": "David Hammons",
+    "author": "Elena Filipovic",
+    "category": "art",
+    "description": "Artists, united states, Criticism and interpretation",
+    "cover_url": "https://covers.openlibrary.org/b/id/13167068-L.jpg",
+    "year": 2017,
+    "added_date": "2026-03-01",
+    "featured": true
+  },
+  {
+    "id": "mm80mkgz",
+    "isbn": "9780300263909",
+    "title": "David Hammons",
+    "author": "Adam D. Weinberg",
+    "category": "art",
+    "description": "Long Now Manual for Civilization",
+    "cover_url": "https://covers.openlibrary.org/b/isbn/9780300263909-L.jpg",
+    "year": 2022,
+    "added_date": "2026-03-01",
+    "featured": false
+  },
+  {
+    "id": "mm80my7l",
+    "isbn": "9780934324656",
+    "title": "David Hammons/Yves Klein Yves Klein/David Hammons",
+    "author": "Klaus Ottmann",
+    "category": "art",
+    "description": "Art, modern, 20th century, exhibitions, Exhibitions",
+    "cover_url": "https://covers.openlibrary.org/b/id/8992256-L.jpg",
+    "year": 2014,
+    "added_date": "2026-03-01",
+    "featured": false
+  },
+  {
+    "id": "mm80nmok",
+    "isbn": "9780944219102",
+    "title": "Lilith",
+    "author": "Anselm Kiefer",
+    "category": "art",
+    "description": "Exhibitions, Art, german, Art, catalogs",
+    "cover_url": "https://covers.openlibrary.org/b/id/720695-L.jpg",
+    "year": 1991,
+    "added_date": "2026-03-01",
+    "featured": false
+  },
+  {
+    "id": "mm80nvg7",
+    "isbn": "9780944219027",
+    "title": "Richard Deacon.",
+    "author": "Deacon, Richard",
+    "category": "art",
+    "description": "British Sculpture, Exhibitions, Sculpture",
+    "cover_url": "https://covers.openlibrary.org/b/id/13836021-L.jpg",
+    "year": 1988,
+    "added_date": "2026-03-01",
+    "featured": false
+  },
+  {
+    "id": "mm80o7pa",
+    "isbn": "9788857253855",
+    "title": "Che Lovelace",
+    "author": "Che Lovelace",
+    "category": "art",
+    "description": "Catalogs, Portfolio, Painting",
+    "cover_url": "https://covers.openlibrary.org/b/isbn/9788857253855-L.jpg",
+    "year": 2025,
+    "added_date": "2026-03-01",
+    "featured": false
   }
 ]
