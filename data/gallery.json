@@ -1,25 +1,25 @@
 [
   {
     "id": "g001",
-    "image_url": "/assets/images/placeholder.svg",
+    "image_url": "https://static.dezeen.com/uploads/2014/01/The-Library-of-Muyinga-by-BC-architects_dezeen_9.jpg",
     "caption": "The reading room — natural light, quiet space",
     "alt": "Interior of Paivapo Institution reading room"
   },
   {
     "id": "g002",
-    "image_url": "/assets/images/placeholder.svg",
+    "image_url": "https://static.dezeen.com/uploads/2014/01/The-Library-of-Muyinga-by-BC-architects_dezeen_11.jpg",
     "caption": "Shelves awaiting their first hundred titles",
     "alt": "Empty bookshelves in the library space"
   },
   {
     "id": "g003",
-    "image_url": "/assets/images/placeholder.svg",
+    "image_url": "https://static.dezeen.com/uploads/2014/01/The-Library-of-Muyinga-by-BC-architects_dezeen_16.jpg",
     "caption": "The courtyard entrance",
     "alt": "Exterior entrance to Paivapo Institution"
   },
   {
     "id": "g004",
-    "image_url": "/assets/images/placeholder.svg",
+    "image_url": "https://static.dezeen.com/uploads/2014/01/The-Library-of-Muyinga-by-BC-architects_dezeen_ss13.jpg",
     "caption": "Community gathering area",
     "alt": "Open area for community events and discussions"
   }
