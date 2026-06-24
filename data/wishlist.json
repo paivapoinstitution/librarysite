@@ -1,34 +1,668 @@
 [
   {
     "id": "w001",
-    "title": "The Buried Giant",
-    "author": "Kazuo Ishiguro",
-    "category": "literature",
-    "reason": "Ishiguro on memory and forgetting. A considered addition to our literature collection.",
-    "amazon_url": "https://www.amazon.co.uk/dp/0571315070"
+    "title": "The Salt Eaters",
+    "author": "Toni Cade Bambara",
+    "category": "fiction",
+    "reason": "Fiction by Toni Cade Bambara we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780394507125",
+    "cover_url": "https://covers.openlibrary.org/b/id/14349804-L.jpg"
   },
   {
     "id": "w002",
-    "title": "Under the Udala Trees",
-    "author": "Chinelo Okparanta",
-    "category": "literature",
-    "reason": "A Nigerian novel about identity and resilience during and after the Biafran War.",
-    "amazon_url": "https://www.amazon.co.uk/dp/1847088368"
+    "title": "Fledgling",
+    "author": "Octavia E. Butler",
+    "category": "fiction",
+    "reason": "Fiction by Octavia E. Butler we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780446178891",
+    "cover_url": "https://covers.openlibrary.org/b/id/846914-L.jpg"
   },
   {
     "id": "w003",
-    "title": "The Mushroom at the End of the World",
-    "author": "Anna Lowenhaupt Tsing",
-    "category": "ecology",
-    "reason": "Tsing on ecology, capitalism, and survival. Rigorous and relevant to our ecology collection.",
-    "amazon_url": "https://www.amazon.co.uk/dp/0691178321"
+    "title": "Parable of the Sower",
+    "author": "Octavia E. Butler",
+    "category": "fiction",
+    "reason": "Fiction by Octavia E. Butler we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781453265420",
+    "cover_url": "https://covers.openlibrary.org/b/id/10466266-L.jpg"
   },
   {
     "id": "w004",
-    "title": "Sculpture in the Age of Doubt",
-    "author": "Thomas McEvilley",
-    "category": "art",
-    "reason": "Critical reading on contemporary sculpture and its philosophical foundations.",
-    "amazon_url": "https://www.amazon.co.uk/dp/1581150067"
+    "title": "Parable of the Talents",
+    "author": "Octavia E. Butler",
+    "category": "fiction",
+    "reason": "Fiction by Octavia E. Butler we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780446675789",
+    "cover_url": "https://covers.openlibrary.org/b/id/12384358-L.jpg"
+  },
+  {
+    "id": "w005",
+    "title": "Kintu",
+    "author": "Jennifer Nansubuga Makumbi",
+    "category": "fiction",
+    "reason": "Fiction by Jennifer Nansubuga Makumbi we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781786074430",
+    "cover_url": "https://covers.openlibrary.org/b/id/8746011-L.jpg"
+  },
+  {
+    "id": "w006",
+    "title": "Midnight Robber",
+    "author": "Nalo Hopkinson",
+    "category": "fiction",
+    "reason": "Fiction by Nalo Hopkinson we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780613279765",
+    "cover_url": "https://covers.openlibrary.org/b/id/288072-L.jpg"
+  },
+  {
+    "id": "w007",
+    "title": "The Dragon Can't Dance",
+    "author": "Earl Lovelace",
+    "category": "fiction",
+    "reason": "Fiction by Earl Lovelace we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9789768228017",
+    "cover_url": "https://covers.openlibrary.org/b/id/7253085-L.jpg"
+  },
+  {
+    "id": "w008",
+    "title": "The Color Purple",
+    "author": "Alice Walker",
+    "category": "fiction",
+    "reason": "Fiction by Alice Walker we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781568653501",
+    "cover_url": "https://covers.openlibrary.org/b/id/8564628-L.jpg"
+  },
+  {
+    "id": "w009",
+    "title": "Giovanni's Room",
+    "author": "James Baldwin",
+    "category": "fiction",
+    "reason": "Fiction by James Baldwin we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780440328810",
+    "cover_url": "https://covers.openlibrary.org/b/id/97395-L.jpg"
+  },
+  {
+    "id": "w010",
+    "title": "I Am Not Your Negro",
+    "author": "James Baldwin",
+    "category": "non-fiction",
+    "reason": "James Baldwin's non-fiction — a considered addition to our collection.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780141986685",
+    "cover_url": "https://covers.openlibrary.org/b/id/10852747-L.jpg"
+  },
+  {
+    "id": "w011",
+    "title": "Brown Girls",
+    "author": "Daphne Palasi Andreades",
+    "category": "fiction",
+    "reason": "Fiction by Daphne Palasi Andreades we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780008478056",
+    "cover_url": "https://covers.openlibrary.org/b/id/11029524-L.jpg"
+  },
+  {
+    "id": "w012",
+    "title": "Their Eyes Were Watching God",
+    "author": "Zora Neale Hurston",
+    "category": "fiction",
+    "reason": "Fiction by Zora Neale Hurston we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780060838676",
+    "cover_url": "https://covers.openlibrary.org/b/id/12752055-L.jpg"
+  },
+  {
+    "id": "w013",
+    "title": "When We Were Birds",
+    "author": "Ayanna Lloyd Banwo",
+    "category": "fiction",
+    "reason": "Fiction by Ayanna Lloyd Banwo we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780241991640",
+    "cover_url": "https://covers.openlibrary.org/b/id/12675034-L.jpg"
+  },
+  {
+    "id": "w014",
+    "title": "Mask Off Masculinity in Crisis",
+    "author": "JJ Bola",
+    "category": "non-fiction",
+    "reason": "JJ Bola's non-fiction — a considered addition to our collection.",
+    "amazon_url": "https://www.amazon.co.uk/s?k=Mask+Off+Masculinity+in+Crisis+JJ+Bola",
+    "cover_url": "assets/images/placeholder.svg"
+  },
+  {
+    "id": "w015",
+    "title": "Things I Have Withheld",
+    "author": "Kei Miller",
+    "category": "non-fiction",
+    "reason": "Kei Miller's non-fiction — a considered addition to our collection.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780802160331",
+    "cover_url": "https://covers.openlibrary.org/b/id/11150870-L.jpg"
+  },
+  {
+    "id": "w016",
+    "title": "Augustown",
+    "author": "Kei Miller",
+    "category": "fiction",
+    "reason": "Fiction by Kei Miller we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781474603591",
+    "cover_url": "https://covers.openlibrary.org/b/id/10841145-L.jpg"
+  },
+  {
+    "id": "w017",
+    "title": "Here Again Now",
+    "author": "Okechukwu Nzelu",
+    "category": "fiction",
+    "reason": "Fiction by Okechukwu Nzelu we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780349701097",
+    "cover_url": "https://covers.openlibrary.org/b/isbn/9780349701097-L.jpg"
+  },
+  {
+    "id": "w018",
+    "title": "The Book of Phoenix",
+    "author": "Nnedi Okorafor",
+    "category": "fiction",
+    "reason": "Fiction by Nnedi Okorafor we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781444762792",
+    "cover_url": "https://covers.openlibrary.org/b/id/10735083-L.jpg"
+  },
+  {
+    "id": "w019",
+    "title": "The Book of Memory",
+    "author": "Petina Gappah",
+    "category": "fiction",
+    "reason": "Fiction by Petina Gappah we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9789752121973",
+    "cover_url": "https://covers.openlibrary.org/b/id/8471882-L.jpg"
+  },
+  {
+    "id": "w020",
+    "title": "Love in Colour",
+    "author": "Bolu Babalola",
+    "category": "fiction",
+    "reason": "Fiction by Bolu Babalola we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781664791510",
+    "cover_url": "https://covers.openlibrary.org/b/id/11495889-L.jpg"
+  },
+  {
+    "id": "w021",
+    "title": "The Secret Lives of Church Ladies",
+    "author": "Deesha Philyaw",
+    "category": "fiction",
+    "reason": "Fiction by Deesha Philyaw we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781949199734",
+    "cover_url": "https://covers.openlibrary.org/b/id/10323724-L.jpg"
+  },
+  {
+    "id": "w022",
+    "title": "The Secret Lives of Baba Segi's Wives",
+    "author": "Lola Shoneyin",
+    "category": "fiction",
+    "reason": "Fiction by Lola Shoneyin we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781846687488",
+    "cover_url": "https://covers.openlibrary.org/b/isbn/9781846687488-L.jpg"
+  },
+  {
+    "id": "w023",
+    "title": "Happiness, Like Water",
+    "author": "Chinelo Okparanta",
+    "category": "fiction",
+    "reason": "Fiction by Chinelo Okparanta we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780544003453",
+    "cover_url": "https://covers.openlibrary.org/b/id/11391317-L.jpg"
+  },
+  {
+    "id": "w024",
+    "title": "All About Love",
+    "author": "bell hooks",
+    "category": "non-fiction",
+    "reason": "bell hooks's non-fiction — a considered addition to our collection.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9786075692302",
+    "cover_url": "https://covers.openlibrary.org/b/id/42317-L.jpg"
+  },
+  {
+    "id": "w025",
+    "title": "Mind What You Tell Your Daughter",
+    "author": "Aircre Maame Fosua",
+    "category": "poetry",
+    "reason": "Poetry we'd love to add to our shelves — Aircre Maame Fosua.",
+    "amazon_url": "https://www.amazon.co.uk/s?k=Mind+What+You+Tell+Your+Daughter+Aircre+Maame+Fosua",
+    "cover_url": "assets/images/placeholder.svg"
+  },
+  {
+    "id": "w026",
+    "title": "This Mournable Body",
+    "author": "Tsitsi Dangarembga",
+    "category": "fiction",
+    "reason": "Fiction by Tsitsi Dangarembga we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780571355525",
+    "cover_url": "https://covers.openlibrary.org/b/id/11199644-L.jpg"
+  },
+  {
+    "id": "w027",
+    "title": "Black and Female",
+    "author": "Tsitsi Dangarembga",
+    "category": "non-fiction",
+    "reason": "Tsitsi Dangarembga's non-fiction — a considered addition to our collection.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781644452127",
+    "cover_url": "https://covers.openlibrary.org/b/id/13229369-L.jpg"
+  },
+  {
+    "id": "w028",
+    "title": "House of Stone",
+    "author": "Novuyo Rosa Tshuma",
+    "category": "fiction",
+    "reason": "Fiction by Novuyo Rosa Tshuma we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780393635423",
+    "cover_url": "https://covers.openlibrary.org/b/id/8808519-L.jpg"
+  },
+  {
+    "id": "w029",
+    "title": "These Bones Will Rise Again",
+    "author": "Panashe Chigumadzi",
+    "category": "non-fiction",
+    "reason": "Panashe Chigumadzi's non-fiction — a considered addition to our collection.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781999683306",
+    "cover_url": "https://covers.openlibrary.org/b/id/10626360-L.jpg"
+  },
+  {
+    "id": "w030",
+    "title": "African Love Stories",
+    "author": "Ama Ata Aidoo",
+    "category": "fiction",
+    "reason": "Fiction by Ama Ata Aidoo we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780954702366",
+    "cover_url": "https://covers.openlibrary.org/b/id/1688893-L.jpg"
+  },
+  {
+    "id": "w031",
+    "title": "Purple Hibiscus",
+    "author": "Chimamanda Ngozi Adichie",
+    "category": "fiction",
+    "reason": "Fiction by Chimamanda Ngozi Adichie we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781627659611",
+    "cover_url": "https://covers.openlibrary.org/b/id/12063933-L.jpg"
+  },
+  {
+    "id": "w032",
+    "title": "The House of Hunger",
+    "author": "Dambudzo Marechera",
+    "category": "fiction",
+    "reason": "Fiction by Dambudzo Marechera we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781478604730",
+    "cover_url": "https://covers.openlibrary.org/b/id/13604744-L.jpg"
+  },
+  {
+    "id": "w033",
+    "title": "Girl, Woman, Other",
+    "author": "Bernardine Evaristo",
+    "category": "fiction",
+    "reason": "Fiction by Bernardine Evaristo we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781094189789",
+    "cover_url": "https://covers.openlibrary.org/b/id/9134982-L.jpg"
+  },
+  {
+    "id": "w034",
+    "title": "Who Fears Death",
+    "author": "Nnedi Okorafor",
+    "category": "fiction",
+    "reason": "Fiction by Nnedi Okorafor we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780008288716",
+    "cover_url": "https://covers.openlibrary.org/b/id/7260326-L.jpg"
+  },
+  {
+    "id": "w035",
+    "title": "The Half-God of Rainfall",
+    "author": "Inua Ellams",
+    "category": "fiction",
+    "reason": "Fiction by Inua Ellams we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780008324780",
+    "cover_url": "https://covers.openlibrary.org/b/id/8753527-L.jpg"
+  },
+  {
+    "id": "w036",
+    "title": "Rotten Row",
+    "author": "Petina Gappah",
+    "category": "fiction",
+    "reason": "Fiction by Petina Gappah we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780571324200",
+    "cover_url": "https://covers.openlibrary.org/b/id/14753613-L.jpg"
+  },
+  {
+    "id": "w037",
+    "title": "The Old Drift",
+    "author": "Namwali Serpell",
+    "category": "fiction",
+    "reason": "Fiction by Namwali Serpell we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781784703998",
+    "cover_url": "https://covers.openlibrary.org/b/id/8793127-L.jpg"
+  },
+  {
+    "id": "w038",
+    "title": "Binti",
+    "author": "Nnedi Okorafor",
+    "category": "fiction",
+    "reason": "Fiction by Nnedi Okorafor we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9782376862185",
+    "cover_url": "https://covers.openlibrary.org/b/id/8441703-L.jpg"
+  },
+  {
+    "id": "w039",
+    "title": "What It Means When a Man Falls from the Sky",
+    "author": "Lesley Nneka Arimah",
+    "category": "fiction",
+    "reason": "Fiction by Lesley Nneka Arimah we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780735211032",
+    "cover_url": "https://covers.openlibrary.org/b/id/8609802-L.jpg"
+  },
+  {
+    "id": "w040",
+    "title": "Dance of the Jakaranda",
+    "author": "Peter Kimani",
+    "category": "fiction",
+    "reason": "Fiction by Peter Kimani we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781617754968",
+    "cover_url": "https://covers.openlibrary.org/b/id/14456058-L.jpg"
+  },
+  {
+    "id": "w041",
+    "title": "Patchwork",
+    "author": "Ellen Banda-Aaku",
+    "category": "fiction",
+    "reason": "Fiction by Ellen Banda-Aaku we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781035900459",
+    "cover_url": "https://covers.openlibrary.org/b/id/9464911-L.jpg"
+  },
+  {
+    "id": "w042",
+    "title": "Homegoing",
+    "author": "Yaa Gyasi",
+    "category": "fiction",
+    "reason": "Fiction by Yaa Gyasi we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780451493835",
+    "cover_url": "https://covers.openlibrary.org/b/id/8081171-L.jpg"
+  },
+  {
+    "id": "w043",
+    "title": "Welcome to Lagos",
+    "author": "Chibundu Onuzo",
+    "category": "fiction",
+    "reason": "Fiction by Chibundu Onuzo we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781936787807",
+    "cover_url": "https://covers.openlibrary.org/b/id/8862996-L.jpg"
+  },
+  {
+    "id": "w044",
+    "title": "The Fishermen",
+    "author": "Chigozie Obioma",
+    "category": "fiction",
+    "reason": "Fiction by Chigozie Obioma we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781478964742",
+    "cover_url": "https://covers.openlibrary.org/b/id/9139289-L.jpg"
+  },
+  {
+    "id": "w045",
+    "title": "My Sister, the Serial Killer",
+    "author": "Oyinkan Braithwaite",
+    "category": "fiction",
+    "reason": "Fiction by Oyinkan Braithwaite we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9788834600467",
+    "cover_url": "https://covers.openlibrary.org/b/id/10721487-L.jpg"
+  },
+  {
+    "id": "w046",
+    "title": "So Long a Letter",
+    "author": "Mariama Ba",
+    "category": "fiction",
+    "reason": "Fiction by Mariama Ba we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781035906062",
+    "cover_url": "https://covers.openlibrary.org/b/isbn/9781035906062-L.jpg"
+  },
+  {
+    "id": "w047",
+    "title": "Ghana Must Go",
+    "author": "Taiye Selasi",
+    "category": "fiction",
+    "reason": "Fiction by Taiye Selasi we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780670065707",
+    "cover_url": "https://covers.openlibrary.org/b/id/7985049-L.jpg"
+  },
+  {
+    "id": "w048",
+    "title": "Nervous Conditions",
+    "author": "Tsitsi Dangarembga",
+    "category": "fiction",
+    "reason": "Fiction by Tsitsi Dangarembga we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781878067777",
+    "cover_url": "https://covers.openlibrary.org/b/id/7934158-L.jpg"
+  },
+  {
+    "id": "w049",
+    "title": "Black Skin, White Masks",
+    "author": "Frantz Fanon",
+    "category": "non-fiction",
+    "reason": "Frantz Fanon's non-fiction — a considered addition to our collection.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9782020006019",
+    "cover_url": "https://covers.openlibrary.org/b/id/482467-L.jpg"
+  },
+  {
+    "id": "w050",
+    "title": "The Wretched of the Earth",
+    "author": "Frantz Fanon",
+    "category": "non-fiction",
+    "reason": "Frantz Fanon's non-fiction — a considered addition to our collection.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780802158635",
+    "cover_url": "https://covers.openlibrary.org/b/id/14325884-L.jpg"
+  },
+  {
+    "id": "w051",
+    "title": "Stay with Me",
+    "author": "Ayobami Adebayo",
+    "category": "fiction",
+    "reason": "Fiction by Ayobami Adebayo we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781509458790",
+    "cover_url": "https://covers.openlibrary.org/b/id/10250668-L.jpg"
+  },
+  {
+    "id": "w052",
+    "title": "The Hairdresser of Harare",
+    "author": "Tendai Huchu",
+    "category": "fiction",
+    "reason": "Fiction by Tendai Huchu we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781779221094",
+    "cover_url": "https://covers.openlibrary.org/b/id/12882362-L.jpg"
+  },
+  {
+    "id": "w053",
+    "title": "Children of Blood and Bone",
+    "author": "Tomi Adeyemi",
+    "category": "fiction",
+    "reason": "Fiction by Tomi Adeyemi we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781250170989",
+    "cover_url": "https://covers.openlibrary.org/b/id/8572526-L.jpg"
+  },
+  {
+    "id": "w054",
+    "title": "Under the Udala Trees",
+    "author": "Chinelo Okparanta",
+    "category": "fiction",
+    "reason": "Fiction by Chinelo Okparanta we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781721329892",
+    "cover_url": "https://covers.openlibrary.org/b/id/9683016-L.jpg"
+  },
+  {
+    "id": "w055",
+    "title": "Children of Virtue and Vengeance",
+    "author": "Tomi Adeyemi",
+    "category": "fiction",
+    "reason": "Fiction by Tomi Adeyemi we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781509899456",
+    "cover_url": "https://covers.openlibrary.org/b/id/9190319-L.jpg"
+  },
+  {
+    "id": "w056",
+    "title": "We Need New Names",
+    "author": "NoViolet Bulawayo",
+    "category": "fiction",
+    "reason": "Fiction by NoViolet Bulawayo we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9782070140268",
+    "cover_url": "https://covers.openlibrary.org/b/id/9556578-L.jpg"
+  },
+  {
+    "id": "w057",
+    "title": "Hiding in Plain Sight",
+    "author": "Nuruddin Farah",
+    "category": "fiction",
+    "reason": "Fiction by Nuruddin Farah we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9789966190239",
+    "cover_url": "https://covers.openlibrary.org/b/id/8199188-L.jpg"
+  },
+  {
+    "id": "w058",
+    "title": "A Grain of Wheat",
+    "author": "Ngugi wa Thiong'o",
+    "category": "fiction",
+    "reason": "Fiction by Ngugi wa Thiong'o we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780949932754",
+    "cover_url": "https://covers.openlibrary.org/b/id/14342094-L.jpg"
+  },
+  {
+    "id": "w059",
+    "title": "The Forbidden Woman",
+    "author": "Malika Mokeddem",
+    "category": "fiction",
+    "reason": "Fiction by Malika Mokeddem we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780803282407",
+    "cover_url": "https://covers.openlibrary.org/b/id/1513565-L.jpg"
+  },
+  {
+    "id": "w060",
+    "title": "Freshwater",
+    "author": "Akwaeke Emezi",
+    "category": "fiction",
+    "reason": "Fiction by Akwaeke Emezi we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780571345403",
+    "cover_url": "https://covers.openlibrary.org/b/id/8456947-L.jpg"
+  },
+  {
+    "id": "w061",
+    "title": "A Stranger's Pose",
+    "author": "Emmanuel Iduma",
+    "category": "non-fiction",
+    "reason": "Emmanuel Iduma's non-fiction — a considered addition to our collection.",
+    "amazon_url": "https://www.amazon.co.uk/s?k=A+Stranger%27s+Pose+Emmanuel+Iduma",
+    "cover_url": "assets/images/placeholder.svg"
+  },
+  {
+    "id": "w062",
+    "title": "The Girl with the Louding Voice",
+    "author": "Abi Dare",
+    "category": "fiction",
+    "reason": "Fiction by Abi Dare we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781529359275",
+    "cover_url": "https://covers.openlibrary.org/b/id/9261646-L.jpg"
+  },
+  {
+    "id": "w063",
+    "title": "The Water Dancer",
+    "author": "Ta-Nehisi Coates",
+    "category": "fiction",
+    "reason": "Fiction by Ta-Nehisi Coates we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781987186758",
+    "cover_url": "https://covers.openlibrary.org/b/id/11328148-L.jpg"
+  },
+  {
+    "id": "w064",
+    "title": "Americanah",
+    "author": "Chimamanda Ngozi Adichie",
+    "category": "fiction",
+    "reason": "Fiction by Chimamanda Ngozi Adichie we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781471241116",
+    "cover_url": "https://covers.openlibrary.org/b/id/8474037-L.jpg"
+  },
+  {
+    "id": "w065",
+    "title": "Here Comes the Sun",
+    "author": "Nicole Dennis-Benn",
+    "category": "fiction",
+    "reason": "Fiction by Nicole Dennis-Benn we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781786071248",
+    "cover_url": "https://covers.openlibrary.org/b/id/8471798-L.jpg"
+  },
+  {
+    "id": "w066",
+    "title": "An Act of Defiance",
+    "author": "Irene Sabatini",
+    "category": "fiction",
+    "reason": "Fiction by Irene Sabatini we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/s?k=An+Act+of+Defiance+Irene+Sabatini",
+    "cover_url": "https://covers.openlibrary.org/b/id/9665064-L.jpg"
+  },
+  {
+    "id": "w067",
+    "title": "Bloodchild",
+    "author": "Octavia E. Butler",
+    "category": "fiction",
+    "reason": "Fiction by Octavia E. Butler we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781644212479",
+    "cover_url": "https://covers.openlibrary.org/b/id/4531927-L.jpg"
+  },
+  {
+    "id": "w068",
+    "title": "The Bluest Eye",
+    "author": "Toni Morrison",
+    "category": "fiction",
+    "reason": "Fiction by Toni Morrison we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781583425381",
+    "cover_url": "https://covers.openlibrary.org/b/id/15152696-L.jpg"
+  },
+  {
+    "id": "w069",
+    "title": "The First Woman",
+    "author": "Jennifer Nansubuga Makumbi",
+    "category": "fiction",
+    "reason": "Fiction by Jennifer Nansubuga Makumbi we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780861540266",
+    "cover_url": "https://covers.openlibrary.org/b/id/10478094-L.jpg"
+  },
+  {
+    "id": "w070",
+    "title": "Vagabonds!",
+    "author": "Eloghosa Osunde",
+    "category": "fiction",
+    "reason": "Fiction by Eloghosa Osunde we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780593541517",
+    "cover_url": "https://covers.openlibrary.org/b/id/12670597-L.jpg"
+  },
+  {
+    "id": "w071",
+    "title": "Things I Have Forgotten Before",
+    "author": "Tanatsei Gambura",
+    "category": "poetry",
+    "reason": "Poetry we'd love to add to our shelves — Tanatsei Gambura.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781913268169",
+    "cover_url": "https://covers.openlibrary.org/b/isbn/9781913268169-L.jpg"
+  },
+  {
+    "id": "w072",
+    "title": "Children of Anguish and Anarchy",
+    "author": "Tomi Adeyemi",
+    "category": "fiction",
+    "reason": "Fiction by Tomi Adeyemi we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781509899432",
+    "cover_url": "https://covers.openlibrary.org/b/id/14643131-L.jpg"
+  },
+  {
+    "id": "w073",
+    "title": "Tristan Strong Punches a Hole in the Sky",
+    "author": "Kwame Mbalia",
+    "category": "fiction",
+    "reason": "Fiction by Kwame Mbalia we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9780593167236",
+    "cover_url": "https://covers.openlibrary.org/b/id/9120341-L.jpg"
+  },
+  {
+    "id": "w074",
+    "title": "The Last Gate of the Emperor",
+    "author": "Kwame Mbalia",
+    "category": "fiction",
+    "reason": "Fiction by Kwame Mbalia we'd welcome for our shelves.",
+    "amazon_url": "https://www.amazon.co.uk/dp/9781338796087",
+    "cover_url": "https://covers.openlibrary.org/b/id/10943161-L.jpg"
   }
 ]

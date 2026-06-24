@@ -1,16 +1,12 @@
 {
   "hero_title": "Paivapo",
-  "hero_subtitle": "A library for the curious, the critical, and the community.",
+  "hero_subtitle": "Art, ecology, and literature in Masvingo — a space for reading, study, and shifting how we see.",
   "cta_browse": "Browse Catalog",
   "cta_donate": "Donate",
   "cta_visit": "Visit Us",
   "mission_label": "Mission",
-  "mission_text": "Paivapo Institution is a community library in Zimbabwe. We collect, preserve, and share books across art, ecology, and literature. Access to books should be ordinary, not exceptional.",
-  "stats": [
-    { "number": "~100", "label": "Books" },
-    { "number": "3", "label": "Categories" },
-    { "number": "Mar 2026", "label": "Opening" }
-  ],
+  "mission_text": "We believe access to ideas should be ordinary, not exceptional. Paivapo is a library and cultural space in Masvingo, Zimbabwe — collecting work across art, ecology, and literature not simply to store books, but to open minds and shift how a community sees itself and the world.",
+  "stats": [],
   "featured_label": "Featured Books",
   "featured_title": "From the Collection",
   "partners_label": "Partners"

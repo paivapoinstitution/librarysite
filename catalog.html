@@ -7,7 +7,7 @@
   <meta name="description" content="Browse the Paivapo Institution book catalog — titles across art, ecology, and literature.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -26,7 +26,6 @@
           <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
           <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
           <li><a href="catalog.html" class="nav__link nav__link--active" data-i18n="nav.catalog">Catalog</a></li>
-          <li><a href="wishlist.html" class="nav__link" data-i18n="nav.wishlist">Books We Need</a></li>
           <li><a href="donate.html" class="nav__link" data-i18n="nav.donate">Donate</a></li>
           <li><a href="visit.html" class="nav__link" data-i18n="nav.visit">Visit Us</a></li>
           <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
@@ -73,20 +72,20 @@
         <div class="book-loader"><div class="inner"><div class="left"></div><div class="middle"></div><div class="right"></div></div><ul><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
       </div>
 
-      <!-- Split View: Text List + Cover Grid -->
-      <div class="catalog-split" id="catalog-split" aria-live="polite">
-        <div class="catalog-list" id="catalog-list">
-          <!-- Text list populated by main.js -->
-        </div>
-        <div class="catalog-covers" id="catalog-covers">
-          <!-- Cover grid populated by main.js -->
-        </div>
+      <!-- Hover-reveal list: titles lead, cover floats in on hover -->
+      <div class="catalog-list" id="catalog-list" aria-live="polite">
+        <!-- Title list populated by main.js -->
       </div>
 
-      <!-- Wishlist CTA -->
+      <!-- Floating cover preview (desktop) -->
+      <div class="catalog-hover-preview" id="catalog-hover-preview" aria-hidden="true">
+        <img src="" alt="">
+      </div>
+
+      <!-- Donate CTA -->
       <div class="catalog-cta">
         <p id="pc-cta-text">Looking for a title we don't have yet?</p>
-        <a href="wishlist.html" class="btn btn--outline" id="pc-cta-button">See Books We Need &rarr;</a>
+        <a href="donate.html" class="btn btn--outline" id="pc-cta-button">Donate a Book &rarr;</a>
       </div>
 
     </section>
@@ -109,13 +108,12 @@
       <div class="footer__grid">
         <div>
           <div class="footer__brand">Paivapo</div>
-          <p class="footer__tagline">A library for the curious, the critical, and the community.</p>
+          <p class="footer__tagline">Art, ecology, and literature in Masvingo, Zimbabwe.</p>
         </div>
         <div>
           <h4 class="footer__heading">Navigate</h4>
           <a href="about.html" class="footer__link">About</a>
           <a href="catalog.html" class="footer__link">Catalog</a>
-          <a href="wishlist.html" class="footer__link">Books We Need</a>
           <a href="donate.html" class="footer__link">Donate</a>
         </div>
         <div>
@@ -131,7 +129,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <span class="footer__copy">&copy; 2026 Paivapo Institution. Harare, Zimbabwe.</span>
+        <span class="footer__copy">&copy; 2026 Paivapo Institution. Masvingo, Zimbabwe.</span>
       </div>
     </div>
   </footer>

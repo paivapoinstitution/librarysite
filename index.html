@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paivapo Institution — A Community Library in Zimbabwe</title>
-  <meta name="description" content="Paivapo Institution is a community library in Zimbabwe dedicated to collecting, preserving, and sharing books across art, ecology, and literature.">
-  <meta name="theme-color" content="#FFFF63">
+  <title>Paivapo Institution — A Community Library in Masvingo, Zimbabwe</title>
+  <meta name="description" content="Paivapo Institution is a community library in Masvingo, Zimbabwe dedicated to collecting, preserving, and sharing books across art, ecology, and literature.">
+  <meta name="theme-color" content="#ffffff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -27,7 +27,6 @@
           <li><a href="index.html" class="nav__link nav__link--active" data-i18n="nav.home">Home</a></li>
           <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
           <li><a href="catalog.html" class="nav__link" data-i18n="nav.catalog">Catalog</a></li>
-          <li><a href="wishlist.html" class="nav__link" data-i18n="nav.wishlist">Books We Need</a></li>
           <li><a href="donate.html" class="nav__link" data-i18n="nav.donate">Donate</a></li>
           <li><a href="visit.html" class="nav__link" data-i18n="nav.visit">Visit Us</a></li>
           <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
@@ -43,15 +42,20 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" aria-label="Introduction">
-    <div class="hero__content">
-      <h1 class="hero__title" id="pc-hero-title">Paivapo</h1>
-      <p class="hero__subtitle" id="pc-hero-subtitle" data-i18n="hero.tagline">A library for the curious, the critical, and the community.</p>
-      <div class="btn-group">
-        <a href="catalog.html" class="btn btn--primary" id="pc-cta-browse" data-i18n="home.cta.browse">Browse Catalog</a>
-        <a href="donate.html" class="btn btn--outline" id="pc-cta-donate" data-i18n="home.cta.donate">Donate</a>
-        <a href="visit.html" class="btn btn--outline" id="pc-cta-visit" data-i18n="home.cta.visit">Visit Us</a>
+  <!-- Banner / Hero -->
+  <section class="home-banner" aria-label="Introduction">
+    <div class="home-banner__media" role="img" aria-label="Banner image — placeholder">
+      <span class="home-banner__tag">Banner image — replace</span>
+    </div>
+    <div class="home-banner__content">
+      <div class="container">
+        <h1 class="home-banner__title" id="pc-hero-title">Paivapo</h1>
+        <p class="home-banner__subtitle" id="pc-hero-subtitle" data-i18n="hero.tagline">Art, ecology, and literature in Masvingo — a space for reading, study, and shifting how we see.</p>
+        <div class="btn-group">
+          <a href="catalog.html" class="btn btn--primary" id="pc-cta-browse" data-i18n="home.cta.browse">Browse Catalog</a>
+          <a href="donate.html" class="btn btn--outline" id="pc-cta-donate" data-i18n="home.cta.donate">Donate</a>
+          <a href="visit.html" class="btn btn--outline" id="pc-cta-visit" data-i18n="home.cta.visit">Visit Us</a>
+        </div>
       </div>
     </div>
   </section>
@@ -62,29 +66,11 @@
     <!-- Mission -->
     <section class="section">
       <div class="container">
-        <h2 style="font-family:var(--font-serif);font-size:var(--text-3xl);font-weight:900;text-transform:uppercase;letter-spacing:-0.03em;margin-bottom:var(--space-sm);" id="pc-mission-label" data-i18n="home.mission.label">Mission</h2>
+        <h2 style="font-family:var(--font-serif);font-size:var(--text-3xl);font-weight:800;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:var(--space-sm);" id="pc-mission-label" data-i18n="home.mission.label">Mission</h2>
         <div class="divider"></div>
-        <p style="font-size:var(--text-2xl);line-height:1.6;max-width:700px;" id="pc-mission-text" data-i18n="home.mission.text">
-          Paivapo Institution is a community library in Zimbabwe. We collect, preserve, and share books across art, ecology, and literature. Access to books should be ordinary, not exceptional.
+        <p style="font-size:var(--text-2xl);line-height:1.6;max-width:760px;" id="pc-mission-text" data-i18n="home.mission.text">
+          We believe access to ideas should be ordinary, not exceptional. Paivapo is a library and cultural space in Masvingo, Zimbabwe — collecting work across art, ecology, and literature not simply to store books, but to open minds and shift how a community sees itself and the world.
         </p>
-      </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="container">
-      <div class="stats" id="pc-stats">
-        <div>
-          <div class="stat__number" id="book-count">100+</div>
-          <div class="stat__label" data-i18n="home.stats.books">Books &amp; Growing</div>
-        </div>
-        <div>
-          <div class="stat__number">3</div>
-          <div class="stat__label" data-i18n="home.stats.categories">Art, Ecology, Literature</div>
-        </div>
-        <div>
-          <div class="stat__number">Free</div>
-          <div class="stat__label">Open Access for All</div>
-        </div>
       </div>
     </section>
 
@@ -127,13 +113,12 @@
       <div class="footer__grid">
         <div>
           <div class="footer__brand">Paivapo</div>
-          <p class="footer__tagline">A library for the curious, the critical, and the community.</p>
+          <p class="footer__tagline">Art, ecology, and literature in Masvingo, Zimbabwe.</p>
         </div>
         <div>
           <h4 class="footer__heading">Navigate</h4>
           <a href="about.html" class="footer__link">About</a>
           <a href="catalog.html" class="footer__link">Catalog</a>
-          <a href="wishlist.html" class="footer__link">Books We Need</a>
           <a href="donate.html" class="footer__link">Donate</a>
         </div>
         <div>
@@ -149,7 +134,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <span class="footer__copy">&copy; 2026 Paivapo Institution. Harare, Zimbabwe.</span>
+        <span class="footer__copy">&copy; 2026 Paivapo Institution. Masvingo, Zimbabwe.</span>
       </div>
     </div>
   </footer>

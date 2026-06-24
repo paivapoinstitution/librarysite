@@ -2,6 +2,6 @@
   "title": "Book Catalog",
   "description": "Our growing collection across art, ecology, and literature",
   "search_placeholder": "Search by title or author...",
-  "cta_text": "Looking for a title we don't have yet?",
-  "cta_button": "See Books We Need"
+  "cta_text": "Looking for a title we don't have yet? Help us grow the collection.",
+  "cta_button": "Donate a Book"
 }

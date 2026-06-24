@@ -115,6 +115,21 @@
     `).join('');
 
     initLazyLoad();
+
+    // Auto-advance the carousel (pauses on hover)
+    var items = track.querySelectorAll('.carousel__item');
+    if (items.length > 1) {
+      var idx = 0;
+      var paused = false;
+      track.addEventListener('mouseenter', function () { paused = true; });
+      track.addEventListener('mouseleave', function () { paused = false; });
+      var base = items[0].offsetLeft;
+      setInterval(function () {
+        if (paused) return;
+        idx = (idx + 1) % items.length;
+        track.scrollTo({ left: items[idx].offsetLeft - base, behavior: 'smooth' });
+      }, 3200);
+    }
   }
 
   /* ---- Render Book Count (Homepage Stats) ---- */
@@ -145,11 +160,13 @@
     initLazyLoad();
   }
 
-  /* ---- Catalog Page (Saint Heron-inspired split view) ---- */
+  /* ---- Catalog Page (hover-reveal list, Corvi-Mora style) ---- */
   async function initCatalog() {
     const listEl = document.getElementById('catalog-list');
-    const coversEl = document.getElementById('catalog-covers');
-    if (!listEl || !coversEl) return;
+    if (!listEl) return;
+
+    const preview = document.getElementById('catalog-hover-preview');
+    const previewImg = preview ? preview.querySelector('img') : null;
 
     const books = await loadJSON('data/books.json');
     hideLoader('catalog-loader');
@@ -178,43 +195,50 @@
       return filtered;
     }
 
+    function showPreview(src) {
+      if (!preview || !previewImg || !src) return;
+      if (previewImg.getAttribute('src') !== src) previewImg.src = src;
+      preview.classList.add('is-visible');
+    }
+    function hidePreview() {
+      if (preview) preview.classList.remove('is-visible');
+    }
+
     function renderCatalog() {
       var filtered = getFiltered();
 
       if (filtered.length === 0) {
         listEl.innerHTML = '<div class="empty-state"><p>No books found.</p></div>';
-        coversEl.innerHTML = '';
         return;
       }
 
-      // Left: text list
       listEl.innerHTML = filtered.map(book => `
-        <a class="catalog-list__item" data-book-id="${book.id}" role="button" tabindex="0">
-          ${book.title}
-          <span class="catalog-list__category">${book.category}</span>
-          <span class="catalog-list__author">${book.author}</span>
+        <a class="catalog-list__item" data-book-id="${book.id}" data-cover="${book.cover_url}" role="button" tabindex="0" aria-label="View ${book.title}">
+          <span class="catalog-list__title">${book.title}</span>
+          <span class="catalog-list__meta">
+            <span class="catalog-list__author">${book.author || '&mdash;'}</span>
+            <span class="catalog-list__category">${book.category}</span>
+          </span>
         </a>
       `).join('');
 
-      // Right: cover grid
-      coversEl.innerHTML = filtered.map(book => `
-        <div class="catalog-cover-item" data-book-id="${book.id}" role="button" tabindex="0" aria-label="View ${book.title}">
-          <img data-src="${book.cover_url}" alt="Cover of ${book.title}" loading="lazy">
-        </div>
-      `).join('');
-
-      initLazyLoad();
-
-      // Attach click handlers
       listEl.querySelectorAll('.catalog-list__item').forEach(el => {
         el.addEventListener('click', () => openBookModal(el.dataset.bookId));
         el.addEventListener('keydown', (e) => { if (e.key === 'Enter') openBookModal(el.dataset.bookId); });
+        el.addEventListener('mouseenter', () => showPreview(el.dataset.cover));
+        el.addEventListener('mouseleave', hidePreview);
       });
+    }
 
-      coversEl.querySelectorAll('.catalog-cover-item').forEach(el => {
-        el.addEventListener('click', () => openBookModal(el.dataset.bookId));
-        el.addEventListener('keydown', (e) => { if (e.key === 'Enter') openBookModal(el.dataset.bookId); });
+    // Floating cover preview follows the cursor (desktop affordance)
+    if (preview) {
+      listEl.addEventListener('mousemove', (e) => {
+        var x = e.clientX + 24;
+        if (x + 240 > window.innerWidth) x = e.clientX - 24 - 230;
+        preview.style.left = x + 'px';
+        preview.style.top = e.clientY + 'px';
       });
+      listEl.addEventListener('mouseleave', hidePreview);
     }
 
     // Book detail modal

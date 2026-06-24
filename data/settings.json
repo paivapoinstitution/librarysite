@@ -1,7 +1,7 @@
 {
   "site_name": "Paivapo Foundation",
   "tagline": "A library for the curious, the critical, and the community.",
-  "mission": "Paivapo Foundation is a community library in Zimbabwe. We collect, preserve, and share books across art, ecology, and literature. Access to books should be ordinary, not exceptional.",
+  "mission": "We believe access to ideas should be ordinary, not exceptional. Paivapo is a library and cultural space in Masvingo, Zimbabwe — collecting work across art, ecology, and literature not simply to store books, but to open minds and shift how a community sees itself and the world.",
   "opening_date": "2026-03-31",
   "email": "hello@paivapo.org",
   "location": "Masvingo, Zimbabwe",
@@ -13,6 +13,6 @@
   "biennale_note": "",
   "founder": "Felix Shumba",
   "opening_hours": "Tuesday – Saturday, 09:00 – 17:00",
-  "map_lat": "-17.8292",
-  "map_lng": "31.0522"
+  "map_lat": "-20.0637",
+  "map_lng": "30.8277"
 }
