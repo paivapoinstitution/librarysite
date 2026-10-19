@@ -1,7 +1,7 @@
 {
-  "title": "Book Catalog",
+  "title": "Catalog",
   "description": "Our growing collection across art, ecology, and literature",
   "search_placeholder": "Search by title or author...",
   "cta_text": "Looking for a title we don't have yet? Help us grow the collection.",
-  "cta_button": "Donate a Book"
+  "cta_button": "Donate a book"
 }

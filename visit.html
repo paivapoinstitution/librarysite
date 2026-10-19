@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visit Us — Paivapo Institution</title>
+  <title>Visit | Paivapo Institution</title>
   <meta name="description" content="Plan your visit to Paivapo Institution in Masvingo, Zimbabwe.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -17,27 +17,15 @@
   <!-- Header -->
   <header class="header" role="banner">
     <div class="header__inner">
-      <a href="index.html" class="header__logo" aria-label="Paivapo Institution — Home">
-        Paivapo
-        <span>Institution</span>
-      </a>
-      <nav class="nav" role="navigation" aria-label="Main navigation">
+      <nav class="nav" aria-label="Main navigation">
         <ul class="nav__list">
-          <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
-          <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
-          <li><a href="catalog.html" class="nav__link" data-i18n="nav.catalog">Catalog</a></li>
-          <li><a href="donate.html" class="nav__link" data-i18n="nav.donate">Donate</a></li>
-          <li><a href="visit.html" class="nav__link nav__link--active" data-i18n="nav.visit">Visit Us</a></li>
-          <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
-          <li><a href="partners.html" class="nav__link" data-i18n="nav.partners">Partners</a></li>
-          <li><button class="lang-toggle" aria-label="Switch to Shona">SN</button></li>
+          <li><a href="index.html" class="nav__link">Paivapo</a></li>
+          <li><a href="index.html#about" class="nav__link" data-i18n="nav.about">About</a></li>
+          <li><a href="index.html#visit" class="nav__link nav__link--active" data-i18n="nav.visit">Visit</a></li>
+          <li><a href="index.html#support" class="nav__link" data-i18n="nav.support">Support</a></li>
+          <li><a href="index.html#contact" class="nav__link" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-      </button>
     </div>
   </header>
 
@@ -46,7 +34,7 @@
     <!-- Page Header -->
     <section class="page-header">
       <div class="container">
-        <h1 class="page-header__title" id="pc-title" data-i18n="visit.title">Visit Us</h1>
+        <h1 class="page-header__title" id="pc-title" data-i18n="visit.title">Visit</h1>
         <p class="page-header__desc" id="pc-description">Reading, reflection, and gathering. Masvingo, Zimbabwe.</p>
       </div>
     </section>
@@ -55,7 +43,7 @@
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-header__label" id="pc-gallery-label">The Space</span>
+          <span class="section-header__label" id="pc-gallery-label">The space</span>
           <h2 class="section-header__title" id="pc-gallery-title">Inside Paivapo</h2>
         </div>
         <div class="page-loader" id="gallery-loader">
@@ -75,7 +63,7 @@
           <!-- Info -->
           <div>
             <div style="margin-bottom:var(--space-2xl);">
-              <h3 style="font-size:var(--text-2xl);margin-bottom:var(--space-md);" id="pc-hours-title" data-i18n="visit.hours">Opening Hours</h3>
+              <h3 style="font-size:var(--text-2xl);margin-bottom:var(--space-md);" id="pc-hours-title" data-i18n="visit.hours">Opening hours</h3>
               <p style="color:var(--color-text-secondary);" id="pc-hours-text">Tuesday – Saturday, 9:00 – 17:00</p>
               <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-sm);" id="pc-hours-note">Closed Sundays, Mondays, and public holidays</p>
             </div>
@@ -87,13 +75,13 @@
             </div>
 
             <div>
-              <h3 style="font-size:var(--text-2xl);margin-bottom:var(--space-md);" id="pc-expect-title" data-i18n="visit.expect">What to Expect</h3>
-              <ul style="color:var(--color-text-secondary);line-height:2;" id="pc-expect-items">
-                <li>— Quiet reading room with natural light</li>
-                <li>— Free access to our full collection</li>
-                <li>— Seating and work tables</li>
-                <li>— Courtyard for conversation and rest</li>
-                <li>— Reading groups and cultural events</li>
+              <h3 style="font-size:var(--text-2xl);margin-bottom:var(--space-md);" id="pc-expect-title" data-i18n="visit.expect">The reading room</h3>
+              <ul style="color:var(--color-text-secondary);line-height:2;list-style:square inside;" id="pc-expect-items">
+                <li>Quiet reading room with natural light</li>
+                <li>Free access to our full collection</li>
+                <li>Seating and work tables</li>
+                <li>Courtyard for conversation and rest</li>
+                <li>Reading groups and cultural events</li>
               </ul>
             </div>
           </div>
@@ -102,14 +90,14 @@
           <div>
             <div class="map-container">
               <iframe
-                src="https://www.openstreetmap.org/export/embed.html?bbox=30.95%2C-17.88%2C31.15%2C-17.78&layer=mapnik&marker=-17.8292%2C31.0522"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=30.72%2C-20.17%2C30.94%2C-19.96&layer=mapnik&marker=-20.0637%2C30.8277"
                 title="Location of Paivapo Institution on OpenStreetMap"
                 loading="lazy"
                 aria-label="Map showing Masvingo, Zimbabwe"
               ></iframe>
             </div>
             <p style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-sm);">
-              <a href="https://www.openstreetmap.org/?mlat=-17.8292&mlon=31.0522#map=13/-17.8292/31.0522" target="_blank" rel="noopener">View larger map</a>
+              <a href="https://www.openstreetmap.org/?mlat=-20.0637&mlon=30.8277#map=13/-20.0637/30.8277" target="_blank" rel="noopener">View larger map</a>
             </p>
           </div>
 
@@ -135,7 +123,7 @@
         </div>
         <div>
           <h4 class="footer__heading">Visit</h4>
-          <a href="visit.html" class="footer__link">Plan Your Visit</a>
+          <a href="visit.html" class="footer__link">Plan your visit</a>
           <a href="contact.html" class="footer__link">Contact</a>
           <a href="partners.html" class="footer__link">Partners</a>
         </div>
@@ -150,6 +138,8 @@
       </div>
     </div>
   </footer>
+
+  <button class="lang-toggle lang-toggle--corner" aria-label="Switch to Shona">SN</button>
 
   <script src="assets/js/translations.js"></script>
   <script src="assets/js/main.js"></script>

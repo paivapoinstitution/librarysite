@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Donate — Paivapo Institution</title>
-  <meta name="description" content="Support Paivapo Institution. Donate money or a book to help build a community library in Masvingo, Zimbabwe.">
+  <title>Donate | Paivapo Institution</title>
+  <meta name="description" content="Support Institution. Donate money or a book to help build a community library in Masvingo, Zimbabwe.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -17,27 +17,15 @@
   <!-- Header -->
   <header class="header" role="banner">
     <div class="header__inner">
-      <a href="index.html" class="header__logo" aria-label="Paivapo Institution — Home">
-        Paivapo
-        <span>Institution</span>
-      </a>
-      <nav class="nav" role="navigation" aria-label="Main navigation">
+      <nav class="nav" aria-label="Main navigation">
         <ul class="nav__list">
-          <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
-          <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
-          <li><a href="catalog.html" class="nav__link" data-i18n="nav.catalog">Catalog</a></li>
-          <li><a href="donate.html" class="nav__link nav__link--active" data-i18n="nav.donate">Donate</a></li>
-          <li><a href="visit.html" class="nav__link" data-i18n="nav.visit">Visit Us</a></li>
-          <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
-          <li><a href="partners.html" class="nav__link" data-i18n="nav.partners">Partners</a></li>
-          <li><button class="lang-toggle" aria-label="Switch to Shona">SN</button></li>
+          <li><a href="index.html" class="nav__link">Paivapo</a></li>
+          <li><a href="index.html#about" class="nav__link" data-i18n="nav.about">About</a></li>
+          <li><a href="index.html#visit" class="nav__link" data-i18n="nav.visit">Visit</a></li>
+          <li><a href="index.html#support" class="nav__link nav__link--active" data-i18n="nav.support">Support</a></li>
+          <li><a href="index.html#contact" class="nav__link" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-      </button>
     </div>
   </header>
 
@@ -46,7 +34,7 @@
     <!-- Page Header -->
     <section class="page-header">
       <div class="container">
-        <h1 class="page-header__title" id="pc-title" data-i18n="donate.title">Support Paivapo</h1>
+        <h1 class="page-header__title" id="pc-title" data-i18n="donate.title">Support</h1>
         <p class="page-header__desc" id="pc-description">We rely on donations to build the collection and maintain the space.</p>
       </div>
     </section>
@@ -56,30 +44,28 @@
       <div class="container">
         <div class="donate-options">
 
-          <!-- Donate Money -->
+          <!-- Donate money -->
           <div class="donate-card">
-            <div class="donate-card__icon" aria-hidden="true">&#9671;</div>
-            <h2 class="donate-card__title" id="pc-money-title" data-i18n="donate.money">Donate Money</h2>
+            <h2 class="donate-card__title" id="pc-money-title" data-i18n="donate.money">Donate money</h2>
             <p class="donate-card__desc" id="pc-money-desc">
               Financial donations go towards books, space maintenance, and community programmes.
             </p>
             <a href="#" class="btn btn--primary" id="pc-money-button" aria-label="Donate money via payment processor">
-              Donate Now &rarr;
+              Donate &rarr;
             </a>
             <p style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-md);" id="pc-money-note">
               Payment processed via Stripe / PayPal
             </p>
           </div>
 
-          <!-- Donate a Book -->
+          <!-- Donate a book -->
           <div class="donate-card">
-            <div class="donate-card__icon" aria-hidden="true">&#9670;</div>
-            <h2 class="donate-card__title" id="pc-book-title" data-i18n="donate.book">Donate a Book</h2>
+            <h2 class="donate-card__title" id="pc-book-title" data-i18n="donate.book">Donate a book</h2>
             <p class="donate-card__desc" id="pc-book-desc">
               Buy a book from our list below. It is delivered to our London collection point and shipped to Masvingo.
             </p>
             <a href="#books-needed" class="btn btn--primary" id="pc-book-button" aria-label="See the books we need">
-              See the Books We Need &rarr;
+              See the books we need &rarr;
             </a>
             <p style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-md);" id="pc-book-note">
               Delivered via the booksellers linked below
@@ -90,11 +76,11 @@
       </div>
     </section>
 
-    <!-- Books We Need -->
+    <!-- Books we need -->
     <section class="section" id="books-needed" style="border-top:var(--border-w) solid var(--color-border);">
       <div class="container">
-        <span class="section-header__label">Donate a Book</span>
-        <h2 style="font-family:var(--font-serif);font-size:var(--text-3xl);font-weight:800;text-transform:uppercase;letter-spacing:-0.02em;margin:var(--space-sm) 0 var(--space-md);">Books We Need</h2>
+        <span class="section-header__label">Donate a book</span>
+        <h2 style="font-family:var(--font-serif);font-size:var(--text-3xl);font-weight:400;letter-spacing:-0.015em;margin:var(--space-sm) 0 var(--space-md);">Books we need</h2>
         <p class="text-sm text-muted" style="margin-bottom:var(--space-xl);">These are the titles we are looking for. Buy one from the linked bookseller and it reaches our collection.</p>
         <div class="page-loader" id="wishlist-loader">
           <div class="book-loader"><div class="inner"><div class="left"></div><div class="middle"></div><div class="right"></div></div><ul><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
@@ -108,19 +94,19 @@
     <!-- How Funds Are Used -->
     <section class="section" style="border-top:var(--border-w) solid var(--color-border);">
       <div class="container">
-        <span class="section-header__label" id="pc-how-label">How It Helps</span>
+        <span class="section-header__label" id="pc-how-label">Where it goes</span>
         <div class="divider"></div>
         <div class="how-it-helps" id="pc-how-items">
           <div class="how-it-helps__item">
-            <h4 style="font-size:var(--text-xl);margin-bottom:var(--space-sm);text-transform:uppercase;letter-spacing:-0.02em;">Books</h4>
+            <h4 style="font-size:var(--text-xl);margin-bottom:var(--space-sm);letter-spacing:-0.02em;">Books</h4>
             <p class="text-sm text-muted">Acquiring titles across art, ecology, and literature.</p>
           </div>
           <div class="how-it-helps__item">
-            <h4 style="font-size:var(--text-xl);margin-bottom:var(--space-sm);text-transform:uppercase;letter-spacing:-0.02em;">Space</h4>
+            <h4 style="font-size:var(--text-xl);margin-bottom:var(--space-sm);letter-spacing:-0.02em;">Space</h4>
             <p class="text-sm text-muted">Maintaining the reading room and gathering area in Masvingo.</p>
           </div>
           <div class="how-it-helps__item how-it-helps__item--last">
-            <h4 style="font-size:var(--text-xl);margin-bottom:var(--space-sm);text-transform:uppercase;letter-spacing:-0.02em;">Programmes</h4>
+            <h4 style="font-size:var(--text-xl);margin-bottom:var(--space-sm);letter-spacing:-0.02em;">Programmes</h4>
             <p class="text-sm text-muted">Reading groups, workshops, and cultural events open to all.</p>
           </div>
         </div>
@@ -154,7 +140,7 @@
         </div>
         <div>
           <h4 class="footer__heading">Visit</h4>
-          <a href="visit.html" class="footer__link">Plan Your Visit</a>
+          <a href="visit.html" class="footer__link">Plan your visit</a>
           <a href="contact.html" class="footer__link">Contact</a>
           <a href="partners.html" class="footer__link">Partners</a>
         </div>
@@ -169,6 +155,8 @@
       </div>
     </div>
   </footer>
+
+  <button class="lang-toggle lang-toggle--corner" aria-label="Switch to Shona">SN</button>
 
   <script src="assets/js/translations.js"></script>
   <script src="assets/js/main.js"></script>

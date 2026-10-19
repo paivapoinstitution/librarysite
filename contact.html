@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Paivapo Institution</title>
+  <title>Contact | Paivapo Institution</title>
   <meta name="description" content="Get in touch with Paivapo Institution. Enquiries, partnerships, and press.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -17,27 +17,15 @@
   <!-- Header -->
   <header class="header" role="banner">
     <div class="header__inner">
-      <a href="index.html" class="header__logo" aria-label="Paivapo Institution — Home">
-        Paivapo
-        <span>Institution</span>
-      </a>
-      <nav class="nav" role="navigation" aria-label="Main navigation">
+      <nav class="nav" aria-label="Main navigation">
         <ul class="nav__list">
-          <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
-          <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
-          <li><a href="catalog.html" class="nav__link" data-i18n="nav.catalog">Catalog</a></li>
-          <li><a href="donate.html" class="nav__link" data-i18n="nav.donate">Donate</a></li>
-          <li><a href="visit.html" class="nav__link" data-i18n="nav.visit">Visit Us</a></li>
-          <li><a href="contact.html" class="nav__link nav__link--active" data-i18n="nav.contact">Contact</a></li>
-          <li><a href="partners.html" class="nav__link" data-i18n="nav.partners">Partners</a></li>
-          <li><button class="lang-toggle" aria-label="Switch to Shona">SN</button></li>
+          <li><a href="index.html" class="nav__link">Paivapo</a></li>
+          <li><a href="index.html#about" class="nav__link" data-i18n="nav.about">About</a></li>
+          <li><a href="index.html#visit" class="nav__link" data-i18n="nav.visit">Visit</a></li>
+          <li><a href="index.html#support" class="nav__link" data-i18n="nav.support">Support</a></li>
+          <li><a href="index.html#contact" class="nav__link nav__link--active" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-      </button>
     </div>
   </header>
 
@@ -71,7 +59,7 @@
                 <label for="message" class="form__label" id="pc-message-label" data-i18n="contact.message">Message</label>
                 <textarea id="message" name="message" class="form__textarea" required></textarea>
               </div>
-              <button type="submit" class="btn btn--primary" id="pc-form-button" data-i18n="contact.send">Send Message</button>
+              <button type="submit" class="btn btn--primary" id="pc-form-button" data-i18n="contact.send">Send</button>
             </form>
           </div>
 
@@ -88,7 +76,7 @@
             </div>
 
             <div style="margin-bottom:var(--space-2xl);">
-              <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-md);" id="pc-london-title">London Office</h3>
+              <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-md);" id="pc-london-title">London office</h3>
               <p style="color:var(--color-text-secondary);" id="pc-london-text">London, United Kingdom<br>Book donations &amp; logistics</p>
             </div>
 
@@ -122,7 +110,7 @@
         </div>
         <div>
           <h4 class="footer__heading">Visit</h4>
-          <a href="visit.html" class="footer__link">Plan Your Visit</a>
+          <a href="visit.html" class="footer__link">Plan your visit</a>
           <a href="contact.html" class="footer__link">Contact</a>
           <a href="partners.html" class="footer__link">Partners</a>
         </div>
@@ -137,6 +125,8 @@
       </div>
     </div>
   </footer>
+
+  <button class="lang-toggle lang-toggle--corner" aria-label="Switch to Shona">SN</button>
 
   <script src="assets/js/translations.js"></script>
   <script src="assets/js/main.js"></script>

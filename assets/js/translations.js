@@ -8,9 +8,10 @@ const TRANSLATIONS = {
     'nav.home': 'Home',
     'nav.about': 'About',
     'nav.catalog': 'Catalog',
-    'nav.wishlist': 'Books We Need',
+    'nav.wishlist': 'Books we need',
     'nav.donate': 'Donate',
-    'nav.visit': 'Visit Us',
+    'nav.support': 'Support',
+    'nav.visit': 'Visit',
     'nav.contact': 'Contact',
     'nav.partners': 'Partners',
 
@@ -18,24 +19,24 @@ const TRANSLATIONS = {
     'hero.tagline': 'A library for the curious, the critical, and the community.',
 
     // Homepage
-    'home.mission.label': 'Our Mission',
+    'home.mission.label': 'Mission',
     'home.mission.text': 'Paivapo Institution is a community library in Zimbabwe. We collect, preserve, and share books across art, ecology, and literature. Access to books should be ordinary, not exceptional.',
-    'home.featured': 'Featured Books',
+    'home.featured': 'Featured books',
     'home.stats.books': 'Books',
     'home.stats.categories': 'Categories',
     'home.stats.opening': 'Opening',
-    'home.cta.visit': 'Visit Us',
+    'home.cta.visit': 'Visit',
     'home.cta.donate': 'Donate',
-    'home.cta.browse': 'Browse Catalog',
-    'home.partners': 'Our Partners',
+    'home.cta.browse': 'Browse the catalog',
+    'home.partners': 'Partners',
 
     // About
     'about.title': 'About',
-    'about.team': 'Our Team',
-    'about.space': 'The Space',
+    'about.team': 'Team',
+    'about.space': 'The space',
 
     // Catalog
-    'catalog.title': 'Book Catalog',
+    'catalog.title': 'Catalog',
     'catalog.search': 'Search by title or author...',
     'catalog.all': 'All',
     'catalog.art': 'Art',
@@ -45,41 +46,41 @@ const TRANSLATIONS = {
     'catalog.wishlist.add': 'Add to Wishlist',
 
     // Wishlist
-    'wishlist.title': 'Books We Need',
+    'wishlist.title': 'Books we need',
     'wishlist.desc': 'Help us build our collection. These are the titles we are looking for.',
-    'wishlist.donate': 'Donate This Book',
+    'wishlist.donate': 'Donate this book',
 
     // Donate
-    'donate.title': 'Support Paivapo',
-    'donate.money': 'Donate Money',
-    'donate.book': 'Donate a Book',
+    'donate.title': 'Support',
+    'donate.money': 'Donate money',
+    'donate.book': 'Donate a book',
 
     // Visit
-    'visit.title': 'Visit Us',
+    'visit.title': 'Visit',
     'visit.opening': 'Opening',
     'visit.hours': 'Hours',
     'visit.address': 'Address',
-    'visit.expect': 'What to Expect',
+    'visit.expect': 'The reading room',
 
     // Contact
     'contact.title': 'Contact',
     'contact.name': 'Name',
     'contact.email': 'Email',
     'contact.message': 'Message',
-    'contact.send': 'Send Message',
+    'contact.send': 'Send',
 
     // Partners
-    'partners.title': 'Partners & Sponsors',
-    'partners.founding': 'Founding Partners',
+    'partners.title': 'Partners',
+    'partners.founding': 'Founding partners',
     'partners.partners': 'Partners',
     'partners.supporters': 'Supporters',
-    'partners.cta': 'Become a Partner',
+    'partners.cta': 'Become a partner',
 
     // Footer
     'footer.built': 'Built with care for Zimbabwe',
 
     // Common
-    'common.readmore': 'Read More',
+    'common.readmore': 'Read more',
     'common.loading': 'Loading...',
   },
 
@@ -90,6 +91,7 @@ const TRANSLATIONS = {
     'nav.catalog': 'Mabhuku',
     'nav.wishlist': 'Mabhuku Atinoda',
     'nav.donate': 'Batsira',
+    'nav.support': 'Batsira',
     'nav.visit': 'Tishanyire',
     'nav.contact': 'Taura Nesu',
     'nav.partners': 'Vadiwa',
@@ -194,7 +196,9 @@ function applyTranslations(lang) {
   if (!lang) lang = getCurrentLang();
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    const translation = TRANSLATIONS[lang]?.[key] || TRANSLATIONS['en']?.[key];
+    let translation = TRANSLATIONS[lang]?.[key];
+    // Untranslated strings are marked "[... coming soon]": keep English rather than show the marker
+    if (!translation || translation.charAt(0) === '[') translation = TRANSLATIONS['en']?.[key];
     if (translation) {
       if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
         el.placeholder = translation;
@@ -213,4 +217,5 @@ function applyTranslations(lang) {
   }
 
   document.documentElement.lang = lang === 'sn' ? 'sn' : 'en';
+  document.dispatchEvent(new CustomEvent('paivapo:langchange', { detail: { lang: lang } }));
 }

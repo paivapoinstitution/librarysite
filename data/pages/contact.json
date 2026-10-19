@@ -5,11 +5,11 @@
   "form_name_label": "Name",
   "form_email_label": "Email",
   "form_message_label": "Message",
-  "form_button": "Send Message",
+  "form_button": "Send",
   "info_email": "hello@paivapo.org",
   "info_zimbabwe_title": "Zimbabwe",
   "info_zimbabwe_text": "Paivapo Institution<br>Masvingo, Zimbabwe",
-  "info_london_title": "London Office",
+  "info_london_title": "London office",
   "info_london_text": "London, United Kingdom<br>Book donations & logistics",
   "info_social_title": "Social",
   "info_social_links": [

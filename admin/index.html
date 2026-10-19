@@ -507,6 +507,10 @@
         <input type="checkbox" id="book-featured">
         <label for="book-featured" style="margin:0;text-transform:none;font-size:0.85rem;color:var(--text);">Mark as featured</label>
       </div>
+      <div class="checkbox-group" style="margin-bottom:12px;">
+        <input type="checkbox" id="book-hidden">
+        <label for="book-hidden" style="margin:0;text-transform:none;font-size:0.85rem;color:var(--text);">Hide from public catalogue (title or details still to confirm)</label>
+      </div>
 
       <!-- Preview -->
       <div id="book-preview" style="display:none;">
@@ -1093,7 +1097,7 @@
           <td>${b.author}</td>
           <td><span class="tag">${b.category}</span></td>
           <td>${b.year || ''}</td>
-          <td>${b.featured ? '<span class="tag tag--featured">Featured</span>' : ''}</td>
+          <td>${b.featured ? '<span class="tag tag--featured">Featured</span>' : ''}${b.hidden ? ' <span class="tag">Hidden</span>' : ''}</td>
           <td>
             <button class="btn btn-sm btn-outline" onclick="editBook(${i})">Edit</button>
             <button class="btn btn-sm btn-danger" onclick="deleteBook(${i})">Delete</button>
@@ -1154,7 +1158,10 @@
 
       const editIdx = document.getElementById('add-book').dataset.editIndex;
 
+      // Spread the existing record first so fields the form does not show
+      // (publisher, editor, translator, copies, donated_by, needs_review) survive an edit.
       const bookData = {
+        ...(editIdx !== undefined ? books[editIdx] : {}),
         id: editIdx !== undefined ? books[editIdx].id : genId(''),
         isbn: document.getElementById('book-isbn-val').value || document.getElementById('isbn-input').value.replace(/[-\s]/g, ''),
         title: title,
@@ -1164,7 +1171,8 @@
         cover_url: document.getElementById('book-cover').value.trim(),
         year: parseInt(document.getElementById('book-year').value) || null,
         added_date: editIdx !== undefined ? books[editIdx].added_date : new Date().toISOString().split('T')[0],
-        featured: document.getElementById('book-featured').checked
+        featured: document.getElementById('book-featured').checked,
+        hidden: document.getElementById('book-hidden').checked
       };
 
       if (editIdx !== undefined) {
@@ -1190,6 +1198,7 @@
       document.getElementById('book-cover').value = b.cover_url || '';
       document.getElementById('book-isbn-val').value = b.isbn || '';
       document.getElementById('book-featured').checked = b.featured || false;
+      document.getElementById('book-hidden').checked = b.hidden || false;
       document.getElementById('add-book').dataset.editIndex = i;
       document.getElementById('add-book').textContent = 'Update Book';
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1206,6 +1215,7 @@
       ['isbn-input','book-title','book-author','book-description','book-cover','book-year','book-isbn-val'].forEach(id => document.getElementById(id).value = '');
       document.getElementById('book-category').value = 'art';
       document.getElementById('book-featured').checked = false;
+      document.getElementById('book-hidden').checked = false;
       document.getElementById('book-preview').style.display = 'none';
       document.getElementById('isbn-status').innerHTML = '';
       delete document.getElementById('add-book').dataset.editIndex;

@@ -2,142 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paivapo Institution — A Community Library in Masvingo, Zimbabwe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Paivapo Institution | A Community Library in Masvingo, Zimbabwe</title>
   <meta name="description" content="Paivapo Institution is a community library in Masvingo, Zimbabwe dedicated to collecting, preserving, and sharing books across art, ecology, and literature.">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#F4F1EA">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="is-canvas-page">
 
   <a href="#main" class="skip-link">Skip to main content</a>
 
-  <!-- Header -->
-  <header class="header" role="banner">
+  <!-- Header: transparent, floats over the canvas. main.js turns the list into the gooey nav. -->
+  <header class="header header--float" role="banner">
     <div class="header__inner">
-      <a href="index.html" class="header__logo" aria-label="Paivapo Institution — Home">
-        Paivapo
-        <span>Institution</span>
-      </a>
-      <nav class="nav" role="navigation" aria-label="Main navigation">
+      <nav class="nav" aria-label="Main navigation">
         <ul class="nav__list">
-          <li><a href="index.html" class="nav__link nav__link--active" data-i18n="nav.home">Home</a></li>
-          <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
-          <li><a href="catalog.html" class="nav__link" data-i18n="nav.catalog">Catalog</a></li>
-          <li><a href="donate.html" class="nav__link" data-i18n="nav.donate">Donate</a></li>
-          <li><a href="visit.html" class="nav__link" data-i18n="nav.visit">Visit Us</a></li>
-          <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
-          <li><a href="partners.html" class="nav__link" data-i18n="nav.partners">Partners</a></li>
-          <li><button class="lang-toggle" aria-label="Switch to Shona">SN</button></li>
+          <li><a href="index.html" class="nav__link nav__link--active">Paivapo</a></li>
+          <li><a href="index.html#about" class="nav__link" data-i18n="nav.about">About</a></li>
+          <li><a href="index.html#visit" class="nav__link" data-i18n="nav.visit">Visit</a></li>
+          <li><a href="index.html#support" class="nav__link" data-i18n="nav.support">Support</a></li>
+          <li><a href="index.html#contact" class="nav__link" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-      </button>
     </div>
   </header>
 
-  <!-- Banner / Hero -->
-  <section class="home-banner" aria-label="Introduction">
-    <div class="home-banner__media" role="img" aria-label="Banner image — placeholder">
-      <span class="home-banner__tag">Banner image — replace</span>
-    </div>
-    <div class="home-banner__content">
-      <div class="container">
-        <h1 class="home-banner__title" id="pc-hero-title">Paivapo</h1>
-        <p class="home-banner__subtitle" id="pc-hero-subtitle" data-i18n="hero.tagline">Art, ecology, and literature in Masvingo — a space for reading, study, and shifting how we see.</p>
-        <div class="btn-group">
-          <a href="catalog.html" class="btn btn--primary" id="pc-cta-browse" data-i18n="home.cta.browse">Browse Catalog</a>
-          <a href="donate.html" class="btn btn--outline" id="pc-cta-donate" data-i18n="home.cta.donate">Donate</a>
-          <a href="visit.html" class="btn btn--outline" id="pc-cta-visit" data-i18n="home.cta.visit">Visit Us</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Main -->
   <main id="main">
 
-    <!-- Mission -->
-    <section class="section">
-      <div class="container">
-        <h2 style="font-family:var(--font-serif);font-size:var(--text-3xl);font-weight:800;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:var(--space-sm);" id="pc-mission-label" data-i18n="home.mission.label">Mission</h2>
-        <div class="divider"></div>
-        <p style="font-size:var(--text-2xl);line-height:1.6;max-width:760px;" id="pc-mission-text" data-i18n="home.mission.text">
-          We believe access to ideas should be ordinary, not exceptional. Paivapo is a library and cultural space in Masvingo, Zimbabwe — collecting work across art, ecology, and literature not simply to store books, but to open minds and shift how a community sees itself and the world.
-        </p>
+    <!-- Infinite canvas of the whole collection. Drag, scroll or use the arrow keys to pan; click a book for details. -->
+    <section class="canvas" id="book-canvas" tabindex="0" aria-label="The Paivapo collection. Drag, scroll or use the arrow keys to move around; press Enter on a book for details.">
+      <div class="page-loader" id="canvas-loader">
+        <div class="book-loader"><div class="inner"><div class="left"></div><div class="middle"></div><div class="right"></div></div><ul><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
       </div>
+
+      <div class="canvas__matrix">
+        <!-- 3 x 3 blocks of the collection, populated by main.js -->
+      </div>
+
+      <a class="canvas__list-link" href="catalog.html" id="canvas-list-link">Browse all titles</a>
     </section>
 
-    <!-- Featured Books -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-header__label" id="pc-featured-label" data-i18n="home.featured">Featured Books</span>
-          <h2 class="section-header__title" id="pc-featured-title">From the Collection</h2>
-        </div>
-        <div class="page-loader" id="featured-loader">
-          <div class="book-loader"><div class="inner"><div class="left"></div><div class="middle"></div><div class="right"></div></div><ul><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
-        </div>
-        <div class="carousel">
-          <div class="carousel__track" aria-label="Featured books">
-            <!-- Populated by main.js -->
-          </div>
-        </div>
-        <div style="margin-top:var(--space-2xl);">
-          <a href="catalog.html" class="btn btn--outline" data-i18n="home.cta.browse">Browse Catalog &rarr;</a>
-        </div>
+    <!-- Nav panels: About, Visit, Support, Contact open here without leaving the page -->
+    <div class="scrim" id="panel-scrim" hidden></div>
+    <aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" hidden>
+      <div class="panel__head">
+        
+        <button class="panel__close" id="panel-close" aria-label="Close">&times;</button>
       </div>
-    </section>
+      <div class="panel__scroll" id="panel-body"></div>
+    </aside>
 
-    <!-- Partners -->
-    <section class="section" style="border-top:var(--border-w) solid var(--color-border);">
-      <div class="container">
-        <span class="section-header__label" id="pc-partners-label" data-i18n="home.partners">Partners</span>
-        <div class="partners-strip" aria-label="Partner logos">
-          <!-- Populated by main.js -->
-        </div>
+    <!-- Book Detail Modal (shared with the catalogue page) -->
+    <div class="book-modal" id="book-modal" role="dialog" aria-modal="true" aria-label="Book details" hidden>
+      <div class="book-modal__overlay" id="book-modal-overlay"></div>
+      <div class="book-modal__content">
+        <button class="book-modal__close" id="book-modal-close" aria-label="Close">&times;</button>
+        <div class="book-modal__cover" id="book-modal-cover"></div>
+        <div class="book-modal__info" id="book-modal-info"></div>
       </div>
-    </section>
+    </div>
 
   </main>
 
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <div>
-          <div class="footer__brand">Paivapo</div>
-          <p class="footer__tagline">Art, ecology, and literature in Masvingo, Zimbabwe.</p>
-        </div>
-        <div>
-          <h4 class="footer__heading">Navigate</h4>
-          <a href="about.html" class="footer__link">About</a>
-          <a href="catalog.html" class="footer__link">Catalog</a>
-          <a href="donate.html" class="footer__link">Donate</a>
-        </div>
-        <div>
-          <h4 class="footer__heading">Visit</h4>
-          <a href="visit.html" class="footer__link">Plan Your Visit</a>
-          <a href="contact.html" class="footer__link">Contact</a>
-          <a href="partners.html" class="footer__link">Partners</a>
-        </div>
-        <div>
-          <h4 class="footer__heading">Connect</h4>
-          <a href="mailto:hello@paivapo.org" class="footer__link">hello@paivapo.org</a>
-          <a href="https://instagram.com/paivapo" target="_blank" rel="noopener" class="footer__link">Instagram</a>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <span class="footer__copy">&copy; 2026 Paivapo Institution. Masvingo, Zimbabwe.</span>
-      </div>
-    </div>
-  </footer>
+  <button class="lang-toggle lang-toggle--corner" aria-label="Switch to Shona">SN</button>
 
   <script src="assets/js/translations.js"></script>
   <script src="assets/js/main.js"></script>
